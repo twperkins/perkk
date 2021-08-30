@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users do
+    resources :companies, only: %i[new create]
+  end
   root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get '/profile', to: 'pages#profile'
+  get '/package', to: 'pages#package'
+  resources :perks do
+    resources :user_perks
+    resources :reviews
+  end
 end
