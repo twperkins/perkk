@@ -3,8 +3,8 @@ class CreateUserPerks < ActiveRecord::Migration[6.0]
     create_table :user_perks do |t|
       t.boolean :redeemed
       t.boolean :favourited
-      t.user :references
-      t.perk :references
+      t.references :user
+      t.references :perk
 
       t.timestamps
     end
