@@ -1,0 +1,2 @@
+class Perk < ApplicationRecord
+end

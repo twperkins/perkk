@@ -1,0 +1,2 @@
+class UserPerk < ApplicationRecord
+end
