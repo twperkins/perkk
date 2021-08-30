@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_08_30_162824) do
     t.string "logo_pic"
     t.date "subscription_start"
     t.date "subscription_end"
-    t.boolean "renewed"
+    t.boolean "renewed", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(version: 2021_08_30_162824) do
   end
 
   create_table "user_perks", force: :cascade do |t|
-    t.boolean "redeemed"
-    t.boolean "favourited"
+    t.boolean "redeemed", default: false
+    t.boolean "favourited", default: false
     t.bigint "user_id"
     t.bigint "perk_id"
     t.datetime "created_at", precision: 6, null: false
@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(version: 2021_08_30_162824) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.string "profile_pic"
-    t.boolean "admin"
-    t.boolean "model"
+    t.boolean "admin", default: false
+    t.boolean "model", default: false
     t.integer "tokens"
     t.string "unique_code"
     t.string "location"

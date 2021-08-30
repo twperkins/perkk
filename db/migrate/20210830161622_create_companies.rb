@@ -7,7 +7,7 @@ class CreateCompanies < ActiveRecord::Migration[6.0]
       t.string :logo_pic
       t.date :subscription_start
       t.date :subscription_end
-      t.boolean :renewed
+      t.boolean :renewed, default: true
 
       t.timestamps
     end
