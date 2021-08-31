@@ -3,4 +3,7 @@ class PagesController < ApplicationController
   def home
     @perks = Perk.all
   end
+  def next
+    @perk_main = Perk.next
+  end
 end
