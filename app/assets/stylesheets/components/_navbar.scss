@@ -1,11 +1,26 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
-  width: 50%;
+  justify-content: flex-start;
+  width: 60%;
   background: transparent;
+  margin: 32px;
 }
 
 .navbar .navbar-sections {
+  width: 60%;
   display: flex;
   justify-content: space-between;
+  margin-left: 10%;
+}
+
+.navbar .logo-icon {
+  color: $teal;
+  font-family: 'Londrina Shadow';
+  border: solid 1px $papyrus;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  line-height: 30px;
+  text-align: center;
+  box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5), inset 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(255, 253, 248, 0.5);
 }
