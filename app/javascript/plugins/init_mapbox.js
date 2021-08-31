@@ -6,7 +6,9 @@ const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10'
+    style: 'mapbox://styles/mapbox/streets-v10',
+    center: [48.86, 2.37],
+    zoom: 22
   });
 };
 
@@ -16,7 +18,7 @@ const addMarkersToMap = (map, markers) => {
 
     const element = document.createElement('div');
     element.className = 'marker';
-    element.style.backgroundImage = `url('${marker.image_url}')`;
+    // element.style.backgroundImage = `url('${marker.image_url}')`;
     element.style.backgroundSize = 'contain';
     element.style.width = '25px';
     element.style.height = '25px';
