@@ -12,10 +12,12 @@
       <h5> le wagon: we’ve increased your tokens for the next year!</h5>
 
       <div>
+      <% @recommended_perks.each do |perk|%>
       <%= perk.name %>
+      <%= cl_image_tag perk.perk_pic, height: 200, width: 200, crop: :fill %>
+      <% end  %>
       </div>
 
-  validates :name, :description, :location, :token_cost, :start_date, :end_date, :category, :merchants, presence: true
 
 
 
