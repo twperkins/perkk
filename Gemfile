@@ -30,10 +30,11 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
 
-# gemfile for .env (Stef)
-gem 'dotenv-rails', groups: [:development, :test]
 
 #gemfile for cloudinary (Stef)
+gem 'cloudinary', '~> 1.16.0'
+
+# gemfile for .env (Stef)
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
