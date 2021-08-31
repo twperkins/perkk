@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_one_attached :profile_pic
   has_many :users_perks
   belongs_to :company
-  validates :email, :password, :name, :location, :tokens, :unique_code
-  end
+  validates :email, :password, :name, :location, :tokens, :unique_code, presence: true
+end
