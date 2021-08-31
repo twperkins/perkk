@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="h2 my-3 d-flex justify-content-center">Pick your perks! 🎁 </h1>
+
+      <div data-controller="search-perks">
+        <%= form_with url: perks_path, method: :get, html: { class: 'mb-4', data: { search_perks_target: 'form' } } do |f| %>
+          <%= f.text_field :query,
+                           class: "form-control",
+                           placeholder: 'Search for a perk...',
+                           value: params[:query],
+                           data: { search_perks_target: 'input', action: 'keyup->search-perks#updateList' }
+                           %>
+        <% end %>
+        <%= render 'list', perks: @perks, markers: @markers %>
+      </div>
+    </div>
+  </div>
+</div>

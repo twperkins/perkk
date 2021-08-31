@@ -1,0 +1,23 @@
+<div data-search-perks-target="list">
+  <p class="h3">
+    <% if params[:query].blank? %>
+      <%= pluralize perks.count, 'perk' %> available
+    <% else %>
+      <%= pluralize perks.count, 'result' %> for <code><%= params[:query] %></code>
+    <% end %>
+  </p>
+  <div class="perks">
+    <% perks.each do |perk| %>
+      <%= perk.name %>
+      <%= perk.description %>
+      <%= perk.location %>
+      <%= perk.token_cost %>
+      <%= perk.merchants %>
+    <% end %>
+  </div>
+  <div id="map"
+    style="width: 100%; height: 600px;"
+    data-markers="<%= markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+</div>
