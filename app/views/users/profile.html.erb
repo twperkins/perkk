@@ -1,15 +1,25 @@
 
 <div class="contain">
-  <h1>Notifications </h1>
+  <div class="row">
+    <div class="col">
+
+  <h1 class="h2 my-3 d-flex justify">Notifications </h1>
     <br>
-      <h3> turo: have two weeks for free on us when you renew <h3>
-      <h3> ellie smith: any questions ahead of the update?</h3>
-      <h3> perkk: less than two weeks to update your perks</h3>
-      <h3> netflix: latest programmes released exclusive to perkk customers</h3>
-      <h3> le wagon: we’ve increased your tokens for the next year!</h3>
+      <h5> turo: have two weeks for free on us when you renew <h5>
+      <h5> ellie smith: any questions ahead of the update?</h5>
+      <h5> perkk: less than two weeks to update your perks</h5>
+      <h5> netflix: latest programmes released exclusive to perkk customers</h5>
+      <h5> le wagon: we’ve increased your tokens for the next year!</h5>
+
+      <div>
+      <%= perk.name %>
+      </div>
+
+  validates :name, :description, :location, :token_cost, :start_date, :end_date, :category, :merchants, presence: true
 
 
-  <div class="contain">
-    <%= link_to "Search more perks!", perks_path %>
+
+
+    </div>
   </div>
 </div>
