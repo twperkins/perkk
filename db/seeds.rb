@@ -28,7 +28,7 @@ company = Company.create!(
   subscription_end: DateTime.parse("09/01/2010 19:00")
 )
 file = URI.open('https://source.unsplash.com/800x600/?company')
-company.logo_pic(io: file, filename: 'test.png', content_type: 'image/png')
+company.logo_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # demo user
 puts "creating demo user.."
