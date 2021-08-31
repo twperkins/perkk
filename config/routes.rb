@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/profile', to: 'pages#profile'
   get '/package', to: 'pages#package'
-  resources :perks do
-    resources :user_perks
-    resources :reviews
+  resources :perks, only: %i[show index] do
+    resources :user_perks, only: %i[create]
+    resources :reviews, only: %i[create]
   end
 end
