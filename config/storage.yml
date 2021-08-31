@@ -36,4 +36,4 @@ local:
 
 # active storage added
 cloudinary:
-service: Cloudinary
+  service: Cloudinary
