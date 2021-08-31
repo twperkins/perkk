@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_08_31_111731) do
     t.string "logo_pic"
     t.date "subscription_start"
     t.date "subscription_end"
-    t.boolean "renewed", default: true
+    t.boolean "renewed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
