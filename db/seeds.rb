@@ -8,6 +8,8 @@
 require "open-uri"
 
 if Rails.env.development?
+  puts "Destroying user perks.."
+  UserPerk.destroy_all
   puts "Destroying reviews.."
   Review.destroy_all
   puts "Destroying perks..."
@@ -33,8 +35,8 @@ company.logo_pic.attach(io: file, filename: 'test.png', content_type: 'image/png
 # demo user
 puts "creating demo user.."
 demo = User.create!(
-  email: "demo@perk.com",
-  password: "123456",
+  email: "demo@email.com",
+  password: "123123",
   name: "Chaplin",
   location: Faker::TvShows::BojackHorseman.character,
   unique_code: Faker::Barcode.ean,
