@@ -7,19 +7,20 @@ class PerksController < ApplicationController
       @perks = @perks.where('name ILIKE ?', "%#{params[:query]}%")
     end
 
-    respond_to do |format|
-      format.html
-      format.text { render partial: 'perks/list', locals: { perks: @perks }, formats: [:html] }
+    @markers = @perks.geocoded.map do |perk|
+      {
+        lat: perk.latitude,
+        lng: perk.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { perk: perk }, formats: [:html]),
+        image_url: perk.perk_pic.first.service_url
+        # include perk logo as image_url
+      }
     end
 
-    # @markers = @perks.geocoded.map do |perk|
-    #   {
-    #     lat: perk.latitude,
-    #     lng: perk.longitude,
-    #     # info_window: render_to_string(partial: "info_window", locals: { perk: perk })
-    #     # include perk logo as image_url
-    #   }
-    # end
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'perks/list', locals: { perks: @perks, markers: @markers }, formats: [:html] }
+    end
   end
 
   def show
