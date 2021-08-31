@@ -1,2 +1,51 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%# logo and tagline, with a link to scroll down %>
+<div>
+  <div class="logo"><h1>perkk</h1></div>
+  <h2>making your job work for you</h2>
+  <%# TO DO: button below to scroll down  %>
+  <div class="button-secondary-down"><%= "⌵" %></div>
+</div>
+
+<%# scroll through perks card %>
+<div class="perk-gallery">
+  <div class="main-perk">
+    <% perk_main = @perks.sample %>
+    <%# add in perk_pic will need cloudinary %>
+    <%= perk_main.name %>
+  </div>
+  <div class="minor-perk">
+    <% perk_minor = perk_main.next %>
+    <%# add in perk_pic will need cloudinary %>
+    <%= perk_minor.name %>
+  </div>
+  <%# TO DO: button below to scroll to next perk (update perk_main and perk_minor)  %>
+  <div class="button-secondary-right"><%= "⌵" %></div>
+</div>
+
+<%# TO DO: pop out for login %>
+<div>
+  <%# TO DO: button below to pop out login page  %>
+  <div class="button-secondary-right"><%= "⌵" %></div>
+  <h2>login</h2>
+
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :email,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" } %>
+      <%= f.input :password,
+                  required: false,
+                  input_html: { autocomplete: "current-password" } %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Log in" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>
+
+<%# add in some extra stuff below here, perkk info etc. etc. use figma for inspo %>
