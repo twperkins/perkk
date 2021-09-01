@@ -6,13 +6,18 @@ class UserPerksController < ApplicationController
     @user_perk.perk_id = @perk.id
     @user_perk.user_id = current_user.id
     if @user_perk.save
-            redirect_to package_path
-# redirect_to profile_path
-    else
       redirect_to package_path
+      # redirect_to profile_path
+    else
+      redirect_to profile_path
     end
   end
 
+  def destroy
+    @user_perk = UserPerk.find(params[:id])
+    @user_perk.destroy
+    redirect_to package_path
+  end
 
 
 
