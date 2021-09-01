@@ -1,0 +1,24 @@
+.text-vertical-left {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 41px;
+  color: #333333;
+  transform: rotate(-90deg);
+  position: absolute; top: 0; left: 0; text-align:right;
+  margin-top: 466px;
+  margin-left:-35px;
+
+}
+.text-vertical-right {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 41px;
+  display: flex;
+  align-items: center;
+  color: #333333;
+  transform: rotate(-90deg);
+  position: absolute; top: 0; right: 0; width: 100px; text-align:right;
+  margin-top: 72px;
+}
