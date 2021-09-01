@@ -1,8 +1,12 @@
+<%= render 'shared/navbar' %>
+
 <div class="container">
   <br>
   <h2><%= @perk.name %></h2>
-  <h4>The cost is <%= @perk.token_cost %> tokens</h4>
+  <h4><%= @perk.token_cost %> ₱erkk tokens</h4>
   <br>
   <%= link_to "Add Perkk", perk_user_perks_path(@perk), class: "btn btn-primary", method: :post %>
-  <%= link_to "Leave a review", perk_reviews_path(@perk), class: "btn btn-primary", method: :post %>
+  <%= link_to "Leave a review", '#', class: "btn btn-primary", data: { toggle: "modal", target: "#exampleModal" } %>
 </div>
+
+<%= render 'form' %>
