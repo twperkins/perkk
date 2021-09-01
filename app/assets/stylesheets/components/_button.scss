@@ -1,0 +1,53 @@
+.button-primary {
+  color: $teal;
+  background: $papyrus;
+  border: 1px solid $papyrus;
+  box-sizing: border-box;
+  box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5), inset 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(255, 253, 248, 0.5);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  transition: 0.3s;
+  &:hover {
+    // color: $papyrus;
+    // background-color: $teal;
+    box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5);
+  }
+}
+
+.button-secondary {
+  color: $papyrus;
+  background: $teal;
+  border: 1px solid $teal;
+  box-sizing: border-box;
+  box-shadow: -4px -4px 4px #779390, 4px 4px 4px rgba(83, 101, 99, 0.5), inset 4px 4px 4px rgba(83, 101, 99, 0.5), inset -4px -4px 4px #779390;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  transition: 0.3s;
+  &:hover {
+    // color: $teal;
+    // background-color: $papyrus;
+    box-shadow: -4px -4px 4px #779390, 4px 4px 4px rgba(83, 101, 99, 0.5);
+  }
+}
+
+.button-left {
+  transform: rotate(90deg);
+}
+
+.button-right {
+  transform: rotate(-90deg);
+}
+
+.button-up {
+  transform: rotate(180deg);
+}
+
+.button-down {
+  transform: rotate(0deg);
+}
