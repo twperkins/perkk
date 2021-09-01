@@ -32,14 +32,14 @@
 <%# add in some extra stuff below here, perkk info etc. etc. use figma for inspo %>
 
 <%# TO DO: pop out for login %>
-<div class="popout" id="login">
+<div class="popout" id="login" data-controller="popout" data-popout-target="popout">
   <%# TO DO: button below to pop out login page  %>
   <div class="sidebar">
-    <div class="button-primary button-left button-popout"><%= "⌵" %></div>
+    <div class="button-primary button-left button-popout" data-popout-target="button" data-action="click->popout#toggleLogin"><%= "⌵" %></div>
     <h2 class="text-vertical-right">login</h2>
   </div>
 
-  <div class="login-overlay">
+  <div class="login-overlay d-none" data-popout-target="form">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,
