@@ -4,3 +4,12 @@
     border-bottom: 1px solid $teal-shadow;
   }
 }
+
+.link-light {
+  color: $papyrus;
+  &:hover {
+    color: $papyrus-highlight;
+    text-decoration: none;
+    border-bottom: 1px solid $papyrus-highlight;
+  }
+}

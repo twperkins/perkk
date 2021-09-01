@@ -1,0 +1,9 @@
+  <div class="perks">
+    <% @all_perks.each do |user_perk| %>
+      <%= user_perk.perk.name %>
+      <%= user_perk.perk.description %>
+      <%= user_perk.perk.location %>
+      <%= user_perk.perk.token_cost %>
+      <%= user_perk.perk.merchants %>
+    <% end %>
+  </div>

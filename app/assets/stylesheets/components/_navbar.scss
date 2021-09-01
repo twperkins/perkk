@@ -3,8 +3,8 @@
   justify-content: flex-start;
   align-items: center;
   width: 60%;
-  background: transparent;
-  margin: 32px;
+  background-color: $papyrus;
+  padding: 32px;
 }
 
 .navbar .navbar-sections {
@@ -28,10 +28,54 @@
   box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5), inset 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(255, 253, 248, 0.5);
   margin-bottom: 0;
   font-size: 1.5rem;
-  transition: 0.3s;
+  transition: 0.2s;
   &:hover {
     color: $papyrus;
     background-color: $teal;
     box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5);
+  }
+  &:active {
+    box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5), inset 4px 4px 4px rgba(83, 101, 99, 0.5), inset -4px -4px 4px #779390;
+  }
+}
+
+.navbar-dark {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 60%;
+  background-color: $teal;
+  padding: 32px;
+}
+
+.navbar-dark .navbar-sections {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10%;
+  font-size: 1.5rem;
+}
+
+.navbar-dark .logo-icon {
+  color: $papyrus;
+  font-family: 'Londrina Shadow';
+  border: solid 1px $teal;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  line-height: 32px;
+  text-align: center;
+  box-shadow: -4px -4px 4px #779390, 4px 4px 4px rgba(83, 101, 99, 0.5), inset 4px 4px 4px rgba(83, 101, 99, 0.5), inset -4px -4px 4px #779390;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  transition: 0.2s;
+  &:hover {
+    color: $teal;
+    background-color: $papyrus;
+    box-shadow: -4px -4px 4px #779390, 4px 4px 4px rgba(83, 101, 99, 0.5);
+  }
+  &:active {
+    box-shadow: -4px -4px 4px #779390, 4px 4px 4px rgba(83, 101, 99, 0.5), inset 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(255, 253, 248, 0.5);
   }
 }
