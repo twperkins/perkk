@@ -1,27 +1,32 @@
 
 <div class="contain">
-  <div class="row">
-    <div class="col">
-
-  <h1 class="h2 my-3 d-flex justify">Notifications </h1>
-    <br>
-      <h5> turo: have two weeks for free on us when you renew <h5>
-      <h5> ellie smith: any questions ahead of the update?</h5>
-      <h5> perkk: less than two weeks to update your perks</h5>
-      <h5> netflix: latest programmes released exclusive to perkk customers</h5>
-      <h5> le wagon: we’ve increased your tokens for the next year!</h5>
-
       <div>
-      <% @recommended_perks.each do |perk|%>
-      <%= perk.name %>
-      <%= cl_image_tag perk.perk_pic, height: 200, width: 200, crop: :fill %>
-      <% end  %>
+        <h1 class="h2 my-3 d-flex justify">Notifications </h1>
+            <br>
+            <h5> turo: have two weeks for free on us when you renew <h5>
+            <h5> ellie smith: any questions ahead of the update?</h5>
+            <h5> perkk: less than two weeks to update your perks</h5>
+            <h5> netflix: latest programmes released exclusive to perkk customers</h5>
+            <h5> le wagon: we’ve increased your tokens for the next year!</h5>
       </div>
 
 
 
 
-
-    </div>
-  </div>
+<div class="cards">
+        <% @recommended_perks.each do |perk|%>
+          <div class="card">
+          <%= perk.name %>
+          <%= cl_image_tag perk.perk_pic.first.key %>
+        </div>
+        <% end  %>
 </div>
+</div>
+
+      <h3 class="text-vertical-left">Recommended perks</h3>
+
+
+
+<div class="contain">
+  <h3 class="text-vertical-right">Profile</h3>
+<div>
