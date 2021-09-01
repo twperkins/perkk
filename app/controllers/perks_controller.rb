@@ -3,7 +3,7 @@ class PerksController < ApplicationController
 
   def index
     @perks = Perk.order(name: :asc)
-    # ^^^ we could order it instead by top rating, most upvotes or nearest distance?
+    # ^^ we could order it instead by top rating, most upvotes or nearest distance?
 
     if params[:query].present?
       @perks = @perks.where('name ILIKE ?', "%#{params[:query]}%")
@@ -15,7 +15,6 @@ class PerksController < ApplicationController
         lng: perk.longitude,
         info_window: render_to_string(partial: "info_window", locals: { perk: perk }, formats: [:html]),
         image_url: perk.perk_pic.first.service_url
-        # include perk logo as image_url
       }
     end
 
