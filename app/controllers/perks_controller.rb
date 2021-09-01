@@ -15,7 +15,6 @@ class PerksController < ApplicationController
         lng: perk.longitude,
         info_window: render_to_string(partial: "info_window", locals: { perk: perk }, formats: [:html]),
         image_url: perk.perk_pic.first.service_url
-        # include perk logo as image_url
       }
     end
 
