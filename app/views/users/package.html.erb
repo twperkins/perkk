@@ -3,9 +3,9 @@
 <div class="contain wrapper">
 
 <div>
-  <ul class="list-group" id="results" data-controller="account" data-action="mouseup->account#account">
+  <ul class="list-group" id="results" data-controller="account"  >
     <% @all_perks.each do |user_perk| %>
-      <li class="list-group-item list-group-item-primary" id=<%="#{user_perk.id}"%>>
+      <li class="list-group-item list-group-item-primary" id=<%="#{user_perk.perk.token_cost}"%> data-account-target="list" data-action="dragend->account#account">
         <%= user_perk.perk.name %>
         <%= user_perk.perk.token_cost %>
       </li>
@@ -13,9 +13,9 @@
   </ul>
 </div>
 <div>
-  <ul class="list-group" id="results2down">
+  <ul class="list-group" id="results2down" data-controller="account">
     <% @all_perks.each do |user_perk| %>
-      <li class="list-group-item list-group-item-secondary" id=<%="#{user_perk.id}"%>>
+      <li class="list-group-item list-group-item-secondary" id=<%="#{user_perk.perk.token_cost}"%> data-account-target="list" data-action="dragend->account#account">
         <%= user_perk.perk.name %>
         <%= user_perk.perk.token_cost %>
       </li>
