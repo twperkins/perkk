@@ -1,4 +1,10 @@
-.cards {
-  margin-left: 60px;
+.cards-profile {
+  display: grid;
+  grid-template-columns: 1fr 5fr 5fr;
+  position:relative;
+
+}
+
+.flex {
   display: flex;
 }
