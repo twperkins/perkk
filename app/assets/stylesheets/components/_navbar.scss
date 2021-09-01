@@ -79,3 +79,28 @@
     box-shadow: -4px -4px 4px #779390, 4px 4px 4px rgba(83, 101, 99, 0.5), inset 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(255, 253, 248, 0.5);
   }
 }
+
+.navbar-dark-home {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  background-color: $teal;
+}
+
+.navbar-dark-home .navbar-sections {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10%;
+  font-size: 1.5rem;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+.navbar-dark-home .lone-section {
+  background-color: $papyrus;
+  font-size: 1.5rem;
+  padding-left: 10%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
