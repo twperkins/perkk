@@ -1,41 +1,46 @@
 <%# logo and tagline, with a link to scroll down %>
-<%= render 'shared/navbar_dark' %>
-<div>
-  <div class="home-flex">
-    <div class="home-banner">
-      <h1 class="logo-alternative">perkk</h1>
-      <h4>making your job work for you</h4>
-      <%# TO DO: button below to scroll down  %>
-      <div class="button-secondary button-down"><%= "⌵" %></div>
-    </div>
+<%= render 'shared/navbar_dark_home' %>
 
-    <%# scroll through perks card %>
-    <div class="perk-gallery">
-      <% perk_main = @perks.sample %>
-      <div class="card main-perk" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk_main.perk_pic.first.key %>')">
-        <div class="card-infos">
-          <h2><%= perk_main.name %></h2>
-          <p><%= perk_main.merchants %></p>
-        </div>
+<div class="home-grid">
+  <div class="home-banner">
+    <h1 class="logo-alternative">perkk</h1>
+    <h4>making your job work for you</h4>
+    <%# TO DO: button below to scroll down  %>
+    <div class="button-secondary button-down"><%= "⌵" %></div>
+  </div>
+
+  <%# scroll through perks card %>
+  <div class="perk-gallery">
+    <% perk_main = @perks.sample %>
+    <div class="card main-perk" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk_main.perk_pic.first.key %>')">
+      <div class="card-infos">
+        <h2><%= perk_main.name %></h2>
+        <p><%= perk_main.merchants %></p>
       </div>
-      <% perk_main == Perk.last ? perk_minor = Perk.first : perk_minor = Perk.find(perk_main.id + 1) %>
-      <div class="card minor-perk" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk_minor.perk_pic.first.key %>')">
-        <div class="card-infos">
-          <h2><%= perk_minor.name %></h2>
-          <p><%= perk_minor.merchants %></p>
-        </div>
-      </div>
-      <%# TO DO: button below to scroll to next perk (update perk_main and perk_minor)  %>
-      <div class="button-primary button-right"><%= "⌵" %></div>
     </div>
+    <% perk_main == Perk.last ? perk_minor = Perk.first : perk_minor = Perk.find(perk_main.id + 1) %>
+    <div class="card minor-perk" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk_minor.perk_pic.first.key %>')">
+      <div class="card-infos">
+        <h2><%= perk_minor.name %></h2>
+        <p><%= perk_minor.merchants %></p>
+      </div>
+    </div>
+    <%# TO DO: button below to scroll to next perk (update perk_main and perk_minor)  %>
+    <div class="button-primary button-right"><%= "⌵" %></div>
+  </div>
+</div>
+<%# add in some extra stuff below here, perkk info etc. etc. use figma for inspo %>
 
-    <%# TO DO: pop out for login %>
-    <div>
-      <%# TO DO: button below to pop out login page  %>
-      <div class="button-primary button-left"><%= "⌵" %></div>
-      <h2>login</h2>
+<%# TO DO: pop out for login %>
+<div class="popout" id="login">
+  <%# TO DO: button below to pop out login page  %>
+  <div class="sidebar">
+    <div class="button-primary button-left button-popout"><%= "⌵" %></div>
+    <h2 class="text-vertical-right">login</h2>
+  </div>
 
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="login-overlay">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,
                       required: false,
@@ -48,7 +53,7 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Log in" %>
+          <%= f.button :submit, "log in" %>
         </div>
       <% end %>
 
@@ -59,7 +64,5 @@
       <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
         <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
       <% end %>
-    </div>
   </div>
-<%# add in some extra stuff below here, perkk info etc. etc. use figma for inspo %>
 </div>
