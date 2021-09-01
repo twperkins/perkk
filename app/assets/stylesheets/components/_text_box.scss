@@ -4,10 +4,14 @@
   font-size: 32px;
   line-height: 41px;
   color: #333333;
-  transform: rotate(-90deg);
-  position: absolute; top: 0; left: 0; text-align:right;
-  margin-top: 466px;
-  margin-left:-35px;
+  transform: rotate(-90deg) translateX(-100%);
+  transform-origin: left;
+  top: 0; left: 0; text-align:right;
+  position: absolute;
+  left: - 20px;
+  top: 0;
+  text-align: right;
+
 
 }
 .text-vertical-right {
