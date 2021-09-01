@@ -28,4 +28,10 @@
   box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5), inset 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(255, 253, 248, 0.5);
   margin-bottom: 0;
   font-size: 1.5rem;
+  transition: 0.3s;
+  &:hover {
+    color: $papyrus;
+    background-color: $teal;
+    box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5);
+  }
 }
