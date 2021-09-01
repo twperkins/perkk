@@ -300,7 +300,7 @@ perk = Perk.create!(
 file = URI.open('https://source.unsplash.com/800x600/?art')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
-# reviews for user
+# reviews user
 rand(2..7).times do
   puts "creating reviews.."
   Review.create!(
