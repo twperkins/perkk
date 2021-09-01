@@ -35,6 +35,16 @@
   }
 }
 
-.login-popout {
-  width: 104px;
+.login-overlay {
+  margin: 0px 64px;
+}
+
+.login-options {
+  padding-left: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: solid 1px $papyrus-shadow;
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
 }

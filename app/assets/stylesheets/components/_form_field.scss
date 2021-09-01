@@ -1,0 +1,15 @@
+.input-field {
+  background-color: transparent;
+  border: transparent;
+  border-bottom: solid 1px $teal;
+  &:hover {
+    background-color: transparent;
+    border: transparent;
+    border-bottom: solid 1.5px $teal-shadow;
+  }
+  &:focus {
+    background-color: transparent;
+    border: transparent;
+    border-bottom: solid 1.5px $teal-shadow;
+  }
+}
