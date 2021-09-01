@@ -25,15 +25,17 @@ class PerksController < ApplicationController
     end
   end
 
-  def show; end
-    
+  def show
+    @review = Review.new
+  end
+
   def set_perk
     @perk = Perk.find(params[:id])
   end
-    
+
   private
 
   def perks_params
     params.require(:perk).permit(:name, :token_cost, :description, :perk_pic, :merchants)
-  end 
+  end
 end

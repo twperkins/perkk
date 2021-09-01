@@ -31,7 +31,9 @@ import "bootstrap";
 import "controllers";
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { initSortable } from '../plugins/init_sortable'; // <-- add this
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initSortable();
 })
