@@ -1,6 +1,19 @@
 
 <div class="contain">
-  <div class="wrapper">
+  <div class="wrapper" id="results">
+    <% @all_perks.each do |user_perk| %>
+      <div class="card">
+        <%= user_perk.perk.name %>
+        <%= user_perk.perk.description %>
+        <%= user_perk.perk.location %>
+        <%= user_perk.perk.token_cost %>
+        <%= user_perk.perk.merchants %>
+        <%= link_to "remove perk", remove_user_perk_path(user_perk), class: "btn btn-primary", method: :delete %>
+        </div>
+    <% end %>
+  </div>
+
+  <div class="wrapper" id="results2down">
     <% @all_perks.each do |user_perk| %>
       <div class="card">
         <%= user_perk.perk.name %>
