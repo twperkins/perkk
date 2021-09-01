@@ -1,11 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
+
+BOROUGH = %w[Hackney Southwark Lambeth Kensington Hammersmith Westminster Islington]
 
 if Rails.env.development?
   puts "Destroying user perks.."
@@ -56,7 +51,7 @@ puts "creating the rest of the users.."
     name: Faker::Internet.user,
     company_id: company.id,
     tokens: 1000,
-    location: "London",
+    location: BOROUGH.sample,
     unique_code: Faker::Barcode.ean
   )
   file = URI.open('https://source.unsplash.com/800x600/?person')
@@ -69,42 +64,42 @@ puts "creating amazing perks.."
 perk = Perk.create!(
   name: "Five Free Friday Rides",
   description: "This perk offers you 5 free riders on 5 Fridays!",
-  location: "United Kingdom",
+  location: BOROUGH.sample,
   token_cost: 50,
   start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
   end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
   category: "travel",
   merchants: "Uber"
 )
-file = URI.open('https://source.unsplash.com/800x600/?uber')
+file = URI.open('https://images.unsplash.com/photo-1551432615-469d73f41b97?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8dWJlcnx8fHx8fDE2MzA1MDkzNjk&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 2
 perk = Perk.create!(
   name: "Bounce: the home of ping-pong",
-  description: "Using this perk will allow you to have 10 free games in any bounce location in Lonon. ",
-  location: "London",
+  description: "Using this perk will allow you to have 10 free games in any bounce location in London.",
+  location: '241 Old St, London EC1V 9EY',
   token_cost: 100,
   start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
   end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
   category: "social",
   merchants: "Bounce"
 )
-file = URI.open('https://source.unsplash.com/800x600/?bounce')
+file = URI.open('https://images.unsplash.com/photo-1616011869127-3508d3b14d48?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8dGFibGUtdGVubmlzfHx8fHx8MTYzMDUwOTM0OA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 3
 perk = Perk.create!(
   name: "Wings",
   description: "This perk offers you 50% off on any Ryan flights booked on Thursdays.",
-  location: "London",
+  location: 'London Heathrow Airport, Nelson Rd, Hounslow, England TW6 1NB, United Kingdom',
   token_cost: 150,
   start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
   end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
   category: "travel",
   merchants: "Ryan Air"
 )
-file = URI.open('https://source.unsplash.com/800x600/?ryanair')
+file = URI.open('https://images.unsplash.com/photo-1583228370699-8406fb3f5771?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8cnlhbmFpcnx8fHx8fDE2MzA1MDkxNTc&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 4
@@ -113,14 +108,14 @@ perk = Perk.create!(
   description: "Roam free and explore the wonderful gardens that London has to offer. This perk will allow you
   to get 10 entries in any gardens you decide to visit in London (*excludes Chelsea flower show and **only available
   between March and September.)",
-  location: "London",
+  location: 'Kew, Richmond, London, TW9 3AE',
   token_cost: 200,
   start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
   end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
   category: "social",
   merchants: "London Council"
 )
-file = URI.open('https://source.unsplash.com/800x600/?garden')
+file = URI.open('https://images.unsplash.com/photo-1621535884102-d13e00c76283?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8Z2FyZGVufHx8fHx8MTYzMDUxMzY4MA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 5
@@ -128,12 +123,190 @@ perk = Perk.create!(
   name: "Pet Sitters",
   description: "Worried about your pet because too busy? Do you have an emergency? Pet Sitters offers 20 hours of free
   pet sitting. Once this hours have been used you can continue using the service with a 20% discount.",
-  location: "United Kingdom",
+  location: BOROUGH.sample,
   token_cost: 250,
   start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
   end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
   category: "pet",
   merchants: "Bark"
 )
-file = URI.open('https://source.unsplash.com/800x600/?pig')
+file = URI.open('https://images.unsplash.com/photo-1574220307753-957783ab948b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8cGlnfHx8fHx8MTYzMDUxMzYyOA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+puts "creating amazing perks.."
+# creating perk 6
+perk = Perk.create!(
+  name: "Scuba-diving lessons",
+  description: "London School of Diving is the capital's premier PADI dive school and the only London dive centre to be
+   equipped with a purpose built heated scuba pool. Spend 6 weekends learning to scuba dive!",
+  location: '11 Power Rd, Chiswick, London W4 5PT',
+  token_cost: 250,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "course",
+  merchants: "London School of Diving"
+)
+file = URI.open('https://images.unsplash.com/photo-1486685919142-89cc9fc91ef6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8c2N1YmEtZGl2aW5nfHx8fHx8MTYzMDUwOTMxOA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 7
+perk = Perk.create!(
+  name: "Sushi-making course",
+  description: "Learn to cook authentic Japanese food in Shoreditch, London. Beginners and advanced cooking classes with
+   traditional and modern recipes with 2 free lessons.",
+  location: '57 Columbia Rd, London E2 7RG',
+  token_cost: 150,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "course",
+  merchants: "Atsuko's kitchen"
+)
+file = URI.open('https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8c3VzaGktY2hlZnx8fHx8fDE2MzA1MDkxMjM&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 8
+perk = Perk.create!(
+  name: "Meal for Two",
+  description: "This perk offers you 50% off at a Quirky, 18th-century townhouse tea room that transforms into a
+   cocktail lounge every evening.",
+  location: '9 Conduit St, London W1S 2XG',
+  token_cost: 50,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "social",
+  merchants: "Sketch London"
+)
+file = URI.open('https://images.unsplash.com/photo-1562685112-44cdeee971d5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmluZS1kaW5pbmd8fHx8fHwxNjMwNTA5NTAz&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 9
+perk = Perk.create!(
+  name: "Spa and Dine",
+  description: "An oasis of calm, the extensively restored and enlarged Spa at Mandarin Oriental, London is a place to
+   enjoy peace and serenity and to restore mind. Discover an exciting menu of next-generation treatments at The Spa at
+   Mandarin Oriental, London.",
+  location: '66 Knightsbridge, London SW1X 7LA',
+  token_cost: 200,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "wellbeing",
+  merchants: "The Spa at Mandarin Oriental"
+)
+file = URI.open('https://images.unsplash.com/photo-1488345979593-09db0f85545f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8c3BhfHx8fHx8MTYzMDUxMzUwMw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 10
+perk = Perk.create!(
+  name: "London waterbus",
+  description: "Enjoy a leisurely a one-way guided boat trip down Regent's Canal between Little Venice and Camden Town
+   in either direction, passing by the London Zoo.",
+  location: BOROUGH.sample,
+  token_cost: 50,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "social",
+  merchants: "London waterbus"
+)
+file = URI.open('https://images.unsplash.com/photo-1570701583670-d18d3d6f5d4b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8bG9uZG9uLWNhbmFsLWJvYXR8fHx8fHwxNjMwNTEwMTU2&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 11
+perk = Perk.create!(
+  name: "Jacuzzi boats",
+  description: "The home of floating Hot Tubs & BBQ boats in London. Each hot tub boat holds seven suave punters, and
+   the tubs are heated to a balmy 38 degrees.",
+  location: BOROUGH.sample,
+  token_cost: 150,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "social",
+  merchants: "Skuna Boats"
+)
+file = URI.open('https://source.unsplash.com/800x600/?jacuzzi')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+puts "creating amazing perks.."
+# creating perk 12
+perk = Perk.create!(
+  name: "Bonsai sculpting course",
+  description: "Learn about setting the main branch structure of a tree, creating ramification, carving, deciduous apex
+   design, yamadori collection and wiring!",
+  location: BOROUGH.sample,
+  token_cost: 50,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "course",
+  merchants: "Bonsai empire"
+)
+file = URI.open('https://images.unsplash.com/photo-1624162872504-e57ceca8874f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8Ym9uc2FpfHx8fHx8MTYzMDUxNDE1Nw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 13
+perk = Perk.create!(
+  name: "Go-karting",
+  description: "London & UK's longest indoor go karting track at 1050m. 270cc and 160cc go karts.",
+  location: '20 Allied Way, London W3 0RQ',
+  token_cost: 100,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "social",
+  merchants: "TeamSport Go Karting"
+)
+file = URI.open('https://images.unsplash.com/photo-1522211041032-a7eb9a3f8c0f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8Z28ta2FydGluZ3x8fHx8fDE2MzA1MTQ2NjQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 14
+perk = Perk.create!(
+  name: "Online escape rooms",
+  description: "Beat the clock across 4 fiendishly tricky escape room. With up to 8 players you can work together to
+   solve a series of puzzles. Play online from multiple devices and locations",
+  location: 'London',
+  token_cost: 50,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "social",
+  merchants: "Mansion impossible"
+)
+file = URI.open('https://images.unsplash.com/photo-1622831423205-4b2d8cfb2cfc?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8bXlzdGVyeXx8fHx8fDE2MzA1MTQ4NDI&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 15
+perk = Perk.create!(
+  name: "Virtual wellbeing sessions",
+  description: "Embark on a journey to a happier, healthier you with one year’s subscription to Whitecalm’s online 360°
+   all round wellbeing sessions.",
+  location: 'London',
+  token_cost: 100,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "wellbeing",
+  merchants: "Well Bean"
+)
+file = URI.open('https://images.unsplash.com/photo-1586439496903-c96e9f18f212?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8eW9nYXx8fHx8fDE2MzA1MTQ5ODQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 16
+perk = Perk.create!(
+  name: "Tate membership",
+  description: "Free entry to Turner, Rego, and Kusama. Enjoy exclusive Members Hours, incredible shows, discounts and
+  more. Free entry for Members. Join Tate Members today.",
+  location: 'Bankside, London SE1 9TG',
+  token_cost: 150,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "social",
+  merchants: "TATE"
+)
+file = URI.open('https://source.unsplash.com/800x600/?art')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# reviews for user
+rand(2..7).times do
+  puts "creating reviews.."
+  Review.create!(
+    comment: Faker::Restaurant.review,
+    rating: rand(0..5),
+    perk_id: Perk.all.sample.id,
+    user_id: User.all.sample.id
+  )
+end
