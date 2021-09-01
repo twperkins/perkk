@@ -32,7 +32,7 @@
 <%# add in some extra stuff below here, perkk info etc. etc. use figma for inspo %>
 
 <%# TO DO: pop out for login %>
-<div class="popout" id="login" data-controller="popout" data-popout-target="popout">
+<div class="popout" data-controller="popout" data-popout-target="popout">
   <%# TO DO: button below to pop out login page  %>
   <div class="sidebar">
     <div class="button-primary button-left button-popout" data-popout-target="button" data-action="click->popout#toggleLogin"><%= "⌵" %></div>
@@ -40,29 +40,33 @@
   </div>
 
   <div class="login-overlay d-none" data-popout-target="form">
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), defaults: { input_html: { class: "input-field" } }) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,
                       required: false,
                       autofocus: true,
+                      label: 'email',
                       input_html: { autocomplete: "email" } %>
           <%= f.input :password,
                       required: false,
+                      label: 'password',
                       input_html: { autocomplete: "current-password" } %>
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <%= f.input :remember_me, label: 'remember me', as: :boolean if devise_mapping.rememberable? %>
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "log in" %>
+          <%= f.button :submit, "submit", class: "button-bar" %>
         </div>
       <% end %>
 
-      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-        <%= link_to "register your company", new_registration_path(resource_name) %><br />
-      <% end %>
+      <div class="login-options">
+        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+          <%= link_to "register your company", new_registration_path(resource_name), class: "link" %><br />
+        <% end %>
 
-      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-        <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
-      <% end %>
+        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+          <%= link_to "forgot your password?", new_password_path(resource_name), class: "link" %><br />
+        <% end %>
+      </div>
   </div>
 </div>

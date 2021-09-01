@@ -7,7 +7,7 @@ export default class extends Controller {
     console.log(this.formTarget);
   }
   toggleLogin() {
-    this.popoutTarget.classList.toggle('expanded');
+    this.popoutTarget.classList.toggle('expanded-login');
     this.formTarget.classList.toggle('d-none');
     this.buttonTarget.classList.toggle('button-right');
     this.buttonTarget.classList.toggle('button-left');

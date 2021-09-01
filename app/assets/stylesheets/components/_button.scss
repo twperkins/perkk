@@ -50,13 +50,14 @@
   border: 1px solid $papyrus;
   box-sizing: border-box;
   box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(131, 159, 156, 0.5), inset 4px 4px 4px rgba(83, 101, 99, 0.5);
-  border-radius: 50%;
+  border-radius: 40px;
   height: 40px;
   width: 120px;
-  line-height: 40px;
+  line-height: 20px;
   text-align: center;
   transition: 0.2s;
   &:hover {
+    color: $papyrus;
     box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5);
   }
   &:active {
