@@ -16,6 +16,7 @@
 <div class="cards">
         <% @recommended_perks.each do |perk|%>
           <div class="card">
+          <h4 class="button-card">i</h4>
           <%= perk.name %>
           <%= cl_image_tag perk.perk_pic.first.key %>
         </div>
@@ -28,5 +29,6 @@
 
 
 <div class="contain">
+  <h4 class="button-card-profile">i</h4>
   <h3 class="text-vertical-right">Profile</h3>
 <div>

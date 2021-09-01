@@ -1,3 +1,5 @@
+
+//
 .button-primary {
   color: $teal;
   background: $papyrus;
@@ -32,7 +34,7 @@
   &:hover {
     // color: $teal;
     // background-color: $papyrus;
-    box-shadow: -4px -4px 4px #779390, 4px 4px 4px rgba(83, 101, 99, 0.5);
+  box-shadow: -4px -4px 4px #779390, 4px 4px 4px rgba(83, 101, 99, 0.5);
   }
 }
 
@@ -50,4 +52,32 @@
 
 .button-down {
   transform: rotate(0deg);
+}
+
+.button-card{
+  color: $papyrus;
+  background: $teal;
+  border: 1px solid $white;
+  box-sizing: border-box;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  position: absolute; top: 0; right: 0;
+  text-align:center;
+}
+
+.button-card-profile{
+  color: $papyrus;
+  background: $teal;
+  border: 1px solid $white;
+  box-sizing: border-box;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  position: relative; top: 100px; right: 0;
+  margin: 0;
+  text-align:center;
+
 }
