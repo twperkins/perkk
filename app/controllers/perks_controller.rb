@@ -3,7 +3,7 @@ class PerksController < ApplicationController
 
   def index
     @perks = Perk.order(name: :asc)
-    # ^^^ we could order it instead by top rating, most upvotes or nearest distance?
+    # ^^ we could order it instead by top rating, most upvotes or nearest distance?
 
     if params[:query].present?
       @perks = @perks.where('name ILIKE ?', "%#{params[:query]}%")
