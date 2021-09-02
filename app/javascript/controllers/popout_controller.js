@@ -12,5 +12,4 @@ export default class extends Controller {
     this.buttonTarget.classList.toggle('button-right');
     this.buttonTarget.classList.toggle('button-left');
   }
-
 }
