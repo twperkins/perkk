@@ -1,12 +1,14 @@
-<%# logo and tagline, with a link to scroll down %>
+<%# navbar customised to home page %>
 <%= render 'shared/navbar_dark_home' %>
 
+<%# main content block %>
 <div class="home-grid">
+  <%# logo and tagline, with a link to scroll down %>
   <div class="home-banner">
     <h1 class="logo-alternative">perkk</h1>
     <h4>making your job work for you</h4>
     <%# TO DO: button below to scroll down  %>
-    <div class="button-secondary button-down"><%= "⌵" %></div>
+    <div class="button-secondary button-down" data-controller="scroll-to" data-homepage-scroll-target="scroll-to"><%= link_to "⌵", '#scroll-circle', class: "link-light-blank" %></div>
   </div>
 
   <%# scroll through perks card %>
@@ -37,7 +39,7 @@
   </div>
   <%# info section on perkk %>
   <div>
-    <div class="info-circle large-circle">
+    <div class="info-circle large-circle" id="scroll-circle">
       <h2>perks</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
       <h4><%= link_to "explore", profile_path, class: "link" %></h4>

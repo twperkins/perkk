@@ -1,4 +1,4 @@
-.popout {
+.overlay {
   display: grid;
   grid-template-columns: 1fr 12fr;
   position: fixed;
@@ -12,6 +12,6 @@
   transition: all 0.2s ease;
 }
 
-.expanded-login {
-  width: 58% !important;
+.expanded-overlay {
+  width: 98% !important;
 }

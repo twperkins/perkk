@@ -22,8 +22,7 @@
 .perk-gallery {
   display: flex;
   align-items: center;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: auto;
   .main-perk {
     height: 516px;
     width: 320px;
@@ -74,7 +73,7 @@
 }
 
 .login-overlay {
-  margin: 0px 64px;
+  margin: 64px;
 }
 
 .login-options {

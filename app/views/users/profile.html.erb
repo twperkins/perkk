@@ -2,14 +2,15 @@
 <div class="contain flex">
   <div>
     <div>
-      <h1 class="h2 my-5 d-flex justify">Notifications </h1>
-      <br>
+      <h1>Notifications </h1>
       <h5> turo: have two weeks for free on us when you renew <h5>
       <h5> ellie smith: any questions ahead of the update?</h5>
       <h5> perkk: less than two weeks to update your perks</h5>
       <h5> netflix: latest programmes released exclusive to perkk customers</h5>
       <h5> le wagon: we’ve increased your tokens for the next year!</h5>
     </div>
+    <br>
+    <br>
     <div class="cards-profile">
       <h3 class="text-vertical-left">Recommended perks</h3>
       <% @recommended_perks.each do |perk|%>
@@ -25,20 +26,17 @@
   </div>
 
 
-
   <div>
-    <%= @perks_category %>
+    <% @perks_category.each do |category| %>
+      <%= category %>
+    <% end %>
   </div>
 
-  <div>
-    <h4 class="button-card-profile"><%= link_to "i", profile_path %></h4>
-    <h3 class="text-vertical-right">Profile</h3>
   </div>
 
 
-  <div>
-  <%#  second page pverlapp %>
-    <p>This will be the second page (the overlap)</p>
-  </div>
+</div>
 
+<div>
+  <%= render 'shared/profile' %>
 </div>
