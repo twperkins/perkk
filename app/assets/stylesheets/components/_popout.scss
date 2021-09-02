@@ -1,4 +1,6 @@
 .popout {
+  display: grid;
+  grid-template-columns: 1fr 12fr;
   position: fixed;
   right: 8px;
   top: 8px;
