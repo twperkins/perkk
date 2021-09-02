@@ -1,12 +1,31 @@
-<%= render 'shared/navbar' %>
+<%= render 'shared/navbar_dark' %>
 
-<div class="container">
-  <br>
-  <h2><%= @perk.name %></h2>
-  <h4><%= @perk.token_cost %> ₱erkk tokens</h4>
-  <br>
-  <%= link_to "Add Perkk", perk_user_perks_path(@perk), class: "btn btn-primary", method: :post %>
-  <%= link_to "Leave a review", '#', class: "btn btn-primary", data: { toggle: "modal", target: "#exampleModal" } %>
+<div class="show-grid">
+  <div class="show-container" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @perk.perk_pic.first.key %>')">
+    <%# perk header %>
+    <div class="perk-header">
+      <h2><%= @perk.name %></h2>
+      <h4><%= @perk.token_cost %> tokens</h4>
+      <div class="button-bar"><%= link_to "add", perk_user_perks_path(@perk), class: "link-light-blank", method: :post %></div>
+    </div>
+    <%# section for description & reviews %>
+    <%# section for reviews %>
+    <div class="reviews-section">
+      <p class="perk-description"><%= @perk.description %></p>
+      <div class="button-bar-light"><%= link_to "review", '#', class: "link-dark-blank", data: { toggle: "modal", target: "#exampleModal" } %></div>
+      <div class="user-avatars">
+        <% @users.each do |user| %>
+          <%= cl_image_tag user.profile_pic.key, class: "avatar" %>
+        <% end %>
+      </div>
+      <h4>also used by</h4>
+      <%= render 'form' %>
+    </div>
+    <%# cycle through perks %>
+    <div class="button-transparent button-left button-move-left"><%= "⌵" %></div>
+    <div class="button-transparent button-right button-move-right"><%= "⌵" %></div>
+  </div>
+  <div class="empty-column"></div>
 </div>
 
-<%= render 'form' %>
+<%= render 'shared/profile' %>
