@@ -21,17 +21,20 @@ class UserPerksController < ApplicationController
         redirect_to profile_path
       end
     end
-
-
   end
 
   def destroy
-    @user_perk = UserPerk.find(params[:id])
-    @user_perk.destroy
-    redirect_to package_path
+    if request.headers["Content-Type"] == "application/json"
+      @user_perk = UserPerk.find(params[:id])
+      p @user_perk
+      user_perk.destroy
+      # @user_perk.user_id = params[:user_id]
+        render json: {message: "user_perk deleted"}
+    else
+      # @user_perk = UserPerk.find(params[:id])
+      # @user_perk.destroy
+      # redirect_to package_path
+
+    end
   end
-
-
-
-
 end

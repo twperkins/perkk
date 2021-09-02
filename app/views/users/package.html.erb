@@ -1,36 +1,29 @@
 <%= render 'shared/navbar' %>
-
 <div class="current-user-id" id="<%=current_user.id%>"></div>
 
-<div class="contain wrapper">
+<div class="contain wrapper" data-controller="account">
 
-<div>
-  <ul class="list-group" id="results" data-controller="account" data-account-target="list">
-    <% @perks.each do |perk|%>
-      <li class="list-group-item list-group-item-primary" id=<%="#{perk.id}-false"%>  data-action="dragend->account#account">
-        <%= perk.name%>
-        <%= perk.token_cost%>
-      </li>
-    <% end %>
-  </ul>
-</div>
-<div>
-  <ul class="list-group" id="results2down" data-controller="account" data-account-target="package">
-    <% @all_perks.each do |user_perk| %>
-      <li class="list-group-item list-group-item-secondary" id=<%="#{user_perk.perk.id}-true"%>  data-action="dragend->account#account">
-        <%= user_perk.perk.name %>
-        <%= user_perk.perk.token_cost %>
-      </li>
-    <% end %>
-  </ul>
-  <div>
-    <%# <% simple_form_for[@perks.sample, @user_perk] do |f|%>
-    <%# <% f. %>
-    <%# <% end %>
-
-
+ <div>
+    <ul class="list-group" id="results" data-account-target="list">
+      <% @perks.each do |perk|%>
+        <li class="list-group-item list-group-item-primary" id=<%="#{perk.id}-false"%>  data-action="dragend->account#account">
+          <%= perk.name%>
+          <%= perk.token_cost%>
+        </li>
+      <% end %>
+    </ul>
   </div>
-</div>
+  <div>
+    <ul class="list-group" id="results2down" data-account-target="package">
+      <% @user_perks.each do |user_perk| %>
+        <li class="list-group-item list-group-item-secondary" id=<%="#{user_perk.perk.id}-true-#{user_perk.id}"%>  data-action="dragend->account#options">
+          <%= user_perk.perk.name %>
+          <%= user_perk.perk.token_cost %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
 </div>
 
 <%# <%= link_to "remove perk", remove_user_perk_path(user_perk), class: "btn btn-primary", method: :delete %>
