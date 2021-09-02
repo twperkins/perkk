@@ -4,9 +4,7 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user!
-    if user_signed_in?
-      redirect_to profile_path, notice: 'Signed in'
-    else
+    if user_signed_in? == false
       redirect_to root_path, notice: 'You need to sign in before continuing.'
       # respond_to do |format|
       #   format.js { render js: "toggleLogin();" }
