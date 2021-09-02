@@ -14,33 +14,50 @@
     bottom: 0px;
     padding: 16px;
   }
+  h2 {
+    font-family: 'Londrina Shadow';
+    text-transform: lowercase;
+    color: $papyrus;
+    font-size: 2.5rem;
+  }
+  p {
+    margin-bottom: 0;
+    margin-top: 8px;
+    text-align: left;
+    text-transform: lowercase;
+    color: $papyrus;
+    font-size: 1.5rem;
+  }
 }
 
-.card h2 {
-  font-family: 'Londrina Shadow';
-  text-transform: lowercase;
-  color: $papyrus;
-  font-size: 2.5rem;
-}
-
-.card p {
-  margin-bottom: 0;
-  margin-top: 8px;
-  text-align: left;
-  text-transform: lowercase;
-  color: $papyrus;
-  font-size: 1.5rem;
-}
-
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.perks-cards {
-  margin-right: 1rem;
-  padding-left: 1rem;
-  .card {
-    margin-bottom: 1rem;
+.card-green {
+  border: 4px solid #708B88;
+  box-sizing: border-box;
+  filter: drop-shadow(8px 8px 8px #536563) drop-shadow(-8px -8px 8px #779390);
+  border-radius: 30px;
+  width: 260px;
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin: 16px;
+  .card-infos {
+    position: absolute;
+    bottom: 0px;
+    padding: 16px;
+  }
+  h2 {
+    font-family: 'Londrina Shadow';
+    text-transform: lowercase;
+    color: $papyrus;
+    font-size: 2.5rem;
+  }
+  p {
+    margin-bottom: 0;
+    margin-top: 8px;
+    text-align: left;
+    text-transform: lowercase;
+    color: $papyrus;
+    font-size: 1.5rem;
   }
 }

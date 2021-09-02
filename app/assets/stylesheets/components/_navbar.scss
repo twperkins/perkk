@@ -7,6 +7,7 @@
   padding: 32px;
   position: fixed;
   top: 0px;
+  z-index: 1;
 }
 
 .navbar .navbar-sections {
@@ -83,6 +84,50 @@
   }
   &:active {
     box-shadow: -4px -4px 4px #779390, 4px 4px 4px rgba(83, 101, 99, 0.5), inset 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(255, 253, 248, 0.5);
+  }
+}
+
+.navbar-transparent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 60%;
+  background-color: transparent;
+  padding: 32px;
+  position: fixed;
+  top: 0px;
+}
+
+.navbar-transparent .navbar-sections {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10%;
+  font-size: 1.5rem;
+}
+
+.navbar-transparent .logo-icon {
+  color: $papyrus;
+  background-color: $teal;
+  font-family: 'Londrina Shadow';
+  border: solid 1px $teal;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  line-height: 32px;
+  text-align: center;
+  box-shadow: inset 4px 4px 4px rgba(83, 101, 99, 0.5), inset -4px -4px 4px #779390;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  transition: 0.2s;
+  &:hover {
+    color: $teal;
+    background-color: $papyrus;
+    box-shadow: none;
+  }
+  &:active {
+    box-shadow: inset 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(255, 253, 248, 0.5);
   }
 }
 

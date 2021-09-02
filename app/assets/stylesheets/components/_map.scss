@@ -1,7 +1,9 @@
 #map {
-  height: 60vh;
   position: sticky;
-  top: 40vh;
+  top: 20vh;
+  border-radius: 30px;
+  border: solid 2px $teal;
+  margin-top: 16px;
 }
 
 .mapboxgl-popup {
