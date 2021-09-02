@@ -37,3 +37,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initSortable();
 })
+
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();

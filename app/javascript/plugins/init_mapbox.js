@@ -6,7 +6,7 @@ const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10',
+    style: 'mapbox://styles/myles2021/ckt2z85c91vub17q95xssmtip',
     center: [0.1278, 51.5074],
     zoom: 12
   });

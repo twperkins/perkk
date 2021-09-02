@@ -14,7 +14,7 @@
 
           <div class="form-inputs">
             <%= f.input :comment, label: "Leave a comment:", placeholder: "#{@perk.name} for only #{@perk.token_cost} tokens is a bargain and I will definitely choose it again. It's by far my favourite perk yet, a huge thank you to #{@perk.merchants}!" %>
-            <%= f.input :rating, collection: 0..5 %>
+            <div id="review-rating"><%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %></div>
           </div>
 
       </div>
@@ -23,8 +23,8 @@
           <div class="form-actions">
             <%= f.button :submit, class: "btn btn-primary" %>
           </div>
-      </div>
         <% end %>
+      </div>
     </div>
   </div>
 </div>
