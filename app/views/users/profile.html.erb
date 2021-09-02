@@ -25,22 +25,15 @@
   </div>
 
 
-
   <div>
-    <%= @perks_category %>
+    <% @perks_category.each do |perk| %>
+    <%= perk.category %>
+    <% end %>
+
   </div>
 
   <div>
-    <h4 class="button-card-profile"><%= link_to "i", profile_path %></h4>
-    <h3 class="text-vertical-right">Profile</h3>
-  </div>
-
-
-  <div>
-
-
-<%= render 'shared/profile' %>
-    <p>This will be the second page (the overlap)</p>
+    <%= render 'shared/profile' %>
   </div>
 
 </div>
