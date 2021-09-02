@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @perks_category = @perks.map do |perk|
       perk.category
     end
+    @perks_category.uniq!
   end
 
   def package

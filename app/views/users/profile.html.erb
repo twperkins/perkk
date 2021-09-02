@@ -27,7 +27,9 @@
 
 
   <div>
-    <%= @perks_category %>
+    <% @perks_category.each do |category| %>
+      <%= category %>
+    <% end %>
   </div>
 
   <div>
