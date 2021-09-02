@@ -76,10 +76,10 @@ perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 1.5
 perk = Perk.create!(
-  name: "'Plus' membership",
-  description: "50% off all orders, free delivery and exclusive discounts for a month!",
+  name: "Food delivery membership",
+  description: "50% off all orders, free delivery and exclusive discounts for one month!",
   location: BOROUGH.sample,
-  token_cost: 150,
+  token_cost: 100,
   start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
   end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
   category: "membership",
@@ -360,7 +360,7 @@ perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 16
 perk = Perk.create!(
-  name: "Arts membership",
+  name: "Arts gallery membership",
   description: "Free entry to Turner, Rego, and Kusama. Enjoy exclusive Members Hours, incredible shows, discounts and
   more. Free entry for Members. Join Tate Members today.",
   location: 'Bankside, London SE1 9TG',
