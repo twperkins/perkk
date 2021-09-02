@@ -3,7 +3,7 @@
   justify-content: flex-start;
   align-items: center;
   width: 60%;
-  background-color: transparent;
+  background-color: $papyrus;
   padding: 32px;
   position: fixed;
   top: 0px;
@@ -109,12 +109,4 @@
   padding-left: 10%;
   padding-top: 40px;
   padding-bottom: 40px;
-}
-
-.sticky {
-  height: 20vh;
-  position: sticky;
-  top: 0;
-  background-color: $papyrus;
-  z-index: 1;
 }
