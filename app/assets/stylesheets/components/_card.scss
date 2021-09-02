@@ -8,11 +8,7 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  transition: transform 0.2s;
   margin: 16px;
-  &:hover {
-    transform: scale(1.02);
-  }
   .card-infos {
     position: absolute;
     bottom: 0px;

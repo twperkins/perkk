@@ -5,6 +5,8 @@
   width: 60%;
   background-color: transparent;
   padding: 32px;
+  position: fixed;
+  top: 0px;
 }
 
 .navbar .navbar-sections {
@@ -45,6 +47,7 @@
   justify-content: flex-start;
   align-items: center;
   width: 60%;
+  background-color: $teal;
   padding: 32px;
   position: fixed;
   top: 0px;
