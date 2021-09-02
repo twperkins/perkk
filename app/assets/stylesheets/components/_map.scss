@@ -1,5 +1,5 @@
 #map {
-  height:60vh;
+  height: 60vh;
   position: sticky;
   top: 40vh;
 }
@@ -10,5 +10,10 @@
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  p {
+    font-family: $body-font;
+  }
+  h1 {
+    font-family: $headers-font;
+  }
 }
