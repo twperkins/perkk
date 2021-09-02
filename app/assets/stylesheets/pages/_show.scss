@@ -1,0 +1,71 @@
+.show-grid {
+  display: grid;
+  grid-template-columns: 14fr 1fr;
+  .empty-column {
+    background-color: $papyrus;
+    width: 120px !important;
+  }
+  .button-right {
+    position: absolute;
+    top: 50vh;
+    right: 232px;
+  }
+  .button-left {
+    position: absolute;
+    top: 50vh;
+    left: 112px;
+  }
+}
+
+.show-container {
+  padding-top: 117px;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.show-flex {
+  display: flex;
+}
+
+.perk-header {
+  position: absolute;
+  top: 167px;
+  left: 144px;
+  width: 20%;
+  h2 {
+    color: $papyrus;
+    font-family: 'Londrina Shadow';
+    font-size: 48px;
+  }
+  h4 {
+    color: $papyrus;
+    font-size: 24px;
+  }
+}
+
+.reviews-section {
+  color: $papyrus;
+  position: absolute;
+  bottom: 100px;
+  right: 264px;
+  text-align: right;
+  width: 30%;
+  .button-bar-light {
+    float: right;
+  }
+  p {
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
+  .user-avatars{
+    clear: right;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid $papyrus;
+  }
+  h4 {
+    margin-top: 0px;
+    clear: right;
+  }
+}
