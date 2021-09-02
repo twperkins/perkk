@@ -1,20 +1,26 @@
 
 
 <%# Pop out for login %>
-<div class="overlay" data-controller="overlay" data-overlay-target="overlay" class="contain-flex">
-  <%# Button below to pop out login page  %>
+<div class="overlay" data-controller="overlay" data-overlay-target="overlay">
+  <%# Button below to pop out login pageew  %>
   <div class="sidebar">
     <div class="button-primary button-left button-overlay" data-overlay-target="button" data-action="click->overlay#toggleOverlay"><%= "⌵" %></div>
     <h2 class="text-vertical-right">Profile</h2>
-
-
-  <div class="detail">This is the details div
   </div>
 
+  <div class="d-none" data-overlay-target="profile-details">
+    <div class="detail">
+    <p>This is the details div</p>
 
-  <div class="usage">This is the usage div
+
+    <div class="usage">
+    <p>This is the usage div</p>
+    </div>
+
+    <div class="your-perks">
+    <p>This is your perk div</p>
+    </div>
+
   </div>
 
-  <div class="your-perks">This is your perk div
-  </div>
  </div>
