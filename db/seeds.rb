@@ -373,6 +373,51 @@ perk = Perk.create!(
 file = URI.open('https://source.unsplash.com/800x600/?art')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
+# creating perk 17
+perk = Perk.create!(
+  name: "One year membership",
+  description: "The National Gallery is an art museum in Trafalgar Square in the City of Westminster, in Central London.
+   Founded in 1824, it houses a collection of over 2,300 paintings dating from the mid-13th century to 1900.",
+  location: 'Trafalgar Square, London WC2N 5DN',
+  token_cost: 150,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "membership",
+  merchants: "National Gallery"
+)
+file = URI.open('https://source.unsplash.com/800x600/?art')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 18
+perk = Perk.create!(
+  name: "Arts membership",
+  description: "Located in Shoreditch, London. It explores home and home life from 1600 to the present day with a series
+   of period room displays. In 2018 the museum had about 120,000 visitors annually.",
+  location: '136 Kingsland Rd, London E2 8EA',
+  token_cost: 100,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "membership",
+  merchants: "Museum of the Home"
+)
+file = URI.open('https://source.unsplash.com/800x600/?design')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 18
+perk = Perk.create!(
+  name: "Web Dev Bootcamp",
+  description: "In 9 intensive weeks, learn all the skills of a Software Developer, code your own web applications from
+   scratch and change your career.",
+  location: ' Shoreditch Stables, North, 138 Kingsland Rd, London E2 8DY',
+  token_cost: 1000,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "course",
+  merchants: "Le Wagon"
+)
+file = URI.open('https://source.unsplash.com/800x600/?coding')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
 # reviews user
 rand(2..7).times do
   puts "creating reviews.."
