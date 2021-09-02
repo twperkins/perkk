@@ -8,19 +8,24 @@
     <h2 class="text-vertical-right">Profile</h2>
   </div>
 
-  <div class="d-none" data-overlay-target="profile-details">
+  <div class="profile-divs d-none" data-overlay-target="profileDetails">
     <div class="detail">
-    <p>This is the details div</p>
-
+      <h2>details</h2>
+      <div ><%= cl_image_tag(@user.profile_pic.key, class: "avatar")%></div>
+    </div>
 
     <div class="usage">
-    <p>This is the usage div</p>
+      <h2>usage</h2>
     </div>
 
     <div class="your-perks">
-    <p>This is your perk div</p>
+      <h2>your perks</h2>
+       <% @current_user.perks.each do |perk| %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk.perk_pic.first.key %>')">
+        <%= perk.name %>
+        <%= perk.merchants %>
+      <% end  %>
     </div>
 
   </div>
-
- </div>
+</div>

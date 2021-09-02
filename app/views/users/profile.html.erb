@@ -1,6 +1,6 @@
-<%= render 'shared/navbar' %>
-<div class="contain flex">
-  <div>
+<%= render 'shared/navbar_dark' %>
+<div class="profile-grid">
+  <div class='profile-first'>
     <div>
       <h1>Notifications </h1>
       <h5> turo: have two weeks for free on us when you renew <h5>
@@ -11,11 +11,11 @@
     </div>
     <br>
     <br>
-    <div class="cards-profile">
+    <div class="cards-profile" >
       <h3 class="text-vertical-left">Recommended perks</h3>
       <% @recommended_perks.each do |perk|%>
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk.perk_pic.first.key %>')">
-          <h4 class="button-card"><%= link_to "i", perk_path(perk)%></h4>
+          <h4 class="button-card"><%= link_to "i", perk_path(perk) %></h4>
           <div class="card-infos">
             <h2><%= perk.name %></h2>
             <p><%= perk.merchants %></p>
@@ -26,16 +26,17 @@
   </div>
 
 
-  <div>
-    <% @perks_category.each do |category| %>
-      <%= category %>
-    <% end %>
+  <div class='profile-second'>
+    <h2> Find your perk </h2>
+    <% @perks.each do |perk| %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk.perk_pic.first.key %>')">
+        <%= perk.name %>
+        <%= perk.merchants %>
+      <% end  %>
+      </div>
   </div>
 
-  </div>
 
-
-</div>
 
 <div>
   <%= render 'shared/profile' %>

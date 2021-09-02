@@ -74,6 +74,20 @@ perk = Perk.create!(
 file = URI.open('https://images.unsplash.com/photo-1551432615-469d73f41b97?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8dWJlcnx8fHx8fDE2MzA1MDkzNjk&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
+# creating perk 1.5
+perk = Perk.create!(
+  name: "'Plus' membership",
+  description: "50% off all orders, free delivery and exclusive discounts for a month!",
+  location: BOROUGH.sample,
+  token_cost: 150,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "membership",
+  merchants: "Deliveroo"
+)
+file = URI.open('https://images.unsplash.com/photo-1610478920409-ec0f58e881a5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGVsaXZlcm9vfHx8fHx8MTYzMDU4NDY2NQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
 # creating perk 2
 perk = Perk.create!(
   name: "Bounce: the home of ping-pong",
@@ -90,7 +104,7 @@ perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 3
 perk = Perk.create!(
-  name: "Wings",
+  name: "Discounted flights",
   description: "This perk offers you 50% off on any Ryan flights booked on Thursdays.",
   location: 'London Heathrow Airport, Nelson Rd, Hounslow, England TW6 1NB, United Kingdom',
   token_cost: 150,
@@ -100,6 +114,34 @@ perk = Perk.create!(
   merchants: "Ryan Air"
 )
 file = URI.open('https://images.unsplash.com/photo-1583228370699-8406fb3f5771?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8cnlhbmFpcnx8fHx8fDE2MzA1MDkxNTc&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 3.5
+perk = Perk.create!(
+  name: "Railcard",
+  description: "One year worth of a rail card membership.",
+  location: 'Westminster',
+  token_cost: 50,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "travel",
+  merchants: "National Rail"
+)
+file = URI.open('https://images.unsplash.com/photo-1607130376281-8b555a7f87dd?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8dHJhaW58fHx8fHwxNjMwNTg0OTUx&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 3.7
+perk = Perk.create!(
+  name: "Cycle to work scheme",
+  description: "50% off of a selection of bikes",
+  location: 'Unit B Effra Rd, London SW2 1BZ',
+  token_cost: 100,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "travel",
+  merchants: "Halfords"
+)
+file = URI.open('https://images.unsplash.com/photo-1618762044398-ec1e7e048bbd?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8YmljeWNsZXx8fHx8fDE2MzA1ODUxMjY&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 4
@@ -145,6 +187,21 @@ perk = Perk.create!(
   end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
   category: "course",
   merchants: "London School of Diving"
+)
+file = URI.open('https://images.unsplash.com/photo-1486685919142-89cc9fc91ef6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8c2N1YmEtZGl2aW5nfHx8fHx8MTYzMDUwOTMxOA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+puts "creating amazing perks.."
+# creating perk 6
+perk = Perk.create!(
+  name: "Unicycle course",
+  description: "2 free unicycle lessons, and then a 20% discount after if you wish to continue training!",
+  location: BOROUGH.sample,
+  token_cost: 50,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "course",
+  merchants: "London School of Unicyclists"
 )
 file = URI.open('https://images.unsplash.com/photo-1486685919142-89cc9fc91ef6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8c2N1YmEtZGl2aW5nfHx8fHx8MTYzMDUwOTMxOA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
@@ -195,6 +252,22 @@ perk = Perk.create!(
 file = URI.open('https://images.unsplash.com/photo-1488345979593-09db0f85545f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8c3BhfHx8fHx8MTYzMDUxMzUwMw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
+# creating perk 9.5
+perk = Perk.create!(
+  name: "Luxury Spa for Two",
+  description: "Modern glass and stone spa with thermal waters, Roman origins and an open rooftop swimming pool. Thermae
+   Bath Spa, Britain' s only natural thermal spa, located in the historic city of Bath, offers traditional and
+    state-of-the-art spa facilities.",
+  location: 'The Hetling Pump Room, Hot Bath St, Bath BA1 1SJ',
+  token_cost: 250,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "wellbeing",
+  merchants: "The Lanesborough Club & Spa"
+)
+file = URI.open('https://images.unsplash.com/photo-1582490841511-81e1363fb48c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8amFjdXp6aXx8fHx8fDE2MzA1ODM4NjQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
 # creating perk 10
 perk = Perk.create!(
   name: "London waterbus",
@@ -222,7 +295,7 @@ perk = Perk.create!(
   category: "social",
   merchants: "Skuna Boats"
 )
-file = URI.open('https://source.unsplash.com/800x600/?jacuzzi')
+file = URI.open('https://images.unsplash.com/photo-1528725106046-533c9bbccd81?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8amFjdXp6aXx8fHx8fDE2MzA1ODM5ODc&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=800')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 puts "creating amazing perks.."
@@ -287,14 +360,14 @@ perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 16
 perk = Perk.create!(
-  name: "Tate membership",
+  name: "Arts membership",
   description: "Free entry to Turner, Rego, and Kusama. Enjoy exclusive Members Hours, incredible shows, discounts and
   more. Free entry for Members. Join Tate Members today.",
   location: 'Bankside, London SE1 9TG',
   token_cost: 150,
   start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
   end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
-  category: "social",
+  category: "membership",
   merchants: "TATE"
 )
 file = URI.open('https://source.unsplash.com/800x600/?art')

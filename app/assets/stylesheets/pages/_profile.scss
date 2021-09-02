@@ -5,6 +5,28 @@
 
 }
 
-.flex {
+.profile-grid{
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  height: 100vh;
+}
+
+.profile-first {
+background-color: $teal;
+padding:64px;
+
+}
+
+.profile-second {
+padding: 64px;
+}
+
+.profile-divs {
   display: flex;
+  justify-content: space-around;
+  padding: 64px;
+}
+
+.detail {
+
 }

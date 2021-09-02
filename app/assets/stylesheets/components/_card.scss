@@ -8,7 +8,11 @@
   background-size: cover;
   background-position: center;
   position: relative;
+  transition: transform 0.2s;
   margin: 16px;
+  &:hover {
+    transform: scale(1.02);
+  }
   .card-infos {
     position: absolute;
     bottom: 0px;
@@ -35,4 +39,12 @@
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.perks-cards {
+  margin-right: 1rem;
+  padding-left: 1rem;
+  .card {
+    margin-bottom: 1rem;
+  }
 }
