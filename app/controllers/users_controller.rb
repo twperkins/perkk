@@ -3,10 +3,6 @@ class UsersController < ApplicationController
     @user = current_user
     @perks = Perk.all
     @recommended_perks = @perks.sample(2)
-    @perks_category = @perks.map do |perk|
-      perk.category
-    end
-    @perks_category.uniq!
   end
 
   def package
