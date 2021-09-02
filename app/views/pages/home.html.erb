@@ -29,11 +29,34 @@
     <div class="button-primary button-right"><%= "⌵" %></div>
   </div>
 </div>
-<%# add in some extra stuff below here, perkk info etc. etc. use figma for inspo %>
 
-<%# TO DO: pop out for login %>
+<%# lower part of page to show info on perkk %>
+<div class="lower-grid">
+  <%# empty column to show teal background %>
+  <div class="empty-column">
+  </div>
+  <%# info section on perkk %>
+  <div>
+    <div class="info-circle large-circle">
+      <h2>perks</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      <h4><%= link_to "explore", profile_path, class: "link" %></h4>
+    </div>
+    <div class="info-circle small-circle">
+      <h2>search</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+      <h4><%= link_to "find", perks_path, class: "link" %></h4>
+    </div>
+    <div class="info-circle medium-circle">
+      <h2>about</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+    </div>
+  </div>
+</div>
+
+<%# Pop out for login %>
 <div class="popout" data-controller="popout" data-popout-target="popout">
-  <%# TO DO: button below to pop out login page  %>
+  <%# Button below to pop out login page  %>
   <div class="sidebar">
     <div class="button-primary button-left button-popout" data-popout-target="button" data-action="click->popout#toggleLogin"><%= "⌵" %></div>
     <h2 class="text-vertical-right">login</h2>

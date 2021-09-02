@@ -4,7 +4,6 @@
   display: grid;
   grid-template-columns: 2fr 3fr;
   height: calc(100vh - 117px);
-  margin-bottom: 32px;
 }
 
 .home-banner {
@@ -23,8 +22,8 @@
 .perk-gallery {
   display: flex;
   align-items: center;
-  margin-left: 32px;
-  margin-right: 32px;
+  margin-left: 10%;
+  margin-right: 10%;
   .main-perk {
     height: 516px;
     width: 320px;
@@ -33,6 +32,45 @@
   .minor-perk {
     margin: 16px;
   }
+}
+
+.lower-grid{
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  .empty-column {
+    background-color: $teal;
+  }
+}
+
+.info-circle {
+  border-radius: 50%;
+  border: solid 1px $teal;
+  text-align: center;
+}
+
+.small-circle {
+  width: 400px;
+  height: 400px;
+  padding: 134px 67px;
+  margin-left: 5%;
+  margin-bottom: 32px;
+}
+
+.medium-circle {
+  width: 500px;
+  height: 500px;
+  padding: 168px 84px;
+  margin-left: 25%;
+  margin-bottom: 32px;
+}
+
+.large-circle {
+  width: 600px;
+  height: 600px;
+  padding: 200px 100px;
+  margin-left: 15%;
+  margin-bottom: 32px;
+  margin-top: 32px;
 }
 
 .login-overlay {

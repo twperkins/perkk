@@ -34,7 +34,7 @@ demo = User.create!(
   password: "123123",
   name: "Chaplin",
   location: Faker::TvShows::BojackHorseman.character,
-  unique_code: Faker::Barcode.ean,
+  unique_code: "#{Faker::Verb.base}-#{Faker::Color.color_name}-#{Faker::Verb.past_participle}",
   tokens: 1000,
   admin: true,
   company_id: company.id
@@ -52,7 +52,7 @@ puts "creating the rest of the users.."
     company_id: company.id,
     tokens: 1000,
     location: BOROUGH.sample,
-    unique_code: Faker::Barcode.ean
+    unique_code: "#{Faker::Verb.base}-#{Faker::Color.color_name}-#{Faker::Verb.past_participle}"
   )
   file = URI.open('https://source.unsplash.com/800x600/?person')
   user.profile_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
