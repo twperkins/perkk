@@ -13,7 +13,7 @@
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
           <div class="form-inputs">
-            <%= f.input :comment, label: "Leave a comment:", placeholder: "#{@perk.name} for only #{@perk.token_cost} tokens, what a bargain!! It's by far my favourite perk yet, big thanks to #{@perk.merchants}!" %>
+            <%= f.input :comment, label: "Leave a comment:", placeholder: "#{@perk.name} for only #{@perk.token_cost} tokens is a bargain and I will definitely choose it again. It's by far my favourite perk yet, a huge thank you to #{@perk.merchants}!" %>
             <%= f.input :rating, collection: 0..5 %>
           </div>
 
