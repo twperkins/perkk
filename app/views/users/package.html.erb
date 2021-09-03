@@ -4,9 +4,13 @@
 <div class="contain" data-controller="account">
 
   <div class="list-section owned" id="results2down" data-account-target="package">
-  <h2 class="package-header text-vertical-left">your perks</h2>
+    <h2 class="package-header text-vertical-left">your perks</h2>
     <% @user_perks_all.each do |user_perk| %>
-      <div class="card-green small" id=<%="#{user_perk.perk.id}-true-#{user_perk.id}"%>  data-action="dragend->account#options" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path user_perk.perk.perk_pic.first.key, height: 300, crop: :fill %>')">
+      <div class="card-green small"
+           id=<%="#{user_perk.perk.id}-true-#{user_perk.id}"%>
+           data-action="dragend->account#options"
+           data-url="<%= remove_user_perk_path(user_perk) %>"
+           style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path user_perk.perk.perk_pic.first.key, height: 300, crop: :fill %>')">
         <div class="card-infos">
           <h2><%= user_perk.perk.name %></h2>
           <p><%= user_perk.perk.token_cost %> tokens</p>
@@ -19,7 +23,11 @@
   <div class="list-section range" id="results" data-account-target="list">
   <h2 class="package-header text-vertical-left green-text">choose perks</h2>
     <% @perks.each do |perk|%>
-      <div class="card small" id=<%="#{perk.id}-false"%>  data-action="dragend->account#account" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk.perk_pic.first.key, height: 300, crop: :fill %>')">
+      <div class="card small"
+           id=<%="#{perk.id}-false"%>
+           data-action="dragend->account#account"
+           data-url="<%= perk_user_perks_path(perk) %>"
+           style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk.perk_pic.first.key, height: 300, crop: :fill %>')">
         <div class="card-infos">
           <h2><%= perk.name %></h2>
           <p><%= perk.token_cost %> tokens</p>
