@@ -23,8 +23,8 @@
       <%= render 'form' %>
     </div>
     <%# cycle through perks %>
-    <div class="button-transparent button-left button-move-left"><%= "⌵" %></div>
-    <div class="button-transparent button-right button-move-right"><%= "⌵" %></div>
+    <div class="button-transparent button-left button-move-left"><%= link_to "⌵", perk_path(Perk.exists?(@perk.id - 1) ? Perk.find(@perk.id - 1) : Perk.last), class: "link-light-blank" %></div>
+    <div class="button-transparent button-right button-move-right"><%= link_to "⌵", perk_path(Perk.exists?(@perk.id + 1) ? Perk.find(@perk.id + 1) : Perk.first), class: "link-light-blank" %></div>
   </div>
   <div class="empty-column"></div>
 </div>

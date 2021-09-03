@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def profile
     @user = current_user
     @perks = Perk.all
-    @recommended_perks = @perks.sample(2)
+    @recommended_perks = @perks.sample(3)
 
     current_user_perks = current_user.perks
     token_array = current_user_perks.map do |perk|
