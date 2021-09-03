@@ -404,6 +404,64 @@ perk = Perk.create!(
 file = URI.open('https://source.unsplash.com/1600x800/?coding')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
+# creating perk 17
+perk = Perk.create!(
+  name: "Orange Wednesdays",
+  description: "Two cinema tickets for the price of one on any Wednesday.",
+  location: BOROUGH.sample,
+  token_cost: 50,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "social",
+  merchants: "Orange Network"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?cinema')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 18
+perk = Perk.create!(
+  name: "Half price staycation",
+  description: "50% off of an airbnb in the UK.",
+  location: BOROUGH.sample,
+  token_cost: 50,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "travel",
+  merchants: "Airbnb"
+)
+file = URI.open('https://images.unsplash.com/photo-1591825692235-69e99d4189f3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8YWlyYm5ifHx8fHx8MTYzMDY3OTMzMw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 19
+perk = Perk.create!(
+  name: "Monthly flowers",
+  description: "Fancy treating yourself to monthly flowers? Or want to remind someone every month how great they are?
+   Our flexible flower subscriptions are here to help. 12 month subscription!",
+  location: BOROUGH.sample,
+  token_cost: 100,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "subscription",
+  merchants: "Bloom & Wild"
+)
+file = URI.open('https://images.unsplash.com/photo-1591350706059-15adf7a1df05?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Ym9xdWV0fHx8fHx8MTYzMDY3OTUwOQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 20
+perk = Perk.create!(
+  name: "Intensive Skate Lessons",
+  description: "Inline and roller skating lessons in London · Beginner Level · Improver Level · (inc. SkateDance) · One
+   Day Intensive Skate Lessons for Improver/Intermediate.",
+  location: BOROUGH.sample,
+  token_cost: 50,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "course",
+  merchants: "Skatefresh"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?cinema')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
 # creating reviews for user
 rand(2..7).times do
   puts "creating reviews..."
