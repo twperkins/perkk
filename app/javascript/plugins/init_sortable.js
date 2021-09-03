@@ -2,8 +2,12 @@
 import Sortable from 'sortablejs';
 
 const initSortable = () => {
-  // const list = document.querySelector('#results');
-  // Sortable.create(list);
+  const results = document.querySelector('#results');
+  const results2down = document.querySelector('#results2down');
+
+  // Sortable.create(results);
+  // Sortable.create(results2down);
+
 
   new Sortable(results, {
     group: 'shared', // set both lists to same group
