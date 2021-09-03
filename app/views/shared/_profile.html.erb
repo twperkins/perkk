@@ -14,20 +14,38 @@
       <div><h2><%= cl_image_tag(current_user.profile_pic.key, class: "avatar")%> <%= current_user.name %></h2></div>
     </div>
 
-    <div class="usage">
+    <%# <div class="usage">
       <h2>usage</h2>
-    </div>
+    </div> %>
 
     <div class="your-perks" >
       <h2>your perks</h2>
-      <% current_user.perks.each do |perk| %>
+      <% ranking = 1 %>
+      <% user_count = @user_perks.first.users.count %>
+      <% @user_perks.each_with_index do |perk, index| %>
         <div class="profile-perk">
         <%= cl_image_tag(perk.perk_pic.first.key, class: "avatar") %>
-        <%= perk.name %>
-        <%= perk.merchants %>
+        <strong><%= perk.name %></strong>
+         by <%= perk.merchants %> <br>
+          <div class="perk-details-main">
+            <div class="perk-details"> <%= perk.token_cost%>
+              <p>token cost</p>
+            </div>
+            <div class="perk-details">
+              <p>proportion</p>
+              <%= perk.token_cost.to_f / @total_tokens * 100 %> %
+            </div>
+            <div class="perk-details">
+              <p>ranking</p>
+              <% if index > 0 && perk.users.count < user_count %>
+                <% ranking += 1 %>
+                <% user_count = perk.users.count %>
+              <% end %>
+              <%= ranking %>
+            </div>
+          </div>
         </div>
-      <% end  %>
+      <% end %>
     </div>
   </div>
 </div>
-p
