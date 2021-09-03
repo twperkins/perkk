@@ -23,11 +23,16 @@ class PerksController < ApplicationController
       format.html
       format.text { render partial: 'perks/list', locals: { perks: @perks, markers: @markers }, formats: [:html] }
     end
+
+    user_perks_calculator
+    # @user_perks = current_user.perks.sort_by { |perk| perk.users.count }.reverse
   end
 
   def show
     @review = Review.new
     @users = @perk.users
+    user_perks_calculator
+    # @user_perks = current_user.perks.sort_by { |perk| perk.users.count }.reverse
   end
 
   private
@@ -38,5 +43,13 @@ class PerksController < ApplicationController
 
   def perks_params
     params.require(:perk).permit(:name, :token_cost, :description, :perk_pic, :merchants)
+  end
+
+  def user_perks_calculator
+    if current_user.perks.nil?
+      @user_perks = Perks.first
+    else
+      @user_perks = current_user.perks.sort_by { |perk| perk.users.count }.reverse
+    end
   end
 end

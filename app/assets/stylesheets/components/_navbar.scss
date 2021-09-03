@@ -155,3 +155,12 @@
   padding-top: 40px;
   padding-bottom: 40px;
 }
+
+.full-width-papyrus {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 104px;
+  background-color: $papyrus;
+  z-index: 1;
+}
