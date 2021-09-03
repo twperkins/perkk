@@ -28,12 +28,13 @@
     </div>
 
     <div class='profile-second'>
-      <h2> Find your perk </h2>
-      <% @perks.each do |perk| %>
-          <%= perk.name %>
-          <%= perk.merchants %>
+      <h2> Perk categories </h2>
+        <% @perk_category.each do |category| %>
+          <%= link_to perk_path(Perk.find_by(category: category)) do %>
+            <h3><%= category %></h3>
+          <% end  %>
         <% end  %>
-        </div>
+      </div>
     </div>
   </div>
 </div>
