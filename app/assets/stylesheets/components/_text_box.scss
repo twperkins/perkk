@@ -2,17 +2,14 @@
   font-style: normal;
   font-weight: normal;
   font-size: 32px;
-  line-height: 41px;
-  color: #333333;
+  line-height: 40px;
+  color: $papyrus;
   transform: rotate(-90deg) translateX(-100%);
   transform-origin: left;
-  top: 0; left: 0; text-align:right;
+  text-align:right;
   position: absolute;
-  left: - 20px;
+  left: -10px;
   top: 0;
-  text-align: right;
-
-
 }
 .text-vertical-right {
   height: 104px;

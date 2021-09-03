@@ -1,18 +1,19 @@
 <%= render 'shared/navbar' %>
 
-  <div class="contain">
-    <div data-controller="search-perks" class="side-trim">
-      <div class="search-bar">
-        <h1 class="h2 my-3 d-flex justify-content-center">Find a perk! 🎁 </h1>
-          <%= form_with url: perks_path, method: :get, html: { class: 'mb-4', data: { search_perks_target: 'form' } } do |f| %>
-            <%= f.text_field :query,
-                            class: "form-control",
-                            placeholder: 'Search for a perk...',
-                            value: params[:query],
-                            data: { search_perks_target: 'input', action: 'keyup->search-perks#updateList' }
-                            %>
-          <% end %>
-      </div>
-      <%= render 'list', perks: @perks, markers: @markers %>
+<div class="contain">
+  <div data-controller="search-perks" class="side-trim">
+    <div class="search-bar">
+      <%= form_with url: perks_path, method: :get, html: { data: { search_perks_target: 'form' } } do |f| %>
+        <%= f.text_field :query,
+                        class: "input-field wide-bar",
+                        placeholder: 'search for a perk...',
+                        value: params[:query],
+                        data: { search_perks_target: 'input', action: 'keyup->search-perks#updateList' }
+                        %>
+      <% end %>
     </div>
+    <%= render 'list', perks: @perks, markers: @markers %>
   </div>
+</div>
+
+<%= render 'shared/profile' %>

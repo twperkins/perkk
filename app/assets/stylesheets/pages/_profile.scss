@@ -1,24 +1,25 @@
 .cards-profile {
   display: grid;
   grid-template-columns: 1fr 5fr 5fr;
-  position:relative;
+  position: relative;
 
 }
 
 .profile-grid{
   display: grid;
   grid-template-columns: 3fr 2fr;
-  height: 100vh;
+  height: calc(100vh - 104px);
+  width: 100vw;
 }
 
 .profile-first {
-background-color: $teal;
-padding:64px;
-
+  background-color: $teal;
+  padding: 32px 64px;
 }
 
 .profile-second {
-padding: 64px;
+  padding: 32px 64px;
+  margin-right: 74px;
 }
 
 .profile-divs {
@@ -34,4 +35,9 @@ padding: 64px;
   border-radius: 5px;
   width: 200px;
   height: 200px;
+}
+
+.notifications-block {
+  color: $papyrus-highlight;
+  margin-left: 32px;
 }

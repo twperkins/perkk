@@ -1,3 +1,26 @@
 .side-trim {
   margin: 0 64px;
 }
+
+.results {
+  p {
+  font-size: 28px;
+  padding-bottom: 1rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-left: 1.5rem;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.perks-cards {
+  margin-right: 1rem;
+  padding-left: 1rem;
+  .card {
+    margin-bottom: 1rem;
+  }
+}
