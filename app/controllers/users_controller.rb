@@ -10,6 +10,8 @@ class UsersController < ApplicationController
     end
     @total_tokens = token_array.sum
     @user_perks = current_user.perks.sort_by { |perk| perk.users.count }.reverse
+    @tokens_left = current_user.tokens - @total_tokens
+    @days_left = Date.today - current_user.company.subscription_end
   end
 
   def package

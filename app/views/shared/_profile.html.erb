@@ -10,8 +10,18 @@
 
   <div class="profile-divs d-none" data-overlay-target="profileDetails">
     <div class="detail">
-      <h2>details</h2>
+      <h2> account details</h2>
       <div><h2><%= cl_image_tag(current_user.profile_pic.key, class: "avatar")%> <%= current_user.name %></h2></div>
+        <div class="perk-details">
+        <p>tokens left</p>
+        <%= @tokens_left %>
+        <p>days left </p>
+        <%= @days_left %></p>
+        </div>
+        <div>
+        <%= current_user.unique_code %>
+        </div>
+       <div class="button-bar"><%= link_to "sign out", destroy_user_session_path, method: :delete, class: "link-light-blank" %></div>
     </div>
 
     <%# <div class="usage">
@@ -27,9 +37,9 @@
         <%= cl_image_tag(perk.perk_pic.first.key, class: "avatar") %>
         <strong><%= perk.name %></strong>
          by <%= perk.merchants %> <br>
-          <div class="perk-details-main">
+            <div class="perk-details-main">
+             <p>token cost</p>
             <div class="perk-details"> <%= perk.token_cost%>
-              <p>token cost</p>
             </div>
             <div class="perk-details">
               <p>proportion</p>
@@ -43,8 +53,10 @@
               <% end %>
               <%= ranking %>
             </div>
+              <%= perk.description %>
           </div>
         </div>
+
       <% end %>
     </div>
   </div>
