@@ -462,6 +462,126 @@ perk = Perk.create!(
 file = URI.open('https://source.unsplash.com/1600x800/?cinema')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
+# creating perk 21
+perk = Perk.create!(
+  name: "Beekeeping lessons",
+  description: "Experience a Day in the Life of a Beekeeper... This workshop will take you inside a working London
+   beehive to discover the world of the honeybee and its hive.",
+  location: 'Unit 9, Old Water Yard, Dorking RH4 1DY',
+  token_cost: 50,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "course",
+  merchants: "The London Bee Company"
+)
+file = URI.open('https://images.unsplash.com/photo-1585326928390-7fd4e7c33dde?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8YmVla2VlcGVyfHx8fHx8MTYzMDY4NDYxOQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 22
+perk = Perk.create!(
+  name: "One month travel",
+  description: "Are you busy? Do you not have time? Are you a trillionaire? Do you go to vegan restaurants and need your
+   friends to know that you love the environment? This token gives you a discounted Taa pass for one whole month!",
+  location: BOROUGH.sample,
+  token_cost: 50,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "travel",
+  merchants: "Taa."
+)
+file = URI.open('https://source.unsplash.com/1600x800/?cycling')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 22
+perk = Perk.create!(
+  name: "Discounted office space",
+  description: "Are you a start-up that needs somewhere to live as well as work? This perk offers you a 10% discount on
+   work/places in London.",
+  location: BOROUGH.sample,
+  token_cost: 150,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "discount",
+  merchants: "Workwise"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?office')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 23
+perk = Perk.create!(
+  name: "One month free trial",
+  description: "Do you love organic fresh food? BeNatural has local farms that specialise in diary, vegetables, fruits
+  and more!",
+  location: BOROUGH.sample,
+  token_cost: 50,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "membership",
+  merchants: "BeNatural"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?farm')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 23
+perk = Perk.create!(
+  name: "VIP yumbership",
+  description: "When living in a new city on a budget one often struggles to find the most reliable shops, restaurants
+   and shoe shops in Brick Lane! Do you need a site with a good price-performance ratio? YUDGET is here to help you!",
+  location: BOROUGH.sample,
+  token_cost: 50,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "membership",
+  merchants: "YUDGET"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?restaurant')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 24
+perk = Perk.create!(
+  name: "One month free vibe-finder",
+  description: "With the near infinite choice afforded by amazon, Netflix and deliveroo its easy to be paralysed by
+   indecision. No more! Time you get a Whatever membership",
+  location: BOROUGH.sample,
+  token_cost: 50,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "membership",
+  merchants: "Whatever"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?snacks')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 25
+perk = Perk.create!(
+  name: "Discounted takeaway",
+  description: "You know you want a specific food: let’s say Chicken Bhuna. How do you find the best one in town? Use
+   Hungr to see images/ratings and find your dish! This perk allows you 10% off all orders for one month!",
+  location: BOROUGH.sample,
+  token_cost: 50,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "membership",
+  merchants: "Hungr"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?takeaway')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 26
+perk = Perk.create!(
+  name: "VIP room membership",
+  description: "Are you an up and coming artist that is looking to cut out the middle man and book their own tours? Get
+   a discounted and exclusive membership with theGreenRoom!",
+  location: BOROUGH.sample,
+  token_cost: 50,
+  start_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  end_date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'),
+  category: "membership",
+  merchants: "theGreenRoom"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?gig')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
 # creating reviews for user
 rand(2..7).times do
   puts "creating reviews..."
