@@ -27,18 +27,20 @@
 
 .profile-divs {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 64px;
+
 }
 
 .profile-perk {
-  display: flex-grow;
+  // display: flex;
+  // flex-direction: column;
   border: 4px solid #FBF4DF;
   justify-content: space-around;
   box-sizing: border-box;
   border-radius: 5px;
-  width: 195px;
-  height: 315px;
+  width: 320px;
+  height: 340px;
   filter: drop-shadow(8px 8px 8px #D5CFBE) drop-shadow(-8px -8px 8px #FFFDF8);
   padding: 24px;
 }
@@ -50,10 +52,23 @@
 
 .perk-details-main {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .perk-details {
   text-align: center;
+}
+
+.detail {
+  padding-left: 64px;
+}
+
+.your-perks {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.perk-attribute {
 
 }
