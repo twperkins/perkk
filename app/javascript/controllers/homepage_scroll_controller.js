@@ -12,7 +12,7 @@ export default class extends Controller {
     console.log("connected");
   }
   scrollPage() {
-    var mainCircle = document.getElementById('scroll-circle')
-    mainCircle.scrollIntoView({ behavior: 'smooth' });;
+    var mainCircle = document.getElementById('scroll-circle');
+    mainCircle.scrollIntoView({ behavior: 'smooth' });
   }
 }

@@ -2,7 +2,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">How was <%= @perk.name %>?</h5>
+        <h5 class="modal-title green" id="exampleModalLabel">How was <%= @perk.name %>?</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -12,7 +12,7 @@
           <%= f.error_notification %>
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-          <div class="form-inputs">
+          <div class="form-inputs green">
             <%= f.input :comment, label: "Leave a comment:", placeholder: "#{@perk.name} for only #{@perk.token_cost} tokens is a bargain and I will definitely choose it again. It's by far my favourite perk yet, a huge thank you to #{@perk.merchants}!" %>
             <div id="review-rating"><%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %></div>
           </div>
