@@ -18,14 +18,16 @@
       <h2>usage</h2>
     </div>
 
-    <div class="your-perks">
+    <div class="your-perks" >
       <h2>your perks</h2>
       <% current_user.perks.each do |perk| %>
+        <div class="profile-perk">
         <%= cl_image_tag(perk.perk_pic.first.key, class: "avatar") %>
         <%= perk.name %>
         <%= perk.merchants %>
+        </div>
       <% end  %>
     </div>
-
   </div>
 </div>
+p
