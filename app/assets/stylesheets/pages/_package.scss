@@ -1,0 +1,36 @@
+.list-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: calc(90vw - 120px);
+  margin: 32px auto;
+  box-shadow: 4px 4px 4px rgba(213, 207, 190, 0.5), -4px -4px 4px rgba(255, 253, 248, 0.5);
+  border: solid 4px $papyrus;
+  border-radius: 8px;
+  position: relative;
+  .button-bar {
+    position: absolute;
+    bottom: -8px;
+    right: 8px;
+  }
+  .text-vertical-left {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: -16px;
+    left: 16px;
+  }
+  .green-text {
+    color: $teal;
+  }
+}
+
+.owned {
+  background-color: $teal;
+}
+
+.package-header {
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: -32px;
+}
