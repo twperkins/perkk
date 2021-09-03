@@ -15,7 +15,7 @@
       <p class="perk-description"><%= @perk.description %></p>
       <div class="button-bar-light"><%= link_to "review", '#', class: "link-dark-blank", data: { toggle: "modal", target: "#exampleModal" } %></div>
       <div class="user-avatars">
-        <% @users.first(8) do |user| %>
+        <% @users.each do |user| %>
           <%= cl_image_tag user.profile_pic.key, class: "avatar" %>
         <% end %>
       </div>
