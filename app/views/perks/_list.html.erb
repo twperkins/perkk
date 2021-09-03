@@ -13,7 +13,7 @@
       <% perks.each do |perk| %>
         <div class="card position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk.perk_pic.first.key %>')">
           <%= link_to "", perk_path(perk), class: "card-link" %>
-          <h4 class="button-card"><%= link_to "+", perk_user_perks_path(perk), class: "link-light-blank high-z-index", method: :post %></h4>
+          <h4 class="button-card"><%= link_to "+", perk_user_perks_path(perk), class: "link-dark-blank high-z-index", method: :post %></h4>
           <div class="card-infos">
             <h2><%= perk.name %></h2>
             <p><%= perk.merchants %></p>
