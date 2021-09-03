@@ -5,6 +5,7 @@
     <%# perk header %>
     <div class="perk-header">
       <h2><%= @perk.name %></h2>
+      <h4>from <%= @perk.merchants %></h4>
       <h4><%= @perk.token_cost %> tokens</h4>
       <div class="button-bar"><%= link_to "add", perk_user_perks_path(@perk), class: "link-light-blank", method: :post %></div>
     </div>
@@ -14,7 +15,7 @@
       <p class="perk-description"><%= @perk.description %></p>
       <div class="button-bar-light"><%= link_to "review", '#', class: "link-dark-blank", data: { toggle: "modal", target: "#exampleModal" } %></div>
       <div class="user-avatars">
-        <% @users.each do |user| %>
+        <% @users.first(8) do |user| %>
           <%= cl_image_tag user.profile_pic.key, class: "avatar" %>
         <% end %>
       </div>
