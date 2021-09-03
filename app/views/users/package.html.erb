@@ -5,7 +5,7 @@
 
   <div class="list-section owned" id="results2down" data-account-target="package">
   <h2 class="package-header text-vertical-left">your perks</h2>
-    <% @user_perks.each do |user_perk| %>
+    <% @user_perks_all.each do |user_perk| %>
       <div class="card-green small" id=<%="#{user_perk.perk.id}-true-#{user_perk.id}"%>  data-action="dragend->account#options" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path user_perk.perk.perk_pic.first.key, height: 300, crop: :fill %>')">
         <div class="card-infos">
           <h2><%= user_perk.perk.name %></h2>
