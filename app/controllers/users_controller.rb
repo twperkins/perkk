@@ -3,6 +3,11 @@ class UsersController < ApplicationController
     @user = current_user
     @perks = Perk.all
     @recommended_perks = @perks.sample(3)
+    @perk_category = @perks.map do |perk|
+      perk.category
+    end
+
+    @perk_category.uniq!
 
     current_user_perks = current_user.perks
     token_array = current_user_perks.map do |perk|

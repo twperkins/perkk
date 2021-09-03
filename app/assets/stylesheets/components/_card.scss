@@ -75,7 +75,7 @@
   z-index: 100;
   position: relative;
 }
-  
+
 .medium {
   box-sizing: border-box;
   border-radius: 16px;
@@ -113,6 +113,7 @@
   background-position: center;
   position: relative;
   margin: 16px;
+  cursor: pointer;
   .card-infos {
     position: absolute;
     bottom: 0px;
