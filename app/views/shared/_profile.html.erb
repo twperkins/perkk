@@ -43,7 +43,7 @@
             </div>
             <div class="perk-details">
               <p>proportion</p>
-              <%= perk.token_cost.to_f / @total_tokens * 100 %> %
+              <p><%= perk.token_cost / @total_tokens.to_f * 100 %>%</p>
             </div>
             <div class="perk-details">
               <p>ranking</p>
