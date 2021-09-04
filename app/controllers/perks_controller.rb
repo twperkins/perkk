@@ -115,20 +115,24 @@ class PerksController < ApplicationController
     # combine rating and popularity
     perk_weight = Hash.new(0)
     perk_popularity.each do |perk_pop, popularity|
-      perk_rating.each do |perk_rat, rating|
-        perk_weight[perk_rat] = (rating + 1) * popularity if perk_rat == perk_pop
+      if perk_rating.include?(perk_pop)
+        perk_rating.each do |perk_rat, rating|
+          perk_weight[perk_rat] = (rating + 1) * popularity if perk_rat == perk_pop
+        end
+      else
+        perk_weight[perk_pop] = popularity
       end
     end
 
     # add in category weighting
     perk_recommendations = Hash.new(0)
     perk_weight.each do |perk, weight|
-      your_categories.each do |category, value|
-        if perk.category == category
-          perk_recommendations[perk] = weight * value
-        else
-          perk_recommendations[perk] = weight
+      if your_categories.include?(perk)
+        your_categories.each do |category, value|
+          perk_recommendations[perk] = weight * value if perk.category == category
         end
+      else
+        perk_recommendations[perk] = weight
       end
     end
     @recommended = (perk_recommendations.sort_by { |_k, v| -v }).map do |perk|
