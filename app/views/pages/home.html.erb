@@ -1,97 +1,99 @@
-<%# navbar customised to home page %>
-<%= render 'shared/navbar_dark_home' %>
+  <%# navbar customised to home page %>
+<div class="green-body">
+  <%= render 'shared/navbar_dark_home' %>
 
-<%# main content block %>
-<div class="home-grid">
-  <%# logo and tagline, with a link to scroll down %>
-  <div class="home-banner">
-    <h1 class="logo-alternative">perkk</h1>
-    <h4>making your job work for you</h4>
-    <%# TO DO: button below to scroll down  %>
-    <div class="button-secondary button-down" data-controller="scroll-to" data-homepage-scroll-target="scroll-to"><%= link_to "⌵", '#scroll-circle', class: "link-light-blank" %></div>
+  <%# main content block %>
+  <div class="home-grid">
+    <%# logo and tagline, with a link to scroll down %>
+    <div class="home-banner">
+      <h1 class="logo">perkk</h1>
+      <h4>making your job work for you</h4>
+      <%# TO DO: button below to scroll down  %>
+      <div class="button-primary button-down" data-controller="scroll-to" data-homepage-scroll-target="scroll-to"><%= link_to "⌵", '#scroll-circle', class: "link-dark-blank" %></div>
+    </div>
+
+    <%# scroll through perks card %>
+    <div class="perk-gallery">
+      <% perk_main = @perks.sample %>
+      <div class="card-green main-perk" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk_main.perk_pic.first.key %>')">
+        <div class="card-infos">
+          <h2><%= perk_main.name %></h2>
+          <p><%= perk_main.merchants %></p>
+        </div>
+      </div>
+      <% perk_main == Perk.last ? perk_minor = Perk.first : perk_minor = Perk.find(perk_main.id + 1) %>
+      <div class="card-green minor-perk" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk_minor.perk_pic.first.key %>')">
+        <div class="card-infos">
+          <h2><%= perk_minor.name %></h2>
+          <p><%= perk_minor.merchants %></p>
+        </div>
+      </div>
+      <%# TO DO: button below to scroll to next perk (update perk_main and perk_minor)  %>
+      <div class="button-secondary button-right"><%= "⌵" %></div>
+    </div>
   </div>
 
-  <%# scroll through perks card %>
-  <div class="perk-gallery">
-    <% perk_main = @perks.sample %>
-    <div class="card main-perk" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk_main.perk_pic.first.key %>')">
-      <div class="card-infos">
-        <h2><%= perk_main.name %></h2>
-        <p><%= perk_main.merchants %></p>
+  <%# lower part of page to show info on perkk %>
+  <div class="lower-grid">
+    <%# empty column to show teal background %>
+    <div class="empty-column">
+    </div>
+    <%# info section on perkk %>
+    <div>
+      <div class="info-circle large-circle" id="scroll-circle">
+        <h2>perks</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <h4><%= link_to "explore", profile_path, class: "link-light" %></h4>
+      </div>
+      <div class="info-circle small-circle">
+        <h2>search</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        <h4><%= link_to "find", perks_path, class: "link-light" %></h4>
+      </div>
+      <div class="info-circle medium-circle">
+        <h2>about</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
       </div>
     </div>
-    <% perk_main == Perk.last ? perk_minor = Perk.first : perk_minor = Perk.find(perk_main.id + 1) %>
-    <div class="card minor-perk" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk_minor.perk_pic.first.key %>')">
-      <div class="card-infos">
-        <h2><%= perk_minor.name %></h2>
-        <p><%= perk_minor.merchants %></p>
-      </div>
-    </div>
-    <%# TO DO: button below to scroll to next perk (update perk_main and perk_minor)  %>
-    <div class="button-primary button-right"><%= "⌵" %></div>
-  </div>
-</div>
-
-<%# lower part of page to show info on perkk %>
-<div class="lower-grid">
-  <%# empty column to show teal background %>
-  <div class="empty-column">
-  </div>
-  <%# info section on perkk %>
-  <div>
-    <div class="info-circle large-circle" id="scroll-circle">
-      <h2>perks</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-      <h4><%= link_to "explore", profile_path, class: "link" %></h4>
-    </div>
-    <div class="info-circle small-circle">
-      <h2>search</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-      <h4><%= link_to "find", perks_path, class: "link" %></h4>
-    </div>
-    <div class="info-circle medium-circle">
-      <h2>about</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-    </div>
-  </div>
-</div>
-
-<%# Pop out for login %>
-<div class="popout" data-controller="popout" data-popout-target="popout">
-  <%# Button below to pop out login page  %>
-  <div class="sidebar">
-    <div class="button-primary button-left button-popout" data-popout-target="button" data-action="click->popout#toggleLogin"><%= "⌵" %></div>
-    <h2 class="text-vertical-right">login</h2>
   </div>
 
-  <div class="login-overlay d-none" data-popout-target="form">
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), defaults: { input_html: { class: "input-field" } }) do |f| %>
-        <div class="form-inputs">
-          <%= f.input :email,
-                      required: false,
-                      autofocus: true,
-                      label: 'email',
-                      input_html: { autocomplete: "email" } %>
-          <%= f.input :password,
-                      required: false,
-                      label: 'password',
-                      input_html: { autocomplete: "current-password" } %>
-          <%= f.input :remember_me, label: 'remember me', as: :boolean if devise_mapping.rememberable? %>
-        </div>
+  <%# Pop out for login %>
+  <div class="popout" data-controller="popout" data-popout-target="popout">
+    <%# Button below to pop out login page  %>
+    <div class="sidebar">
+      <div class="button-secondary button-left button-popout" data-popout-target="button" data-action="click->popout#toggleLogin"><%= "⌵" %></div>
+      <h2 class="text-vertical-right papyrus">login</h2>
+    </div>
 
-        <div class="form-actions">
-          <%= f.button :submit, "submit", class: "button-bar" %>
-        </div>
-      <% end %>
+    <div class="login-overlay d-none" data-popout-target="form">
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), defaults: { input_html: { class: "input-field" } }) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: false,
+                        autofocus: true,
+                        label: 'email',
+                        input_html: { autocomplete: "email" } %>
+            <%= f.input :password,
+                        required: false,
+                        label: 'password',
+                        input_html: { autocomplete: "current-password" } %>
+            <%= f.input :remember_me, label: 'remember me', as: :boolean if devise_mapping.rememberable? %>
+          </div>
 
-      <div class="login-options">
-        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-          <%= link_to "register your company", new_registration_path(resource_name), class: "link" %><br />
+          <div class="form-actions">
+            <%= f.button :submit, "submit", class: "button-bar-light" %>
+          </div>
         <% end %>
 
-        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-          <%= link_to "forgot your password?", new_password_path(resource_name), class: "link" %><br />
-        <% end %>
-      </div>
+        <div class="login-options">
+          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+            <%= link_to "register your company", new_registration_path(resource_name), class: "link-light" %><br />
+          <% end %>
+
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to "forgot your password?", new_password_path(resource_name), class: "link-light" %><br />
+          <% end %>
+        </div>
+    </div>
   </div>
 </div>

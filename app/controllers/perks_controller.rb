@@ -1,12 +1,13 @@
 class PerksController < ApplicationController
   before_action :set_perk, only: [:show]
+  before_action :overlay_calcs
 
   def index
     @perks = Perk.order(name: :asc)
     # ^^ we could order it instead by top rating, most upvotes or nearest distance?
 
     if params[:query].present?
-      @perks = @perks.where('name ILIKE ?', "%#{params[:query]}%")
+      @perks = @perks.where('name ILIKE ? OR description ILIKE ? OR category ILIKE ? OR merchants ILIKE ?', "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
     end
 
     @markers = @perks.geocoded.map do |perk|
@@ -23,16 +24,11 @@ class PerksController < ApplicationController
       format.html
       format.text { render partial: 'perks/list', locals: { perks: @perks, markers: @markers }, formats: [:html] }
     end
-
-    user_perks_calculator
-    # @user_perks = current_user.perks.sort_by { |perk| perk.users.count }.reverse
   end
 
   def show
     @review = Review.new
     @users = @perk.users
-    user_perks_calculator
-    # @user_perks = current_user.perks.sort_by { |perk| perk.users.count }.reverse
   end
 
   private
@@ -43,6 +39,18 @@ class PerksController < ApplicationController
 
   def perks_params
     params.require(:perk).permit(:name, :token_cost, :description, :perk_pic, :merchants)
+  end
+
+  def overlay_calcs
+    current_user_perks = current_user.perks
+    token_array = current_user_perks.map do |perk|
+      perk.token_cost
+    end
+    @total_tokens = token_array.sum
+    @user_perks = current_user.perks.sort_by { |perk| perk.users.count }.reverse
+    @tokens_left = current_user.tokens - @total_tokens
+    @days_left = ((Date.today - current_user.company.subscription_end) / (1000 * 60 * 60 * 24))
+    user_perks_calculator
   end
 
   def user_perks_calculator

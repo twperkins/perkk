@@ -5,7 +5,7 @@
     <div class="search-bar">
       <%= form_with url: perks_path, method: :get, html: { data: { search_perks_target: 'form' } } do |f| %>
         <%= f.text_field :query,
-                        class: "input-field wide-bar",
+                        class: "input-field-green wide-bar",
                         placeholder: 'search for a perk...',
                         value: params[:query],
                         data: { search_perks_target: 'input', action: 'keyup->search-perks#updateList' }

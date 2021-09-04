@@ -1,8 +1,7 @@
 .cards-profile {
-  display: grid;
-  grid-template-columns: 1fr 5fr 5fr;
+  display: flex;
   position: relative;
-
+  flex-wrap: wrap;
 }
 
 .profile-grid{
@@ -67,8 +66,4 @@
 .your-perks {
   display: flex;
   flex-wrap: wrap;
-}
-
-.perk-attribute {
-
 }

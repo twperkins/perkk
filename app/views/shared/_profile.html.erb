@@ -29,40 +29,44 @@
 
     <div>
       <h2>your perks</h2>
-      <div class="your-perks">
-        <% ranking = 1 %>
-        <% user_count = @user_perks.first.users.count %>
-        <% @user_perks.each_with_index do |perk, index| %>
-          <div class="profile-perk">
-            <div class="perk-details-main">
-              <%= cl_image_tag(perk.perk_pic.first.key, class: "avatar") %>
-              <strong><%= perk.name %></strong>
-              by <%= perk.merchants %> <br>
-            </div>
-            <div class="perk-details-main">
-              <div class="perk-attribute">
-                <p>token cost</p>
-                <h3 class="perk-details"><%= perk.token_cost%></h3>
+      <% if @user_perks.blank? %>
+        <h4>no perks at the moment</h4>
+      <% else %>
+        <div class="your-perks">
+          <% ranking = 1 %>
+          <% user_count = @user_perks.first.users.count %>
+          <% @user_perks.each_with_index do |perk, index| %>
+            <div class="profile-perk">
+              <div class="perk-details-main">
+                <%= cl_image_tag(perk.perk_pic.first.key, class: "avatar") %>
+                <strong><%= perk.name %></strong>
+                by <%= perk.merchants %> <br>
               </div>
-              <div class="perk-attribute">
-                <p>proportion</p>
-                <h3 class="perk-details"><%= (perk.token_cost / @total_tokens.to_f * 100).round(2) %>%</h3>
+              <div class="perk-details-main">
+                <div class="perk-attribute">
+                  <p>token cost</p>
+                  <h3 class="perk-details"><%= perk.token_cost%></h3>
+                </div>
+                <div class="perk-attribute">
+                  <p>proportion</p>
+                  <h3 class="perk-details"><%= (perk.token_cost / @total_tokens.to_f * 100).round(2) %>%</h3>
+                </div>
+                <div class="perk-attribute">
+                  <p>ranking</p>
+                  <% if index > 0 && perk.users.count < user_count %>
+                    <% ranking += 1 %>
+                    <% user_count = perk.users.count %>
+                  <% end %>
+                  <h3 class="perk-details"> <%= ranking %>
+                </div>
               </div>
-              <div class="perk-attribute">
-                <p>ranking</p>
-                <% if index > 0 && perk.users.count < user_count %>
-                  <% ranking += 1 %>
-                  <% user_count = perk.users.count %>
-                <% end %>
-                <h3 class="perk-details"> <%= ranking %>
+              <div class="perk-details">
+                <%= perk.description %>
               </div>
             </div>
-            <div class="perk-details">
-              <%= perk.description %>
-            </div>
-          </div>
-      <% end %>
+          <% end %>
         </div>
+      <% end %>
     </div>
   </div>
 </div>
