@@ -6,22 +6,42 @@
     <div class="perk-header">
       <h2><%= @perk.name %></h2>
       <h4>from <%= @perk.merchants %></h4>
-      <h4><%= @perk.token_cost %> tokens</h4>
       <div class="button-bar"><%= link_to "add", perk_user_perks_path(@perk), class: "link-light-blank", method: :post %></div>
     </div>
-    <%# section for description & reviews %>
-    <%# section for reviews %>
-    <div class="reviews-section">
+
+    <%# section for description and other users %>
+    <div class="description-section">
       <p class="perk-description"><%= @perk.description %></p>
-      <div class="button-bar-light"><%= link_to "review", '#', class: "link-dark-blank", data: { toggle: "modal", target: "#exampleModal" } %></div>
+      <h4><%= @perk.token_cost %> tokens</h4>
       <div class="user-avatars">
-        <% @users.each do |user| %>
+        <% @perk_users.each do |user| %>
           <%= cl_image_tag user.profile_pic.key, class: "avatar" %>
         <% end %>
       </div>
       <h4>also used by</h4>
       <%= render 'form' %>
     </div>
+
+    <%# section for reviews %>
+    <div class="reviews-section">
+      <% if @avg_rating.nil? %>
+        <h4><%= "☆" * 5 %></h4>
+      <% else %>
+        <h4><%= "★" * @avg_rating.round %><%= "☆" * (5 - @avg_rating.round) %></h4>
+      <% end %>
+      <% if @reviews.blank? %>
+        <h5>no reviews yet</h5>
+      <% else %>
+        <div class="perk-review">
+          <% @reviews.each do |review| %>
+            <p><%= review.comment %></p>
+            <h6><%= review.user.name %>: <%= review.rating.to_i %> / 5</h6>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="button-bar-light"><%= link_to "review", '#', class: "link-dark-blank", data: { toggle: "modal", target: "#exampleModal" } %></div>
+    </div>
+
     <%# cycle through perks %>
     <div class="button-transparent button-left button-move-left"><%= link_to "⌵", perk_path(Perk.exists?(@perk.id - 1) ? Perk.find(@perk.id - 1) : Perk.last), class: "link-light-blank" %></div>
     <div class="button-transparent button-right button-move-right"><%= link_to "⌵", perk_path(Perk.exists?(@perk.id + 1) ? Perk.find(@perk.id + 1) : Perk.first), class: "link-light-blank" %></div>

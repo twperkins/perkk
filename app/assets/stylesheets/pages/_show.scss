@@ -31,8 +31,8 @@
 .perk-header {
   position: absolute;
   top: 167px;
-  left: 144px;
-  width: 20%;
+  left: 12%;
+  width: 40%;
   h2 {
     color: $papyrus;
     font-family: 'Londrina Shadow';
@@ -44,22 +44,20 @@
   }
 }
 
-.reviews-section {
+.description-section {
   color: $papyrus;
   position: absolute;
   bottom: 100px;
-  right: 264px;
+  right: calc(12% + 120px);
   text-align: right;
   width: 30%;
-  .button-bar-light {
-    float: right;
-  }
   p {
     font-size: 18px;
     margin-bottom: 0px;
   }
   .user-avatars{
-    clear: right;
+    width: 80%;
+    float: right;
     display: flex;
     justify-content: flex-end;
     border-top: 1px solid $papyrus;
@@ -67,5 +65,50 @@
   h4 {
     margin-top: 0px;
     clear: right;
+  }
+}
+
+.reviews-section {
+  color: $papyrus;
+  position: absolute;
+  bottom: 100px;
+  left: 12%;
+  text-align: left;
+  width: 30%;
+  filter: opacity(30%);
+  transition: 0.3s;
+  &:hover {
+    filter: opacity(100%);
+  }
+  .button-bar-light {
+    margin-top: 4px;
+  }
+  h4 {
+    width: 60%;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+    border-bottom: solid 1px #fbf4df57;
+  }
+  h5 {
+    width: 60%;
+    margin-bottom: 4px;
+    padding-bottom: 4px;
+    border-bottom: solid 1px #fbf4df57;
+  }
+  .perk-review {
+    height: 150px;
+    overflow: scroll;
+    width: 60%;
+    margin-bottom: 4px;
+    padding-bottom: 4px;
+    border-bottom: solid 1px #fbf4df57;
+    p {
+      margin-bottom: 2px;
+    }
+    h6 {
+      font-size: 1.1rem;
+      border-bottom: solid 1px #fbf4df57;
+      padding-bottom: 8px;
+    }
   }
 }

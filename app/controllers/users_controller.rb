@@ -1,14 +1,13 @@
 class UsersController < ApplicationController
   before_action :overlay_calcs
+  before_action :recommended_perks
 
   def profile
     @user = current_user
     @perks = Perk.all
-    @recommended_perks = @perks.sample(3)
+    @recommended_perks = @recommended.first(3)
 
-    @perk_category = @perks.map do |perk|
-      perk.category
-    end
+    @perk_category = @perks.map(&:category)
     @perk_category.uniq!
   end
 
@@ -16,12 +15,10 @@ class UsersController < ApplicationController
     @user_perk = UserPerk.new
     @user_perks_all = UserPerk.where(user: current_user)
 
-    @owned_perks = @user_perks_all.map do |user_perk|
-      user_perk.perk
-    end
+    @owned_perks = @user_perks_all.map(&:perk)
 
     @unowned_perks = []
-    Perk.all.each do |perk|
+    @recommended.each do |perk|
       @unowned_perks << perk if @owned_perks.exclude?(perk) && @unowned_perks.exclude?(perk)
     end
   end
@@ -30,9 +27,7 @@ class UsersController < ApplicationController
 
   def overlay_calcs
     current_user_perks = current_user.perks
-    token_array = current_user_perks.map do |perk|
-      perk.token_cost
-    end
+    token_array = current_user_perks.map(&:token_cost)
     @total_tokens = token_array.sum
     @user_perks = current_user.perks.sort_by { |perk| perk.users.count }.reverse
     @tokens_left = current_user.tokens - @total_tokens
@@ -45,6 +40,74 @@ class UsersController < ApplicationController
       @user_perks = Perks.first
     else
       @user_perks = current_user.perks.sort_by { |perk| perk.users.count }.reverse
+    end
+  end
+
+  def recommended_perks
+    perks = Perk.all
+    users = User.all
+
+    # counts how many perks in each category you have
+    your_categories_total = Hash.new(0)
+    current_user.perks.each do |perk|
+      your_categories_total[perk.category] += 1
+    end
+
+    # counts how many perks are in each category
+    categories_count = Hash.new(0)
+    perks.each do |perk|
+      categories_count[perk.category] += 1
+    end
+
+    # weights your categories depending on how many members they have
+    your_categories = Hash.new(1)
+    categories_count.each do |category, count|
+      your_categories_total.each do |your_category, total|
+        your_categories[your_category] = (total.to_f / count + 1).to_f if your_category == category
+      end
+    end
+
+    # counts number of times each perk has been used
+    perk_popularity = Hash.new(1)
+    users.each do |user|
+      user.perks.each do |perk|
+        perk_popularity[perk] += 1
+      end
+    end
+
+    # gets rating of each perk
+    perk_rating = Hash.new(0)
+    perks.each do |perk|
+      count = 0
+      total_rating = 0
+      perk.reviews.each do |review|
+        total_rating += review.rating
+        count += 1
+        perk_rating[perk] = (total_rating / count)
+      end
+    end
+
+    # combine rating and popularity
+    perk_weight = Hash.new(0)
+    perk_popularity.each do |perk_pop, popularity|
+      perk_rating.each do |perk_rat, rating|
+        perk_weight[perk_rat] = (rating + 1) * popularity if perk_rat == perk_pop
+      end
+    end
+
+    # add in category weighting
+    perk_recommendations = Hash.new(0)
+    perk_weight.each do |perk, weight|
+      your_categories.each do |category, value|
+        if perk.category == category
+          perk_recommendations[perk] = weight * value
+        else
+          perk_recommendations[perk] = weight
+        end
+      end
+    end
+    @recommended = (perk_recommendations.sort_by { |_k, v| -v }).map do |perk|
+      perk[0]
     end
   end
 end
