@@ -1,27 +1,45 @@
-
+<%= render 'shared/navbar_dark' %>
 <div class="contain">
-  <div class="row">
-    <div class="col">
-
-  <h1 class="h2 my-3 d-flex justify">Notifications </h1>
-    <br>
-      <h5> turo: have two weeks for free on us when you renew <h5>
-      <h5> ellie smith: any questions ahead of the update?</h5>
-      <h5> perkk: less than two weeks to update your perks</h5>
-      <h5> netflix: latest programmes released exclusive to perkk customers</h5>
-      <h5> le wagon: we’ve increased your tokens for the next year!</h5>
-
-      <div>
-      <% @recommended_perks.each do |perk|%>
-      <%= perk.name %>
-      <%= cl_image_tag perk.perk_pic, height: 200, width: 200, crop: :fill %>
-      <% end  %>
+  <div class="profile-grid">
+    <div class='profile-first'>
+      <div class="notifications-block">
+        <h1>notifications </h1>
+        <h5> > turo: have two weeks for free on us when you renew <h5>
+        <h5> > ellie smith: any questions ahead of the update?</h5>
+        <h5> > perkk: less than two weeks to update your perks</h5>
+        <h5> > netflix: latest programmes released exclusive to perkk customers</h5>
+        <h5> > le wagon: we’ve increased your tokens for the next year!</h5>
       </div>
+      <br>
+      <br>
+      <div class="cards-profile" >
+        <h3 class="text-vertical-left">recommended perks</h3>
+        <% @recommended_perks.each do |perk|%>
+          <div class="card-green" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk.perk_pic.first.key %>')">
+            <%= link_to "", perk_path(perk), class: "card-link" %>
+            <h4 class="button-card-teal"><%= link_to "+", perk_user_perks_path(perk), class: "link-light-blank high-z-index", method: :post %></h4>
+            <div class="card-infos">
+              <h2><%= perk.name %></h2>
+              <p><%= perk.merchants %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
-
-
-
-
+    <div class='profile-second'>
+      <h2> Perk categories </h2>
+        <% @perk_category.each do |category| %>
+          <%= link_to perk_path(Perk.find_by(category: category)) do %>
+            <h3><%= category %></h3>
+          <% end  %>
+        <% end  %>
+      </div>
     </div>
   </div>
+</div>
+
+
+<div>
+  <%= render 'shared/profile' %>
 </div>

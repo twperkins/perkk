@@ -9,6 +9,7 @@
   width: 40px;
   line-height: 40px;
   text-align: center;
+  cursor: pointer;
   transition: 0.2s;
   &:hover {
     // color: $papyrus;
@@ -31,6 +32,7 @@
   width: 40px;
   line-height: 40px;
   text-align: center;
+  cursor: pointer;
   transition: 0.2s;
   &:hover {
     // color: $teal;
@@ -42,23 +44,70 @@
   }
 }
 
-.button-bar {
+.button-transparent {
   color: $papyrus;
-  background: $teal;
   border: 1px solid $papyrus;
   box-sizing: border-box;
-  box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(131, 159, 156, 0.5), inset 4px 4px 4px rgba(83, 101, 99, 0.5);
   border-radius: 50%;
   height: 40px;
-  width: 120px;
+  width: 40px;
   line-height: 40px;
   text-align: center;
+  cursor: pointer;
   transition: 0.2s;
   &:hover {
     box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5);
   }
   &:active {
-    box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(131, 159, 156, 0.5), inset 4px 4px 4px rgba(83, 101, 99, 0.5);
+    box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5), inset 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(255, 253, 248, 0.5);
+  }
+}
+
+.button-bar {
+  color: $papyrus;
+  background: $teal;
+  border: 1px solid $papyrus;
+  box-sizing: border-box;
+  box-shadow: inset -4px -4px 4px rgba(131, 159, 156, 0.5), inset 4px 4px 4px rgba(83, 101, 99, 0.5);
+  border-radius: 40px;
+  height: 40px;
+  width: 120px;
+  line-height: 20px;
+  padding: 10px;
+  margin: 16px 0px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+  &:hover {
+    color: $papyrus;
+    box-shadow: none;
+  }
+  &:active {
+    box-shadow: inset -4px -4px 4px rgba(131, 159, 156, 0.5), inset 4px 4px 4px rgba(83, 101, 99, 0.5);
+  }
+}
+
+.button-bar-light {
+  color: $teal;
+  background: $papyrus;
+  border: 1px solid $teal;
+  box-sizing: border-box;
+  box-shadow: inset 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(255, 253, 248, 0.5);
+  border-radius: 40px;
+  height: 40px;
+  width: 120px;
+  line-height: 20px;
+  padding: 10px;
+  margin: 16px 0px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+  &:hover {
+    color: $teal;
+    box-shadow: none;
+  }
+  &:active {
+    box-shadow: inset 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(255, 253, 248, 0.5);
   }
 }
 
@@ -76,4 +125,68 @@
 
 .button-down {
   transform: rotate(0deg);
+}
+
+.button-popout {
+  margin: 32px 32px 16px;
+}
+
+.button-overlay {
+  margin: 32px 32px 16px;
+}
+
+.button-card{
+  color: $teal;
+  background: $papyrus;
+  border: 1px solid $papyrus;
+  box-sizing: border-box;
+  box-shadow: inset 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(255, 253, 248, 0.5);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  position: absolute; top: 0px; right: 0;
+  text-align:center;
+  cursor: pointer;
+  &:hover {
+    box-shadow: none;
+  }
+  &:active {
+    box-shadow: inset 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(255, 253, 248, 0.5);
+  }
+}
+
+.button-card-teal{
+  color: $papyrus;
+  background: $teal;
+  border: 1px solid $teal;
+  box-sizing: border-box;
+  box-shadow: inset -4px -4px 4px rgba(131, 159, 156, 0.5), inset 4px 4px 4px rgba(83, 101, 99, 0.5);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  position: absolute; top: 0px; right: 0;
+  text-align:center;
+  cursor: pointer;
+  &:hover {
+    box-shadow: none;
+  }
+  &:active {
+    box-shadow: inset -4px -4px 4px rgba(131, 159, 156, 0.5), inset 4px 4px 4px rgba(83, 101, 99, 0.5);
+  }
+}
+
+.button-card-profile{
+  color: $papyrus;
+  background: $teal;
+  border: 1px solid $white;
+  box-sizing: border-box;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  position: relative; top: -725px; right: 0;
+  text-align:center;
+  margin-left: 1225px;
 }

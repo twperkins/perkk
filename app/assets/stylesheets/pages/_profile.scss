@@ -1,0 +1,69 @@
+.cards-profile {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.profile-grid{
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  height: calc(100vh - 104px);
+  width: 100vw;
+}
+
+.profile-first {
+  background-color: $teal;
+  padding: 32px 64px;
+}
+
+.profile-second {
+  padding: 32px 64px;
+  margin-right: 74px;
+  h3 {
+    font-family: Londrina Shadow;
+  }
+}
+
+.profile-divs {
+  display: flex;
+  justify-content: space-between;
+  padding: 64px;
+
+}
+
+.profile-perk {
+  // display: flex;
+  // flex-direction: column;
+  border: 4px solid #FBF4DF;
+  justify-content: space-around;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 320px;
+  height: 340px;
+  filter: drop-shadow(8px 8px 8px #D5CFBE) drop-shadow(-8px -8px 8px #FFFDF8);
+  padding: 24px;
+}
+
+.notifications-block {
+  color: $papyrus-highlight;
+  margin-left: 32px;
+}
+
+.perk-details-main {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.perk-details {
+  text-align: center;
+}
+
+.detail {
+  padding-left: 64px;
+}
+
+.your-perks {
+  display: flex;
+  flex-wrap: wrap;
+}

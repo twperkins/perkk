@@ -1,0 +1,18 @@
+.overlay {
+  display: grid;
+  grid-template-columns: 1fr 12fr;
+  position: fixed;
+  right: 8px;
+  top: 8px;
+  height: 98vh;
+  width: 104px;
+  background: #FBF4DF;
+  box-shadow: 4px 4px 4px rgba(213, 207, 190, 0.5), -4px -4px 4px rgba(255, 253, 248, 0.5);
+  border-radius: 8px;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.expanded-overlay {
+  width: 98% !important;
+}

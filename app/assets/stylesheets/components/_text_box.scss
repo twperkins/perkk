@@ -1,0 +1,30 @@
+.text-vertical-left {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 40px;
+  color: $papyrus;
+  transform: rotate(-90deg) translateX(-100%);
+  transform-origin: left;
+  text-align:right;
+  position: absolute;
+  left: -10px;
+  top: 0;
+  z-index: 1;
+}
+.text-vertical-right {
+  height: 104px;
+  width: 104px;
+  margin-bottom: 0px;
+  line-height: 104px;
+  transform: rotate(90deg);
+  z-index: 1;
+}
+
+.green {
+  color: $teal;
+}
+
+.papyrus {
+  color: $papyrus;
+}

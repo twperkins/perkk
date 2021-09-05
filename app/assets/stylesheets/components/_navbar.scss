@@ -5,6 +5,9 @@
   width: 60%;
   background-color: $papyrus;
   padding: 32px;
+  position: fixed;
+  top: 0px;
+  z-index: 4;
 }
 
 .navbar .navbar-sections {
@@ -18,6 +21,7 @@
 
 .navbar .logo-icon {
   color: $teal;
+  background-color: $papyrus;
   font-family: 'Londrina Shadow';
   border: solid 1px $papyrus;
   height: 40px;
@@ -46,6 +50,9 @@
   width: 60%;
   background-color: $teal;
   padding: 32px;
+  position: fixed;
+  top: 0px;
+  z-index: 4;
 }
 
 .navbar-dark .navbar-sections {
@@ -59,6 +66,7 @@
 
 .navbar-dark .logo-icon {
   color: $papyrus;
+  background-color: $teal;
   font-family: 'Londrina Shadow';
   border: solid 1px $teal;
   height: 40px;
@@ -78,4 +86,85 @@
   &:active {
     box-shadow: -4px -4px 4px #779390, 4px 4px 4px rgba(83, 101, 99, 0.5), inset 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(255, 253, 248, 0.5);
   }
+}
+
+.navbar-transparent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 60%;
+  background-color: transparent;
+  padding: 32px;
+  position: fixed;
+  top: 0px;
+  z-index: 4;
+}
+
+.navbar-transparent .navbar-sections {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10%;
+  font-size: 1.5rem;
+}
+
+.navbar-transparent .logo-icon {
+  color: $papyrus;
+  background-color: $teal;
+  font-family: 'Londrina Shadow';
+  border: solid 1px $teal;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  line-height: 32px;
+  text-align: center;
+  box-shadow: inset 4px 4px 4px rgba(83, 101, 99, 0.5), inset -4px -4px 4px #779390;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  transition: 0.2s;
+  &:hover {
+    color: $teal;
+    background-color: $papyrus;
+    box-shadow: none;
+  }
+  &:active {
+    box-shadow: inset 4px 4px 4px rgba(213, 207, 190, 0.5), inset -4px -4px 4px rgba(255, 253, 248, 0.5);
+  }
+}
+
+.navbar-dark-home {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  background-color: $papyrus;
+  width: calc(100vw - 120px);
+  z-index: 4;
+}
+
+.navbar-dark-home .navbar-sections {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10%;
+  font-size: 1.5rem;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+.navbar-dark-home .lone-section {
+  background-color: $teal;
+  font-size: 1.5rem;
+  padding-left: 10%;
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+
+.full-width-papyrus {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 104px;
+  background-color: $papyrus;
+  z-index: 3;
 }

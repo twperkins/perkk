@@ -1,4 +1,5 @@
 .link {
+  border-bottom: 1px solid transparent;
   &:hover {
     text-decoration: none;
     border-bottom: 1px solid $teal-shadow;
@@ -7,9 +8,36 @@
 
 .link-light {
   color: $papyrus;
+  border-bottom: 1px solid transparent;
   &:hover {
     color: $papyrus-highlight;
     text-decoration: none;
     border-bottom: 1px solid $papyrus-highlight;
+  }
+}
+
+.link-light-blank {
+  color: $papyrus;
+  &:hover {
+    color: $papyrus-highlight;
+    text-decoration: none;
+  }
+}
+
+.link-dark {
+  color: $teal;
+  border-bottom: 1px solid transparent;
+  &:hover {
+    color: $teal-shadow;
+    text-decoration: none;
+    border-bottom: 1px solid $teal-shadow;
+  }
+}
+
+.link-dark-blank {
+  color: $teal;
+  &:hover {
+    color: $teal-shadow;
+    text-decoration: none;
   }
 }
