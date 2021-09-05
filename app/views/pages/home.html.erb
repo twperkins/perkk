@@ -5,11 +5,13 @@
   <%# main content block %>
   <div class="home-grid">
     <%# logo and tagline, with a link to scroll down %>
-    <div class="home-banner">
-      <h1 class="logo">perkk</h1>
-      <h4>making your job work for you</h4>
-      <%# TO DO: button below to scroll down  %>
-      <div class="button-primary button-down" data-controller="scroll-to" data-homepage-scroll-target="scroll-to"><%= link_to "⌵", '#scroll-circle', class: "link-dark-blank" %></div>
+    <div class="banner-container">
+      <div class="home-banner" id="logo-block">
+        <h1 class="logo">perkk</h1>
+        <h4>making your job work for you</h4>
+        <%# TO DO: button below to scroll down  %>
+        <div class="button-primary button-down" id="button-scroll"><a href="#scroll-circle" class="link-dark-blank" data-controller="scroll-to" data-scroll-to-behavior-value="smooth">⌵</a></div>
+      </div>
     </div>
 
     <%# scroll through perks card %>

@@ -7,20 +7,37 @@
 .home-grid{
   display: grid;
   grid-template-columns: 2fr 3fr;
-  height: calc(100vh - 117px);
+  height: calc(100vh - 108px);
   width: calc(100vw - 120px);
+}
+
+.banner-container {
+  background-color: $papyrus;
+  padding-left: 20%;
 }
 
 .home-banner {
   background-color: $papyrus;
-  padding-left: 20%;
-  padding-top: 70%;
+  padding-top: 80%;
   h1 {
     font-size: 72px;
   }
   h4 {
     color: $teal-shadow;
-    width: 50%;
+    width: 40%;
+  }
+}
+
+.home-banner-fixed {
+  background-color: $papyrus;
+  position: fixed;
+  top: 108;
+  h1 {
+    font-size: 72px;
+  }
+  h4 {
+    color: $teal-shadow;
+    width: 80%;
   }
 }
 
