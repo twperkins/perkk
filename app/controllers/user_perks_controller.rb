@@ -1,6 +1,4 @@
 class UserPerksController < ApplicationController
-
-
   def create
     @perk = Perk.find(params[:perk_id])
     @user_perk = UserPerk.new
@@ -10,7 +8,7 @@ class UserPerksController < ApplicationController
       if @user_perk.save
         render json: @user_perk
       else
-        render json: {message: "failed to save"}
+        render json: { message: "failed to save" }
       end
     else
       @user_perk.user = current_user
@@ -34,7 +32,6 @@ class UserPerksController < ApplicationController
       # @user_perk = UserPerk.find(params[:id])
       # @user_perk.destroy
       # redirect_to package_path
-
     end
   end
 end

@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = ['popout', 'form', 'button'];
 
   connect() {
-    console.log('connected');
+    console.log('popout connected');
   }
   toggleLogin() {
     console.log('clicked');

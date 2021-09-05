@@ -7,7 +7,7 @@
   padding: 32px;
   position: fixed;
   top: 0px;
-  z-index: 1;
+  z-index: 4;
 }
 
 .navbar .navbar-sections {
@@ -52,6 +52,7 @@
   padding: 32px;
   position: fixed;
   top: 0px;
+  z-index: 4;
 }
 
 .navbar-dark .navbar-sections {
@@ -96,6 +97,7 @@
   padding: 32px;
   position: fixed;
   top: 0px;
+  z-index: 4;
 }
 
 .navbar-transparent .navbar-sections {
@@ -134,7 +136,9 @@
 .navbar-dark-home {
   display: grid;
   grid-template-columns: 2fr 3fr;
-  background-color: $teal;
+  background-color: $papyrus;
+  width: calc(100vw - 120px);
+  z-index: 4;
 }
 
 .navbar-dark-home .navbar-sections {
@@ -142,18 +146,18 @@
   justify-content: space-between;
   margin-left: 10%;
   font-size: 1.5rem;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 32px;
+  padding-bottom: 32px;
   padding-right: 10%;
   padding-left: 10%;
 }
 
 .navbar-dark-home .lone-section {
-  background-color: $papyrus;
+  background-color: $teal;
   font-size: 1.5rem;
   padding-left: 10%;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 36px;
+  padding-bottom: 36px;
 }
 
 .full-width-papyrus {
@@ -162,5 +166,5 @@
   width: 100vw;
   height: 104px;
   background-color: $papyrus;
-  z-index: 1;
+  z-index: 3;
 }

@@ -1,26 +1,49 @@
 // Specific CSS for your home-page
 
+.green-body {
+  background-color: $teal;
+}
+
 .home-grid{
   display: grid;
   grid-template-columns: 2fr 3fr;
-  height: calc(100vh - 117px);
+  height: calc(100vh - 108px);
+  width: calc(100vw - 120px);
+}
+
+.banner-container {
+  background-color: $papyrus;
+  padding-left: 20%;
 }
 
 .home-banner {
-  background-color: $teal;
-  padding-left: 25%;
-  padding-top: 60%;
+  background-color: $papyrus;
+  padding-top: 80%;
   h1 {
     font-size: 72px;
   }
   h4 {
-    color: $papyrus-highlight;
-    width: 50%;
+    color: $teal-shadow;
+    width: 40%;
+  }
+}
+
+.home-banner-fixed {
+  background-color: $papyrus;
+  position: fixed;
+  top: 108;
+  h1 {
+    font-size: 72px;
+  }
+  h4 {
+    color: $teal-shadow;
+    width: 80%;
   }
 }
 
 .perk-gallery {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin: auto;
   .main-perk {
@@ -36,37 +59,39 @@
 .lower-grid{
   display: grid;
   grid-template-columns: 2fr 3fr;
+  width: calc(100vw - 120px);
   .empty-column {
-    background-color: $teal;
+    background-color: $papyrus;
   }
 }
 
 .info-circle {
   border-radius: 50%;
-  border: solid 1px $teal;
+  color: $papyrus;
+  border: solid 1px $papyrus;
   text-align: center;
 }
 
 .small-circle {
-  width: 400px;
-  height: 400px;
-  padding: 134px 67px;
+  width: 20vw;
+  height: 20vw;
+  padding: 5vw 3vw;
   margin-left: 5%;
   margin-bottom: 32px;
 }
 
 .medium-circle {
-  width: 500px;
-  height: 500px;
-  padding: 168px 84px;
+  width: 25vw;
+  height: 25vw;
+  padding: 7vw 4vw;
   margin-left: 25%;
   margin-bottom: 32px;
 }
 
 .large-circle {
-  width: 600px;
-  height: 600px;
-  padding: 200px 100px;
+  width: 30vw;
+  height: 30vw;
+  padding: 9vw 5vw;
   margin-left: 15%;
   margin-bottom: 32px;
   margin-top: 32px;

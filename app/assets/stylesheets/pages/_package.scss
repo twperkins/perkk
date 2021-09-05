@@ -3,16 +3,13 @@
   flex-wrap: wrap;
   justify-content: center;
   width: calc(90vw - 120px);
-  margin: 32px auto;
+  margin: 0px auto 16px;
+  padding: 0px 16px;
   box-shadow: 4px 4px 4px rgba(213, 207, 190, 0.5), -4px -4px 4px rgba(255, 253, 248, 0.5);
   border: solid 4px $papyrus;
   border-radius: 8px;
+  border-top-right-radius: 30px;
   position: relative;
-  .button-bar {
-    position: absolute;
-    bottom: -8px;
-    right: 8px;
-  }
   .text-vertical-left {
     width: auto;
     height: auto;
@@ -27,6 +24,12 @@
 
 .owned {
   background-color: $teal;
+}
+
+.range {
+  height: calc(98vh - 378px);
+  margin-bottom: 0px;
+  overflow-y: scroll;
 }
 
 .package-header {

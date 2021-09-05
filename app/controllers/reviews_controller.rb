@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
     @perk = Perk.find(params[:perk_id])
     @review.perk = @perk
     @review.user = current_user
-    if @review.save
+    if @review.save!
       redirect_to perk_path(@perk)
     end
   end

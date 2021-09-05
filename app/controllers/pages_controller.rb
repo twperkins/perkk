@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [:home]
   helper_method :resource_name, :resource, :devise_mapping, :resource_class
 
   def home

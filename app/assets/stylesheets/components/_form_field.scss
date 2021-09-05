@@ -1,15 +1,35 @@
 .input-field {
   background-color: transparent;
   border: transparent;
-  border-bottom: solid 1px $teal;
+  border-bottom: solid 1px $papyrus;
   &:hover {
     background-color: transparent;
     border: transparent;
-    border-bottom: solid 1.5px $teal-shadow;
+    border-bottom: solid 1px $papyrus-highlight;
   }
   &:focus {
     background-color: transparent;
     border: transparent;
-    border-bottom: solid 1.5px $teal-shadow;
+    border-bottom: solid 1px $papyrus-highlight;
+  }
+}
+
+.email, .password, .form-check-label {
+  color: $papyrus;
+}
+
+.input-field-green {
+  background-color: transparent;
+  border: transparent;
+  border-bottom: solid 1px $teal;
+  &:hover {
+    background-color: transparent;
+    border: transparent;
+    border-bottom: solid 1px $teal-shadow;
+  }
+  &:focus {
+    background-color: transparent;
+    border: transparent;
+    border-bottom: solid 1px $teal-shadow;
   }
 }
