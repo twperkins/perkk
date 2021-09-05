@@ -3,6 +3,12 @@
 }
 
 .results {
+  position: fixed;
+  border-bottom: solid 1px $papyrus-shadow;
+  background-color: $papyrus;
+  width: 86vw;
+  padding-top: 32px;
+  z-index: 1;
   p {
   font-size: 28px;
   padding-bottom: 1rem;
@@ -20,6 +26,7 @@
 
 .perks-cards {
   margin-right: 1rem;
+  margin-top: 91px;
   padding-left: 1rem;
   .card {
     margin-bottom: 1rem;
