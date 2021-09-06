@@ -22,11 +22,11 @@
               <%= link_to perk_favourites_path(perk), class: "link-light-blank button-top-right", method: :post do %>
                 <h4 class="button-card-teal high-z-index">♡</h4>
               <% end %>
-            <% else  %>
+            <%# <% else  %>
              <%= link_to perk_favourites_path(perk), class: "link-light-blank button-top-right", method: :post do %>
                 <h4 class="button-card-teal high-z-index">♥︎</h4>
               <% end %>
-            <% end %>
+            <%# <% end %>
 
             <div class="card-infos">
               <h2><%= perk.name %></h2>
