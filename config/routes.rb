@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   resources :perks, only: %i[show index] do
     resources :user_perks, only: %i[create]
     resources :reviews, only: %i[create]
+    resources :favourites, only: %i[create]
   end
+  resources :favourites, only: %i[destroy]
 
   delete '/package/:id', to: 'user_perks#destroy', as: :remove_user_perk
 end
