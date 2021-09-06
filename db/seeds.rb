@@ -30,7 +30,7 @@ company.logo_pic.attach(io: file, filename: 'test.png', content_type: 'image/png
 # demo user
 puts "creating demo user.."
 demo = User.create!(
-  email: "charlie@gmail.com",
+  email: "charlie@facebook.com",
   password: "123123",
   name: "Chaplin",
   location: Faker::TvShows::BojackHorseman.character,
