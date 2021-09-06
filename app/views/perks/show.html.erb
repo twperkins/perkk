@@ -6,7 +6,9 @@
     <div class="perk-header">
       <h2><%= @perk.name %></h2>
       <h4>from <%= @perk.merchants %></h4>
-      <div class="button-bar"><%= link_to "add", perk_user_perks_path(@perk), class: "link-light-blank", method: :post %></div>
+      <%= link_to perk_user_perks_path(@perk), class: "link-light-blank", method: :post do %>
+        <p class="button-bar">add</p>
+      <% end %>
     </div>
 
     <%# section for description and other users %>
@@ -39,7 +41,9 @@
           <% end %>
         </div>
       <% end %>
-      <div class="button-bar-light"><%= link_to "review", '#', class: "link-dark-blank", data: { toggle: "modal", target: "#exampleModal" } %></div>
+      <%= link_to '#', class: "link-dark-blank", data: { toggle: "modal", target: "#exampleModal" } do %>
+        <p class="button-bar-light">review</p>
+      <% end %>
     </div>
 
     <%# cycle through perks %>

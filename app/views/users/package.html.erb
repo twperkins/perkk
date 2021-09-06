@@ -31,8 +31,12 @@
         </div>
       <% end %>
     <% end %>
-    <div class="button-card button-top-right"><%= link_to "✓", profile_path, class: "link-dark-blank" %></div>
-    <div class="button-card-teal button-bottom-left"><%= link_to "♺", profile_path, class: "link-light-blank" %></div>
+    <%= link_to profile_path, class: "link-light-blank button-top-right" do %>
+      <p class="button-card-teal prominent">✓</p>
+    <% end %>
+    <%= link_to profile_path, class: "link-light-blank button-bottom-left" do %>
+      <p class="button-card-teal">♺</p>
+    <% end %>
   </div>
 <h1><%= @token_cost  %></h1>
 

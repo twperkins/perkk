@@ -36,6 +36,7 @@
   &:hover {
     color: $papyrus;
     background-color: $teal;
+    text-decoration: none;
     box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5);
   }
   &:active {
@@ -81,6 +82,7 @@
   &:hover {
     color: $teal;
     background-color: $papyrus;
+    text-decoration: none;
     box-shadow: -4px -4px 4px #779390, 4px 4px 4px rgba(83, 101, 99, 0.5);
   }
   &:active {
@@ -126,6 +128,7 @@
   &:hover {
     color: $teal;
     background-color: $papyrus;
+    text-decoration: none;
     box-shadow: none;
   }
   &:active {
