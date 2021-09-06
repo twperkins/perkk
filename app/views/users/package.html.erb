@@ -34,7 +34,7 @@
     <div class="button-card button-top-right"><%= link_to "✓", profile_path, class: "link-dark-blank" %></div>
     <div class="button-card-teal button-bottom-left"><%= link_to "♺", profile_path, class: "link-light-blank" %></div>
   </div>
-<h1><%= @token_cost  %></h1>
+    <h1><%= current_user.tokens_used  %></h1>
 
   <div class="list-section range" id="results" data-account-target="list">
   <h2 class="package-header text-vertical-left green-text">choose perks</h2>
@@ -55,6 +55,7 @@
 
 </div>
 <div>
+
   <%= render 'shared/profile' %>
 </div>
 
