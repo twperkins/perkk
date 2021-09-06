@@ -45,6 +45,9 @@
         <div class="card-infos">
           <h2><%= perk.name %></h2>
           <p><%= perk.token_cost %> tokens</p>
+          <%# add a new class and customise button %>
+            <%= link_to "", perk_favourites_path(perk), class: "card-link" %>
+            <h4 class="button-card-teal button-top-right"><%= link_to "♡", perk_favourites_path(perk), class: "link-light-blank high-z-index", method: :post, remote: true %></h4>
         </div>
       </div>
     <% end %>
