@@ -32,12 +32,10 @@ import "controllers";
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { initSortable } from '../plugins/init_sortable'; // <-- add this
+import { initStarRating } from '../plugins/init_star_rating';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initSortable();
+  initStarRating();
 })
-
-import { initStarRating } from '../plugins/init_star_rating';
-
-initStarRating();
