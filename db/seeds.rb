@@ -74,6 +74,36 @@ perk = Perk.create!(
 file = URI.open('https://images.unsplash.com/photo-1482029255085-35a4a48b7084?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8dWJlcnx8fHx8fDE2MzA2NjczNjc&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
+# creating perk 1.2
+perk = Perk.create!(
+  name: "One month of 50% off",
+  description: "Can't wait to get home? Get 50% off of ubers for a month! Get a ride in minutes. Uber is finding you
+   better ways to move, work, and succeed in the United Kingdom.",
+  location: BOROUGH.sample,
+  token_cost: 110,
+  start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+  end_date: Faker::Date.forward(days: 365),
+  category: "travel",
+  merchants: "Uber"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?uber')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 1.3
+perk = Perk.create!(
+  name: "One month of free delivery fee",
+  description: "Find the best restaurants that deliver. Get contactless delivery for restaurant takeaways, food shopping
+   and more! Order food online or in the Uber Eats app and get free delivery cost every time!",
+  location: BOROUGH.sample,
+  token_cost: 50,
+  start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+  end_date: Faker::Date.forward(days: 365),
+  category: "membership",
+  merchants: "Uber Eats"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?uber-eats')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
 # creating perk 1.5
 perk = Perk.create!(
   name: "Two months membership",
@@ -114,6 +144,20 @@ perk = Perk.create!(
   merchants: "Ryanair"
 )
 file = URI.open('https://images.unsplash.com/photo-1493235818145-77224bfd6e5c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8cGxhbmV8fHx8fHwxNjMwNjY3MDcz&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 3
+perk = Perk.create!(
+  name: "50% off on flights for two",
+  description: "Save on your next holiday with 50% off of any Ryanair flights to Europe. Only redeemable once!",
+  location: 'London Heathrow Airport, Nelson Rd, Hounslow, England TW6 1NB, United Kingdom',
+  token_cost: 70,
+  start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+  end_date: Faker::Date.forward(days: 365),
+  category: "travel",
+  merchants: "Ryanair"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?heathrow-airport')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 3.5
@@ -173,6 +217,21 @@ perk = Perk.create!(
   merchants: "Bark"
 )
 file = URI.open('https://images.unsplash.com/photo-1552944150-6dd1180e5999?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2F0fHx8fHx8MTYzMDY2Njg4Ng&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 5
+perk = Perk.create!(
+  name: "Pet insurance",
+  description: "Petplan is the UK's leading pet insurer with 40 years' experience helping pets through illness and
+   injury. Get a quote today and receive 50% off!",
+  location: BOROUGH.sample,
+  token_cost: 80,
+  start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+  end_date: Faker::Date.forward(days: 365),
+  category: "pet",
+  merchants: "Petplan"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?pet')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 puts "creating amazing perks.."
@@ -270,7 +329,7 @@ perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 10
 perk = Perk.create!(
-  name: "London waterbus",
+  name: "Regent's Canal trip",
   description: "Enjoy a leisurely a one-way guided boat trip down Regent's Canal between Little Venice and Camden Town
    in either direction, passing by the London Zoo.",
   location: BOROUGH.sample,
@@ -316,9 +375,24 @@ perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 13
 perk = Perk.create!(
-  name: "Go-karting",
+  name: "Go-karting for one",
   description: "London & UK's longest indoor go karting track at 1050m. 270cc and 160cc go karts. Book an evening for
-  yourself and 9 friends.",
+  yourself, and race others!",
+  location: '20 Allied Way, London W3 0RQ',
+  token_cost: 20,
+  start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+  end_date: Faker::Date.forward(days: 365),
+  category: "social",
+  merchants: "TeamSport Go Karting"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?go-kart')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 13
+perk = Perk.create!(
+  name: "Group go-karting",
+  description: "London & UK's longest indoor go karting track at 1050m. 270cc and 160cc go karts. Book an evening for
+  yourself and 9 friends!",
   location: '20 Allied Way, London W3 0RQ',
   token_cost: 100,
   start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
@@ -331,11 +405,11 @@ perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 14
 perk = Perk.create!(
-  name: "Online escape rooms",
+  name: "Online escape room",
   description: "Beat the clock across 4 fiendishly tricky escape room. With up to 8 players you can work together to
    solve a series of puzzles. Play online from multiple devices and locations.",
   location: 'London',
-  token_cost: 50,
+  token_cost: 40,
   start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
   end_date: Faker::Date.forward(days: 365),
   category: "social",
@@ -344,13 +418,29 @@ perk = Perk.create!(
 file = URI.open('https://source.unsplash.com/1600x800/?mystery')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
+# creating perk 14
+perk = Perk.create!(
+  name: "Haunted mansion escape room",
+  description: "Beat the clock across 4 fiendishly tricky escape room. You can work together to solve a series of
+   puzzles at our haunted mansion located in Hoxten! Bring up to 7 of your friends and try your best to escape as quick
+   as you can.",
+  location: 'London',
+  token_cost: 70,
+  start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+  end_date: Faker::Date.forward(days: 365),
+  category: "social",
+  merchants: "Mansion impossible"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?haunted-mansion')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
 # creating perk 15
 perk = Perk.create!(
   name: "Virtual wellbeing sessions",
   description: "Embark on a journey to a happier, healthier you with one year’s subscription to Whitecalm’s online 360°
    all round wellbeing sessions.",
   location: 'London',
-  token_cost: 100,
+  token_cost: 60,
   start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
   end_date: Faker::Date.forward(days: 365),
   category: "wellbeing",
@@ -372,6 +462,22 @@ perk = Perk.create!(
   merchants: "TATE"
 )
 file = URI.open('https://source.unsplash.com/1600x800/?kusama')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 16
+perk = Perk.create!(
+  name: "Guided in-depth arts tour",
+  description: "A day of custom arts tours, centerted on a variety of specific arts movements in history, starting at
+   the Tate Modern and exploring multiple galleries and museums to create a well rounded investigation on the chosen
+   movement, for example: impressionism, abstract expressionism, romanticism and more.",
+  location: 'Bankside, London SE1 9TG',
+  token_cost: 60,
+  start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+  end_date: Faker::Date.forward(days: 365),
+  category: "membership",
+  merchants: "TATE"
+)
+file = URI.open('https://images.unsplash.com/photo-1575223970966-76ae61ee7838?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xhc3NpYy1hcnR8fHx8fHwxNjMwOTI3MTk3&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 17
@@ -460,7 +566,7 @@ perk = Perk.create!(
   category: "course",
   merchants: "Skatefresh"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?cinema')
+file = URI.open('https://source.unsplash.com/1600x800/?skating')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 21
@@ -480,7 +586,7 @@ perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 22
 perk = Perk.create!(
-  name: "One month travel",
+  name: "One month city travel",
   description: "Are you busy? Do you not have time? Are you a trillionaire? Do you go to vegan restaurants and need your
    friends to know that you love the environment? This token gives you a discounted Taa pass for one whole month!",
   location: BOROUGH.sample,
@@ -510,7 +616,7 @@ perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 23
 perk = Perk.create!(
-  name: "One month free trial",
+  name: "Organic local food delivery",
   description: "Do you love organic fresh food? BeNatural has local farms that specialise in diary, vegetables, fruits
   and more!",
   location: BOROUGH.sample,
@@ -518,16 +624,17 @@ perk = Perk.create!(
   start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
   end_date: Faker::Date.forward(days: 365),
   category: "membership",
-  merchants: "BeNatural"
+  merchants: "Be Natural"
 )
 file = URI.open('https://source.unsplash.com/1600x800/?farm')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 23
 perk = Perk.create!(
-  name: "VIP yumbership",
-  description: "When living in a new city on a budget one often struggles to find the most reliable shops, restaurants
-   and shoe shops in Brick Lane! Do you need a site with a good price-performance ratio? YUDGET is here to help you!",
+  name: "Budget helper",
+  description: "Annual subscription to managing your budgets! When living in a new city on a budget one often struggles
+   to find the most reliable shops, restaurants and shoe shops in Brick Lane! Do you need a site with a good
+   price-performance ratio? YUDGET is here to help you!",
   location: BOROUGH.sample,
   token_cost: 40,
   start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
@@ -540,8 +647,8 @@ perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 24
 perk = Perk.create!(
-  name: "One month free vibe-finder",
-  description: "With the near infinite choice afforded by amazon, Netflix and deliveroo its easy to be paralysed by
+  name: "Streaming and snack service",
+  description: "With the near infinite choice afforded by Amazon, Netflix and Deliveroo its easy to be paralysed by
    indecision. No more! Time you get a Whatever membership",
   location: BOROUGH.sample,
   token_cost: 20,
@@ -570,7 +677,7 @@ perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 26
 perk = Perk.create!(
-  name: "VIP room membership",
+  name: "Tour booking membership",
   description: "Are you an up and coming artist that is looking to cut out the middle man and book their own tours? Get
    a discounted and exclusive membership with theGreenRoom!",
   location: BOROUGH.sample,
@@ -584,11 +691,11 @@ file = URI.open('https://source.unsplash.com/1600x800/?gig')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating reviews for user
-80.times do
+110.times do
   puts "creating reviews..."
   Review.create!(
     comment: Faker::Restaurant.review,
-    rating: rand(0..5),
+    rating: rand(1..5),
     perk_id: Perk.all.sample.id,
     user_id: User.all.sample.id
   )
