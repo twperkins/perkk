@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     @total_tokens = token_array.sum
     @user_perks = current_user.perks.sort_by { |perk| perk.users.count }.reverse
     @tokens_left = current_user.tokens - @total_tokens
-    @days_left = ((Date.today - current_user.company.subscription_end).to_i / (1000 * 60 * 60 * 24))
+    @days_left = ((Date.today - current_user.company.subscription_end) / (1000 * 60 * 60 * 24))
     user_perks_calculator
   end
 
@@ -46,6 +46,7 @@ class UsersController < ApplicationController
   def recommended_perks
     perks = Perk.all
     users = User.all
+    owned_perks = UserPerk.where(user: current_user).map(&:perk)
 
     # counts how many perks in each category you have
     your_categories_total = Hash.new(0)
@@ -110,8 +111,19 @@ class UsersController < ApplicationController
         perk_recommendations[perk] = weight
       end
     end
-    @recommended = (perk_recommendations.sort_by { |_k, v| -v }).map do |perk|
+
+    # add in slight randomisation
+    perk_slight_random = Hash.new(0)
+    perk_recommendations.each do |perk, value|
+      perk_slight_random[perk] = value * rand(1.0..3.0)
+    end
+
+    # get recommended into a nice array
+    @all_recommended = (perk_slight_random.sort_by { |_k, v| -v }).map do |perk|
       perk[0]
     end
+
+    # remove owned from recommended
+    @recommended = @all_recommended - owned_perks
   end
 end
