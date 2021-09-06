@@ -13,4 +13,14 @@
   border-radius: 50%;
   margin: 4px;
   border: solid 1px $papyrus;
+  object-fit: cover;
+}
+
+.avatar-very-large {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin: 4px;
+  border: solid 2px $teal;
+  object-fit: cover;
 }

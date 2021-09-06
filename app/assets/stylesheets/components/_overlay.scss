@@ -16,3 +16,135 @@
 .expanded-overlay {
   width: 98% !important;
 }
+
+.profile-divs {
+  display: grid;
+  padding: 32px;
+  padding-left: 0px;
+  grid-template-columns: 1fr 4fr ;
+}
+
+.detail-container {
+  h2 {
+    color: $teal;
+  }
+}
+
+.detail {
+  border-radius: 16px;
+  margin-right: 16px;
+  padding: 16px;
+  height: 85vh;
+  position: relative;
+  box-shadow: inset 4px 4px 4px rgba(239, 228, 196, 0.5), inset -4px -4px 4px rgba(255, 251, 238, 0.5);
+  .border-line {
+    height: 1px;
+    background-color: $teal;
+    position: absolute;
+    top: 90px;
+    width: 70%;
+    z-index: 1;
+    margin-left: 32px;
+  }
+  span {
+    font-size: 32px;
+  }
+}
+
+.account-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 32px;
+  text-align: center;
+  p {
+    font-size: 16px;
+  }
+}
+
+.perk-container {
+  border-left: 1px solid $teal;
+  h2 {
+    color: $teal;
+    margin-left: 2%;
+    margin-right: 40%;
+    margin-bottom: 0px;
+    border-bottom: solid 1px $papyrus-shadow;
+  }
+}
+
+.your-perks {
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+.profile-perk {
+  border: 4px solid #FBF4DF;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border-top-right-radius: 30px;
+  width: 550px;
+  height: 340px;
+  box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5);
+  padding: 16px;
+  margin: 16px;
+  position: relative;
+  .border-line {
+    height: 1px;
+    background-color: $teal;
+    position: absolute;
+    top: 90px;
+    width: 446px;
+    z-index: 1;
+    margin-left: 32px;
+  }
+}
+
+.perk-details-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 16px;
+  z-index: 2;
+  .avatar-very-large {
+    margin-right: 16px;
+    z-index: 2;
+  }
+  p {
+    margin-bottom: 2px;
+    z-index: 2;
+  }
+  h5 {
+    margin-bottom: 2px;
+    z-index: 2;
+  }
+}
+
+.perk-details-main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  border-bottom: solid 1px $teal;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  p {
+    margin-bottom: 2px;
+  }
+  h4 {
+    margin-bottom: 2px;
+  }
+}
+
+.perk-details {
+  h5 {
+    padding: 4px;
+  }
+  p {
+    font-size: 16px;
+    padding: 4px;
+  }
+}
