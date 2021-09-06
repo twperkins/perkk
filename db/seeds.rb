@@ -36,6 +36,7 @@ demo = User.create!(
   location: Faker::TvShows::BojackHorseman.character,
   unique_code: "#{Faker::Verb.base}-#{Faker::Color.color_name}-#{Faker::Verb.past_participle}",
   tokens: 1000,
+  tokens_used: 0,
   admin: true,
   company_id: company.id
 )
@@ -51,6 +52,7 @@ puts "creating the rest of the users.."
     name: Faker::Name.first_name,
     company_id: company.id,
     tokens: 1000,
+    tokens_used: 0,
     location: BOROUGH.sample,
     unique_code: "#{Faker::Verb.base}-#{Faker::Color.color_name}-#{Faker::Verb.past_participle}"
   )
