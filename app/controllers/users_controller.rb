@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     @total_tokens = token_array.sum
     @user_perks = current_user.perks.sort_by { |perk| perk.users.count }.reverse
     @tokens_left = current_user.tokens - @total_tokens
-    @days_left = ((Date.today - current_user.company.subscription_end) / (1000 * 60 * 60 * 24))
+    @days_left = ((Date.today - current_user.company.subscription_end).to_i / (1000 * 60 * 60 * 24))
     user_perks_calculator
   end
 
