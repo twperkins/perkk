@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_one_attached :profile_pic
   has_many :user_perks, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :favourites, dependent: :destroy
   has_many :perks, through: :user_perks
   belongs_to :company
   validates :email, :password, :name, :location, :tokens, :unique_code, presence: true

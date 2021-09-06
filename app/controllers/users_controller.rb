@@ -14,24 +14,13 @@ class UsersController < ApplicationController
   def package
     @user_perk = UserPerk.new
     @user_perks_all = UserPerk.where(user: current_user)
-
     @owned_perks = @user_perks_all.map(&:perk)
-
     @unowned_perks = []
     @recommended.each do |perk|
       @unowned_perks << perk if @owned_perks.exclude?(perk) && @unowned_perks.exclude?(perk)
     end
   end
 
-  def favourite
-    @perk = Perk.find(params[:perk_id])
-    @favourite_perks = Hash.new(0)
-    @user_perks = UserPerk.new
-    if user_perks.favourited? == true
-      @favourite_perks << user_perks
-      render json: {message: "Added to favourites"}
-    end
-  end
 
   private
 
