@@ -17,9 +17,17 @@
         <% @recommended_perks.each do |perk|%>
           <div class="card-green" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk.perk_pic.first.key %>')">
             <%= link_to "", perk_path(perk), class: "card-link" %>
-            <%= link_to perk_favourites_path(perk), class: "link-light-blank button-top-right", method: :post do %>
-              <h4 class="button-card-teal high-z-index">♡</h4>
-            <% end %>
+
+            <%# <% if Perk.find(perk) %> %>
+              <%= link_to perk_favourites_path(perk), class: "link-light-blank button-top-right", method: :post do %>
+                <h4 class="button-card-teal high-z-index">♡</h4>
+              <% end %>
+            <%# <% else  %>
+             <%= link_to perk_favourites_path(perk), class: "link-light-blank button-top-right", method: :post do %>
+                <h4 class="button-card-teal high-z-index">♥︎</h4>
+              <% end %>
+            <%# <% end %>
+
             <div class="card-infos">
               <h2><%= perk.name %></h2>
               <p><%= perk.merchants %></p>
