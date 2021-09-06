@@ -23,6 +23,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def favourite
+    @perk = Perk.find(params[:perk_id])
+    @favourite_perks = Hash.new(0)
+    @user_perks = UserPerk.new
+    if user_perks.favourited? == true
+      @favourite_perks << user_perks
+      render json: {message: "Added to favourites"}
+    end
+  end
+
   private
 
   def overlay_calcs
@@ -46,6 +56,7 @@ class UsersController < ApplicationController
   def recommended_perks
     perks = Perk.all
     users = User.all
+    owned_perks = UserPerk.where(user: current_user).map(&:perk)
 
     # counts how many perks in each category you have
     your_categories_total = Hash.new(0)
@@ -110,8 +121,19 @@ class UsersController < ApplicationController
         perk_recommendations[perk] = weight
       end
     end
-    @recommended = (perk_recommendations.sort_by { |_k, v| -v }).map do |perk|
+
+    # add in slight randomisation
+    perk_slight_random = Hash.new(0)
+    perk_recommendations.each do |perk, value|
+      perk_slight_random[perk] = value * rand(1.0..3.0)
+    end
+
+    # get recommended into a nice array
+    @all_recommended = (perk_slight_random.sort_by { |_k, v| -v }).map do |perk|
       perk[0]
     end
+
+    # remove owned from recommended
+    @recommended = @all_recommended - owned_perks
   end
 end

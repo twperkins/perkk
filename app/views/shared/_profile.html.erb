@@ -11,14 +11,14 @@
   <div class="profile-divs d-none" data-overlay-target="profileDetails">
     <div class="detail">
       <h2> account details</h2>
-      <div><h2><%= cl_image_tag(current_user.profile_pic.key, class: "avatar")%> <%= current_user.name %></h2>
+      <div><span><%= cl_image_tag(current_user.profile_pic.key, class: "avatar")%> <%= current_user.name %></span>
       </div>
       <div class="perk-details">
-        <p>tokens left <br> <%= @tokens_left %></p>
-        <p>days left <br> <%= @days_left %></p>
+        <p>tokens left</p><h3><%= @tokens_left %></h3>
+        <p>days left</p><h3><%= @days_left %></h3>
       </div>
       <div>
-        <%=current_user.unique_code %>
+        <p>unique-code</p><h3><strong><%=current_user.unique_code %></strong></h3>
       </div>
       <div class="button-bar"><%= link_to "sign out", destroy_user_session_path, method: :delete, class: "link-light-blank" %></div>
     </div>
