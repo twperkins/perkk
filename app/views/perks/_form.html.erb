@@ -7,21 +7,21 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <%= simple_form_for [@perk, @review] do |f| %>
-          <%= f.error_notification %>
-          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <%= simple_form_for [@perk, @review], remote: true do |f| %>
+          <div class="modal-body">
+              <%= f.error_notification %>
+              <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-          <div class="form-inputs green">
-            <%= f.input :comment, label: "Leave a comment:", placeholder: "#{@perk.name} for only #{@perk.token_cost} tokens is a bargain and I will definitely choose it again. It's by far my favourite perk yet, a huge thank you to #{@perk.merchants}!" %>
-            <div id="review-rating"><%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %></div>
+              <div class="form-inputs green">
+                <%= f.input :comment, label: "Leave a comment:", placeholder: "#{@perk.name} for only #{@perk.token_cost} tokens is a bargain and I will definitely choose it again. It's by far my favourite perk yet, a huge thank you to #{@perk.merchants}!" %>
+                <div id="review-rating"><%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %></div>
+              </div>
           </div>
-
       </div>
       <div class="modal-footer">
-        <button type="button" class="button-card" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
           <div class="form-actions">
-            <%= f.button :submit, class: "button-card" %>
+            <%= f.submit "Create Review", class: "btn btn-primary" %>
           </div>
         <% end %>
       </div>
