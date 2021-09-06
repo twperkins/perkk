@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :overlay_calcs
   before_action :recommended_perks
+  respond_to :json, :html
 
   def profile
     @user = current_user
@@ -19,6 +20,14 @@ class UsersController < ApplicationController
     @recommended.each do |perk|
       @unowned_perks << perk if @owned_perks.exclude?(perk) && @unowned_perks.exclude?(perk)
     end
+      @total_perks = 0
+      @users_perks = UserPerk.where(user: current_user)
+      @users_perks.each { |user_perk| @total_perks += user_perk.perk.token_cost }
+      current_user.tokens_used = @total_perks
+      current_user.save(validate: false)
+
+      respond_with @total_perks
+
   end
 
 
