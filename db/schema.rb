@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_06_104020) do
+ActiveRecord::Schema.define(version: 2021_09_06_123512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_09_06_104020) do
     t.string "logo_pic"
     t.date "subscription_start"
     t.date "subscription_end"
-    t.boolean "renewed", default: true
+    t.boolean "renewed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(version: 2021_09_06_104020) do
     t.bigint "company_id", null: false
     t.float "latitude"
     t.float "longitude"
+    t.integer "tokens_used"
     t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
