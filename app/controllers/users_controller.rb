@@ -23,6 +23,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def favourite
+    @perk = Perk.find(params[:perk_id])
+    @favourite_perks = Hash.new(0)
+    @user_perks = UserPerk.new
+    if user_perks.favourited? == true
+      @favourite_perks << user_perks
+      render json: {message: "Added to favourites"}
+    end
+  end
+
   private
 
   def overlay_calcs

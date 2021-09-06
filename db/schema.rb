@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_115332) do
+ActiveRecord::Schema.define(version: 2021_09_06_104020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(version: 2021_08_31_115332) do
     t.boolean "renewed", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "perk_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["perk_id"], name: "index_favourites_on_perk_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
   end
 
   create_table "perks", force: :cascade do |t|
@@ -111,5 +120,7 @@ ActiveRecord::Schema.define(version: 2021_08_31_115332) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "favourites", "perks"
+  add_foreign_key "favourites", "users"
   add_foreign_key "users", "companies"
 end
