@@ -27,8 +27,10 @@
           <div class="card-infos">
             <h2><%= user_perk.perk.name %></h2>
             <p><%= user_perk.perk.token_cost %> tokens</p>
-            <h4 class="button-card-teal"><%= link_to "♡", perk_favourites_path(user_perk), class: "link-light-blank high-z-index", method: :post, remote: true %></h4>
           </div>
+            <%= link_to perk_favourites_path(user_perk), class: "link-light-blank button-top-right", method: :post, remote: true do %>
+              <h4 class="button-card-teal high-z-index">♡</h4>
+            <% end %>
         </div>
       <% end %>
     <% end %>
@@ -40,7 +42,6 @@
     <% end %>
   </div>
     <h1><%= current_user.tokens_used  %></h1>
-
   <div class="list-section range" id="results" data-account-target="list">
   <h2 class="package-header text-vertical-left green-text">choose perks</h2>
     <% @unowned_perks.each do |perk|%>
@@ -50,11 +51,11 @@
            data-url="<%= perk_user_perks_path(perk) %>"
            data-token-cost=<%="#{perk.token_cost}"%>
            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk.perk_pic.first.key %>')">
+            <h4 class="button-card button-top-right"><%= link_to "♡", perk_favourites_path(perk), class: "link-dark-blank high-z-index", method: :post, remote: true %></h4>
         <div class="card-infos">
           <h2><%= perk.name %></h2>
           <p><%= perk.token_cost %> tokens</p>
           <div>
-            <h4 class="button-card-teal"><%= link_to "♡", perk_favourites_path(perk), class: "link-light-blank high-z-index", method: :post, remote: true %></h4>
           </div>
         </div>
       </div>
