@@ -9,27 +9,29 @@
   </div>
 
   <div class="profile-divs d-none" data-overlay-target="profileDetails">
-    <div class="detail">
-      <h2> account details</h2>
-      <div><span><%= cl_image_tag(current_user.profile_pic.key, class: "avatar")%> <%= current_user.name %></span>
+    <div class="detail-container">
+      <h2> your details</h2>
+      <div class="detail">
+        <div class="border-line"></div>
+        <span><%= cl_image_tag(current_user.profile_pic.key, class: "avatar-very-large")%> <%= current_user.name %></span>
+        <div class="account-details">
+          <span><h3><%= @tokens_left %></h3><p>tokens left</p></span>
+          <span><h3><%= @days_left %></h3><p>days left</p></span>
+        </div>
+        <div>
+          <h3>unique-code</h3><h5><%=current_user.unique_code %></h5>
+        </div>
+        <%= link_to destroy_user_session_path, method: :delete, class: "link-light-blank" do %>
+          <p class="button-bar">sign out</p>
+        <% end %>
       </div>
-      <div class="perk-details">
-        <p>tokens left</p><h3><%= @tokens_left %></h3>
-        <p>days left</p><h3><%= @days_left %></h3>
-      </div>
-      <div>
-        <p>unique-code</p><h3><strong><%=current_user.unique_code %></strong></h3>
-      </div>
-      <%= link_to destroy_user_session_path, method: :delete, class: "link-light-blank" do %>
-        <p class="button-bar">sign out</p>
-      <% end %>
     </div>
 
     <%# <div class="usage">
       <h2>usage3</h2>
     </div> %>
 
-    <div>
+    <div class="perk-container">
       <h2>your perks</h2>
       <% if @user_perks.blank? %>
         <h4>no perks at the moment</h4>
@@ -39,31 +41,38 @@
           <% user_count = @user_perks.first.users.count %>
           <% @user_perks.each_with_index do |perk, index| %>
             <div class="profile-perk">
-              <div class="perk-details-main">
-                <%= cl_image_tag(perk.perk_pic.first.key, class: "avatar") %>
-                <strong><%= perk.name %></strong>
-                by <%= perk.merchants %> <br>
+              <%= link_to perk_path(perk), class: "link-light-blank button-top-right" do %>
+                <h4 class="button-card-teal high-z-index">i</h4>
+              <% end %>
+              <div class="border-line"></div>
+              <div class="perk-details-header">
+                <%= cl_image_tag(perk.perk_pic.first.key, class: "avatar-very-large") %>
+                <div>
+                  <h5><strong><%= perk.name %></strong></h5>
+                  <p>from <%= perk.merchants %></p>
+                </div>
               </div>
               <div class="perk-details-main">
                 <div class="perk-attribute">
-                  <p>token cost</p>
-                  <h3 class="perk-details"><%= perk.token_cost%></h3>
+                  <h4 class="perk-details"><%= perk.token_cost%></h4>
+                  <p>tokens</p>
                 </div>
                 <div class="perk-attribute">
+                  <h4 class="perk-details"><%= (perk.token_cost / @total_tokens.to_f * 100).round(1) %>%</h4>
                   <p>proportion</p>
-                  <h3 class="perk-details"><%= (perk.token_cost / @total_tokens.to_f * 100).round(2) %>%</h3>
                 </div>
                 <div class="perk-attribute">
-                  <p>ranking</p>
                   <% if index > 0 && perk.users.count < user_count %>
                     <% ranking += 1 %>
                     <% user_count = perk.users.count %>
                   <% end %>
-                  <h3 class="perk-details"> <%= ranking %>
+                  <h4 class="perk-details"> <%= ranking %></h4>
+                  <p>ranking</p>
                 </div>
               </div>
               <div class="perk-details">
-                <%= perk.description %>
+                <h5>details</h5>
+                <p><%= perk.description %></p>
               </div>
             </div>
           <% end %>
