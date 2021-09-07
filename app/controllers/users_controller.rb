@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :overlay_calcs
   before_action :recommended_perks
+  before_action :favourites
   respond_to :json, :html
 
   def profile
@@ -10,6 +11,10 @@ class UsersController < ApplicationController
 
     @perk_category = @perks.map(&:category)
     @perk_category.uniq!
+
+    @favourites = current_user.favourites.map do |favourite|
+      favourite.perk
+    end
   end
 
   def package
@@ -33,6 +38,13 @@ class UsersController < ApplicationController
 
 
   private
+
+  def favourites
+     @favourites = current_user.favourites.map do |favourite|
+      favourite.perk
+     end
+  end
+
 
   def overlay_calcs
     current_user_perks = current_user.perks

@@ -1,9 +1,5 @@
 class FavouritesController < ApplicationController
 
-  # def current_page?
-
-  # end
-
   def create
     @favourite = Favourite.new
     @favourite.user = current_user
@@ -18,6 +14,6 @@ class FavouritesController < ApplicationController
 
   def destroy
     @favourite = Favourite.find(params[:id])
-    @favourite.destroy
+    @favourite.destroy_all
   end
 end
