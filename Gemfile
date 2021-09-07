@@ -37,8 +37,11 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 # gemfile for cloudinary (Stef)
 gem 'cloudinary', '~> 1.16.0'
 
-#gemfile for stripe(K)
+# gemfile for stripe(K)
 gem 'stripe'
+
+# gemfile for QR code
+gem 'rqrcode'
 
 # gemfile for .env (Stef)
 gem 'autoprefixer-rails', '10.2.5'

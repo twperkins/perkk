@@ -38,6 +38,7 @@ demo = User.create!(
   tokens: 1000,
   tokens_used: 0,
   admin: true,
+  qr_code: "http://www.perkk.co.uk/",
   company_id: company.id
 )
 file = URI.open('https://source.unsplash.com/800x600/?person')
@@ -54,7 +55,8 @@ puts "creating the rest of the users.."
     tokens: 1000,
     tokens_used: 0,
     location: BOROUGH.sample,
-    unique_code: "#{Faker::Verb.base}-#{Faker::Color.color_name}-#{Faker::Verb.past_participle}"
+    unique_code: "#{Faker::Verb.base}-#{Faker::Color.color_name}-#{Faker::Verb.past_participle}",
+    qr_code: "http://www.perkk.co.uk/"
   )
   file = URI.open('https://source.unsplash.com/800x600/?person')
   user.profile_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
@@ -494,7 +496,7 @@ perk = Perk.create!(
   category: "membership",
   merchants: "National Gallery"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?design')
+file = URI.open('https://source.unsplash.com/1600x800/?gallery')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 16

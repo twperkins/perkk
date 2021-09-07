@@ -18,8 +18,9 @@
           <span><h3><%= @tokens_left %></h3><p>tokens left</p></span>
           <span><h3><%= @days_left %></h3><p>days left</p></span>
         </div>
-        <div>
-          <h3>unique-code</h3><h5><%=current_user.unique_code %></h5>
+        <div class="unique-codes">
+          <div class="qr-code"><%= @svg.html_safe %></div>
+          <h4><%=current_user.unique_code %></h4><h5>unique-code</h5>
         </div>
         <%= link_to destroy_user_session_path, method: :delete, class: "link-light-blank" do %>
           <p class="button-bar">sign out</p>
