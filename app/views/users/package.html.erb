@@ -59,11 +59,26 @@
     </div>
   </div>
 
-
-  <div class="card-green"data-totals-bar-target="totals">
-    <h1><%= current_user.tokens_used  %></h1>
+  <div class="score-perk flex">
+    <div class="score-details-main">
+      <div class="total-display">
+        <h4>Tokens Used</h4>
+        <h2 data-totals-bar-target="totals"><%= current_user.tokens_used  %></h2>
+      </div>
+      <div>
+        <h4>Tokens Available</h4>
+        <h2 data-totals-bar-target="available"><%= current_user.tokens - current_user.tokens_used %></h2>
+      </div>
+    </div>
   </div>
 </div>
+
+
+
+
+
+
+
 
 <div>
   <%= render 'shared/profile' %>
