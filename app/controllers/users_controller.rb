@@ -25,17 +25,15 @@ class UsersController < ApplicationController
     @recommended.each do |perk|
       @unowned_perks << perk if @owned_perks.exclude?(perk) && @unowned_perks.exclude?(perk)
     end
-      @total_perks = 0
-      @users_perks = UserPerk.where(user: current_user)
-      @users_perks.each { |user_perk| @total_perks += user_perk.perk.token_cost }
-      current_user.tokens_used = @total_perks
-      current_user.save(validate: false)
-      @available_perks = current_user.token_allowance - @total_perks
+    @total_perks = 0
+    @users_perks = UserPerk.where(user: current_user)
+    @users_perks.each { |user_perk| @total_perks += user_perk.perk.token_cost }
+    current_user.tokens_used = @total_perks
+    current_user.save(validate: false)
+    @available_perks = current_user.token_allowance - @total_perks
 
-      respond_with total_perks: @total_perks, available_perks: @available_perks #,  @available_perks
-
+    respond_with total_perks: @total_perks, available_perks: @available_perks # , @available_perks
   end
-
 
   private
 
@@ -44,7 +42,6 @@ class UsersController < ApplicationController
       favourite.perk
     end
   end
-
 
   def overlay_calcs
     current_user_perks = current_user.perks
