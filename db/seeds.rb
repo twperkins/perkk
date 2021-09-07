@@ -662,7 +662,7 @@ perk = Perk.create!(
   category: "course",
   merchants: "Skatefresh"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?skating')
+file = URI.open('https://images.unsplash.com/photo-1583832292569-7092d6d90873?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8cm9sbGVyLXNrYXRpbmd8fHx8fHwxNjMxMDI3OTI0&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 21
@@ -693,7 +693,7 @@ perk = Perk.create!(
   category: "travel",
   merchants: "Taa."
 )
-file = URI.open('https://source.unsplash.com/1600x800/?cycling')
+file = URI.open('https://images.unsplash.com/photo-1535659184496-06bea05c16c0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y3ljbGluZ3x8fHx8fDE2MzEwMjc3ODE&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 22
@@ -708,7 +708,7 @@ perk = Perk.create!(
   category: "discount",
   merchants: "Workwise"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?office')
+file = URI.open('https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8b2ZmaWNlfHx8fHx8MTYzMTAyNzc0Nw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 23
@@ -723,7 +723,7 @@ perk = Perk.create!(
   category: "membership",
   merchants: "Be Natural"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?farm')
+file = URI.open('https://images.unsplash.com/photo-1498191923457-88552caeccb3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmFybXx8fHx8fDE2MzEwMjc3MTg&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 23
@@ -739,7 +739,7 @@ perk = Perk.create!(
   category: "membership",
   merchants: "YUDGET"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?restaurant')
+file = URI.open('https://images.unsplash.com/photo-1600628421055-4d30de868b8f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8cmVzdGF1cmFudHx8fHx8fDE2MzEwMjc1OTk&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 24
@@ -754,7 +754,7 @@ perk = Perk.create!(
   category: "membership",
   merchants: "Whatever"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?snacks')
+file = URI.open('https://images.unsplash.com/photo-1585647347483-22b66260dfff?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8cG9wY29ybnx8fHx8fDE2MzEwMjc1NTQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 25
@@ -769,7 +769,7 @@ perk = Perk.create!(
   category: "membership",
   merchants: "Hungr"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?takeaway')
+file = URI.open('https://images.unsplash.com/photo-1580781441945-3a233a33ff8c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8dGFrZWF3YXl8fHx8fHwxNjMxMDI3NDUx&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 26
@@ -784,7 +784,7 @@ perk = Perk.create!(
   category: "membership",
   merchants: "theGreenRoom"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?gig')
+file = URI.open('https://images.unsplash.com/photo-1428992992979-aaeb02b6960c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Z2lnfHx8fHx8MTYzMTAyNzQyNg&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating reviews for user
@@ -884,18 +884,18 @@ end
 
 puts "creating tokens small bundle..."
 Token.create!(
-  bundle: '100',
-  price_cents: 1000
+  bundle: '100 Extra Tokens',
+  price_cents: 2000
 )
 
 puts "creating tokens big bundle..."
 Token.create!(
-  bundle: '200',
-  price_cents: 1500
+  bundle: '200 Extra Tokens',
+  price_cents: 3000
 )
 
 puts "creating tokens XL bundle..."
 Token.create!(
-  bundle: '300',
-  price_cents: 2000
+  bundle: '300 Extra Tokens',
+  price_cents: 4000
 )
