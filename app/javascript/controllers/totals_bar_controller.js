@@ -4,18 +4,22 @@ import { Controller } from "stimulus"
 
 export default class extends Controller {
 
-  static targets = ["totals"]
+  static targets = ["totals","available"]
 
   connect() {
     console.log("totals_bar is also connected")
   }
 
   total() {
-    // console.log(this.totalsTarget.innerText)
+    // console.log(this.availableTarget)
+    // console.log(this.totalsTarget)
 
     fetch('/package')
       .then(response => response.json())
-      .then(data => this.totalsTarget.innerText = data);
-
+      .then(data => {this.availableTarget.innerText = data["available_perks"];
+        this.totalsTarget.innerText = data["total_perks"];
+    });
   }
+
+
 }

@@ -25,8 +25,9 @@ class UsersController < ApplicationController
       @users_perks.each { |user_perk| @total_perks += user_perk.perk.token_cost }
       current_user.tokens_used = @total_perks
       current_user.save(validate: false)
+      @available_perks = current_user.tokens - @total_perks
 
-      respond_with @total_perks
+      respond_with total_perks: @total_perks, available_perks: @available_perks #,  @available_perks
 
   end
 
