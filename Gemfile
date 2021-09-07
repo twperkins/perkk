@@ -33,12 +33,13 @@ gem 'geocoder'
 gem 'money-rails'
 # gemfile added for faker (S)
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
-gem 'stripe'
+
 # gemfile for cloudinary (Stef)
 gem 'cloudinary', '~> 1.16.0'
 
 # gemfile for stripe(K)
 gem 'stripe'
+gem 'stripe_event'
 
 # gemfile for QR code
 gem 'rqrcode'

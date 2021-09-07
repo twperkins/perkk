@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   def create
     token = Token.find(params[:token_id])
-    order = Order.create!(token: token, token_bundle: token.bundle, amount: token.price, state: 'confirmed', user: current_user)
+    order = Order.create!(token: token, token_bundle: token.bundle, amount: token.price, state: 'pending', user: current_user)
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],

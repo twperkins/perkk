@@ -23,6 +23,7 @@
             <h6 class="button-card-teal button-bottom-right high-z-index button-flip" data-flipcard-target="flipcard-button" data-action="click->flipcard#toggleFlipcard">i</h6>
             <div class="front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk.perk_pic.first.key %>')">
               <%= link_to "", perk_path(perk), class: "card-link" %>
+
               <%# NOT USING: because of recommended perks before action in users controller %>
               <%# favourite = current_user.favourites.find_by(perk: perk) %>
               <%# if favourite.present? %>
@@ -43,8 +44,6 @@
 
             <div class="back" data-flipcard-target="flipback">
               <%= link_to "", perk_path(perk), class: "card-link" %>
-
-
               <div class="card-infos">
                 <h3><%= perk.name %></h3>
                 <h5>Details</h5>
