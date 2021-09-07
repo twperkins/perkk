@@ -40,9 +40,9 @@ class UsersController < ApplicationController
   private
 
   def favourites
-     @favourites = current_user.favourites.map do |favourite|
+    @favourites = current_user.favourites.map do |favourite|
       favourite.perk
-     end
+    end
   end
 
 
