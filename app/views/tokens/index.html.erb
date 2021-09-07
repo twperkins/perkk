@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Token bundles</h1>
+  <div class="row">
+    <% @tokens.each do |token| %>
+      <div class="col-6 col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= token.bundle %></h5>
+            <%= link_to "More details", token_path(token), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
