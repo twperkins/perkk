@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to perk_path(@perk)
     else
-      flash[:notice] = 'Review could not be saved.'
+      flash[:notice] = 'Review could not be saved: please leave a comment as well as a rating.'
       redirect_to perk_path(@perk)
     end
   end

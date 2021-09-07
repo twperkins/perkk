@@ -19,7 +19,7 @@
           <span><h3><%= @days_left %></h3><p>days left</p></span>
         </div>
         <div class="unique-codes">
-          <div class="qr-code"><%= @svg.html_safe %></div>
+          <%# <div class="qr-code"><%= @svg.html_safe %></div> %>
           <h4><%=current_user.unique_code %></h4><h5>unique-code</h5>
         </div>
         <%= link_to destroy_user_session_path, method: :delete, class: "link-light-blank" do %>
