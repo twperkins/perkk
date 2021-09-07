@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :overlay_calcs
   before_action :recommended_perks
   before_action :favourites
+  respond_to :json, :html
 
   def profile
     @user = current_user
@@ -24,6 +25,15 @@ class UsersController < ApplicationController
     @recommended.each do |perk|
       @unowned_perks << perk if @owned_perks.exclude?(perk) && @unowned_perks.exclude?(perk)
     end
+      @total_perks = 0
+      @users_perks = UserPerk.where(user: current_user)
+      @users_perks.each { |user_perk| @total_perks += user_perk.perk.token_cost }
+      current_user.tokens_used = @total_perks
+      current_user.save(validate: false)
+      @available_perks = current_user.tokens - @total_perks
+
+      respond_with total_perks: @total_perks, available_perks: @available_perks #,  @available_perks
+
   end
 
 
@@ -41,7 +51,7 @@ class UsersController < ApplicationController
     token_array = current_user_perks.map(&:token_cost)
     @total_tokens = token_array.sum
     @user_perks = current_user.perks.sort_by { |perk| perk.users.count }.reverse
-    @tokens_left = current_user.tokens - @total_tokens
+    @tokens_left = current_user.token_allowance - @total_tokens
     @days_left = (current_user.company.subscription_end - Date.today).to_i
     @qr_code = RQRCode::QRCode.new(current_user.qr_code)
     @svg = @qr_code.as_svg(

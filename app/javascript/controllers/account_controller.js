@@ -4,7 +4,7 @@ import Rails from '@rails/ujs'
 
 export default class extends Controller {
 
-static targets = ["list","package"]
+static targets = ["list","package","totals"]
 
   connect() {
     console.log("I am connected")

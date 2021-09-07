@@ -16,6 +16,7 @@
     "sortablejs": "^1.14.0",
     "stimulus": "^2.0.0",
     "stimulus-scroll-to": "^3.0.0",
+    "stripe": "^8.174.0",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
