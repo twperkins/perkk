@@ -1,7 +1,22 @@
 <%= render 'shared/navbar' %>
 <div class="current-user-id" id="<%=current_user.id%>"></div>
-<div data-controller="account totals-bar">
-  <div class="contain" >
+<div data-controller="account totals-bar" class="contain" >
+
+  <div class="score-perk flex">
+    <div class="score-details-main">
+      <div class="total-display">
+        <h4>Tokens Used</h4>
+        <h2 data-totals-bar-target="totals"><%= current_user.tokens_used  %></h2>
+      </div>
+      <div class="total-display">
+        <h4>Tokens Available</h4>
+        <h2 data-totals-bar-target="available"><%= current_user.token_allowance - current_user.tokens_used %></h2>
+      </div>
+      <div class="pay-link">
+      <%= link_to "Add Tokens", tokens_path, class: "link" %>
+      </div>
+    </div>
+  </div>
     <div class="list-section owned" id="results2down" data-account-target="package">
       <h2 class="package-header text-vertical-left">your perks</h2>
       <% if @user_perks_all.blank? %>
@@ -73,22 +88,8 @@
         </div>
       <% end %>
     </div>
-  </div>
 
-  <h1><%= current_user.tokens_used  %></h1>
 
-  <div class="score-perk flex">
-    <div class="score-details-main">
-      <div class="total-display">
-        <h4>Tokens Used</h4>
-        <h2 data-totals-bar-target="totals"><%= current_user.tokens_used  %></h2>
-      </div>
-      <div>
-        <h4>Tokens Available</h4>
-        <h2 data-totals-bar-target="available"><%= current_user.token_allowance - current_user.tokens_used %></h2>
-      </div>
-    </div>
-  </div>
 
 </div>
 
