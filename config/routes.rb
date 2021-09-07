@@ -24,5 +24,7 @@ Rails.application.routes.draw do
     resources :payments, only: :new
   end
 
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
+
   delete '/package/:id', to: 'user_perks#destroy', as: :remove_user_perk
 end
