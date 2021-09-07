@@ -134,6 +134,8 @@ ActiveRecord::Schema.define(version: 2021_09_07_101315) do
     t.bigint "company_id", null: false
     t.float "latitude"
     t.float "longitude"
+    t.integer "tokens_used"
+    t.string "qr_code"
     t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

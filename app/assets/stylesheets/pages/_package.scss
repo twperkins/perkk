@@ -24,7 +24,9 @@
 }
 
 .owned {
+  height: calc(250px);
   background-color: $teal;
+  overflow-y: scroll;
 }
 
 .range {

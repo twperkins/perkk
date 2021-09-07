@@ -177,18 +177,34 @@
 
 .button-top-left {
   position: absolute; top: 0; left: 0;
+  margin: 0px;
+  p {
+    margin: 0px;
+  }
 }
 
 .button-top-right {
   position: absolute; top: 0; right: 0;
+  margin: 0px;
+  p {
+    margin: 0px;
+  }
 }
 
 .button-bottom-left {
   position: absolute; bottom: 0; left: 0;
+  margin: 0px;
+  p {
+    margin: 0px;
+  }
 }
 
 .button-bottom-right {
   position: absolute; bottom: 0; right: 0;
+  margin: 0px;
+  p {
+    margin: 0px;
+  }
 }
 
 .button-card-profile{
@@ -203,4 +219,8 @@
   position: relative; top: -725px; right: 0;
   text-align:center;
   margin-left: 1225px;
+}
+
+.prominent {
+  border: 2px solid $papyrus !important;
 }

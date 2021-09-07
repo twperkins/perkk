@@ -9,7 +9,7 @@ export default class extends Controller {
   toggleOverlay() {
     console.log('clicked')
     this.overlayTarget.classList.toggle('expanded-overlay');
-    this.profileDetailsTarget.classList.remove('d-none');
+    this.profileDetailsTarget.classList.toggle('d-none');
     this.buttonTarget.classList.toggle('button-right');
     this.buttonTarget.classList.toggle('button-left');
   }

@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   resources :perks, only: %i[show index] do
     resources :user_perks, only: %i[create]
     resources :reviews, only: %i[create]
+    resources :favourites, only: %i[create]
   end
+  resources :favourites, only: %i[destroy]
 
   resources :tokens, only: %i[index show]
   resources :orders, only: %i[show create] do

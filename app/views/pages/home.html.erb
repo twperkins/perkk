@@ -10,7 +10,12 @@
         <h1 class="logo">perkk</h1>
         <h4>making your job work for you</h4>
         <%# TO DO: button below to scroll down  %>
-        <div class="button-primary button-down" id="button-scroll"><a href="#scroll-circle" class="link-dark-blank" data-controller="scroll-to" data-scroll-to-behavior-value="smooth">⌵</a></div>
+
+        <a href="#scroll-circle" class="link-dark-blank" data-controller="scroll-to" data-scroll-to-behavior-value="smooth">
+          <div class="button-primary button-down" id="button-scroll">
+            <p>⌵</p>
+          </div>
+        </a>
       </div>
     </div>
 
@@ -31,7 +36,9 @@
         </div>
       </div>
       <%# TO DO: button below to scroll to next perk (update perk_main and perk_minor)  %>
-      <div class="button-secondary button-right"><%= "⌵" %></div>
+      <%= link_to "#", class: "link-light-blank" do %>
+        <p class="button-secondary button-right">⌵</p>
+      <% end %>
     </div>
   </div>
 
@@ -45,12 +52,16 @@
       <div class="info-circle large-circle" id="scroll-circle">
         <h2>perks</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-        <h4><%= link_to "explore", profile_path, class: "link-light" %></h4>
+        <%= link_to profile_path, class: "link-light" do %>
+          <p>explore</p>
+        <% end %>
       </div>
       <div class="info-circle small-circle">
         <h2>search</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-        <h4><%= link_to "find", perks_path, class: "link-light" %></h4>
+        <%= link_to perks_path, class: "link-light" do %>
+          <p>find</p>
+        <% end %>
       </div>
       <div class="info-circle medium-circle">
         <h2>about</h2>
@@ -63,7 +74,7 @@
   <div class="popout" data-controller="popout" data-popout-target="popout">
     <%# Button below to pop out login page  %>
     <div class="sidebar">
-      <div class="button-secondary button-left button-popout" data-popout-target="button" data-action="click->popout#toggleLogin"><%= "⌵" %></div>
+      <div class="button-secondary button-left button-popout" data-popout-target="button" data-action="click->popout#toggleLogin"><p>⌵</p></div>
       <h2 class="text-vertical-right papyrus">login</h2>
     </div>
 

@@ -37,6 +37,12 @@ gem 'stripe'
 # gemfile for cloudinary (Stef)
 gem 'cloudinary', '~> 1.16.0'
 
+# gemfile for stripe(K)
+gem 'stripe'
+
+# gemfile for QR code
+gem 'rqrcode'
+
 # gemfile for .env (Stef)
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :overlay_calcs
   before_action :recommended_perks
+  respond_to :json, :html
 
   def profile
     @user = current_user
@@ -14,24 +15,21 @@ class UsersController < ApplicationController
   def package
     @user_perk = UserPerk.new
     @user_perks_all = UserPerk.where(user: current_user)
-
     @owned_perks = @user_perks_all.map(&:perk)
-
     @unowned_perks = []
     @recommended.each do |perk|
       @unowned_perks << perk if @owned_perks.exclude?(perk) && @unowned_perks.exclude?(perk)
     end
+      @total_perks = 0
+      @users_perks = UserPerk.where(user: current_user)
+      @users_perks.each { |user_perk| @total_perks += user_perk.perk.token_cost }
+      current_user.tokens_used = @total_perks
+      current_user.save(validate: false)
+
+      respond_with @total_perks
+
   end
 
-  def favourite
-    @perk = Perk.find(params[:perk_id])
-    @favourite_perks = Hash.new(0)
-    @user_perks = UserPerk.new
-    if user_perks.favourited? == true
-      @favourite_perks << user_perks
-      render json: {message: "Added to favourites"}
-    end
-  end
 
   private
 
@@ -41,7 +39,15 @@ class UsersController < ApplicationController
     @total_tokens = token_array.sum
     @user_perks = current_user.perks.sort_by { |perk| perk.users.count }.reverse
     @tokens_left = current_user.tokens - @total_tokens
-    @days_left = ((Date.today - current_user.company.subscription_end) / (1000 * 60 * 60 * 24))
+    @days_left = (current_user.company.subscription_end - Date.today).to_i
+    @qr_code = RQRCode::QRCode.new(current_user.qr_code)
+    @svg = @qr_code.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      standalone: true,
+      module_size: 8
+    )
     user_perks_calculator
   end
 

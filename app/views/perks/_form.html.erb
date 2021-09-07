@@ -17,13 +17,14 @@
                 <div id="review-rating"><%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %></div>
               </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="button-card" data-dismiss="modal">Close</button>
-              <div class="form-actions">
-                <%= f.submit "Create Review", class: "button-card" %>
-              </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <div class="form-actions">
+            <%= f.submit "Create Review", class: "btn btn-primary" %>
           </div>
         <% end %>
+      </div>
     </div>
   </div>
 </div>

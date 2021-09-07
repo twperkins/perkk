@@ -1,5 +1,7 @@
 <div class="navbar-dark">
-  <h4 class="logo-icon">p</h4>
+  <%= link_to root_path, class: "link-dark-logo" do %>
+    <h4 class="logo-icon">p</h4>
+  <% end %>
   <div class="navbar-sections">
     <%= link_to "home", profile_path, class: "link-light" %>
     <%= link_to "package", package_path, class: "link-light" %>
