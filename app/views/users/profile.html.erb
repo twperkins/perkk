@@ -24,15 +24,17 @@
             <div class="front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk.perk_pic.first.key %>')">
               <%= link_to "", perk_path(perk), class: "card-link" %>
 
-              <% if current_user.favourites.include?(perk) %>
-                <%= link_to favourite_path(Favourite.find(params[:id])), class: "link-light-blank button-top-right", method: :delete, remote: true do %>
-                  <h6 class="button-card-teal high-z-index">♥︎</h6>
-                <% end %>
-              <% else %>
-                <%= link_to perk_favourites_path(perk), class: "link-light-blank button-top-right", method: :post, remote: true  do %>
-                  <h6 class="button-card-teal high-z-index">♡</h6>
-                <% end %>
-              <% end %>
+              <%# NOT USING: because of recommended perks before action in users controller %>
+              <%# favourite = current_user.favourites.find_by(perk: perk) %>
+              <%# if favourite.present? %>
+                <%#=# link_to favourite_path(favourite), class: "link-light-blank button-top-right", method: :delete, remote: true do %>
+                  <%# <h6 class="button-card-teal high-z-index">♥︎</h6> %>
+                <%# end %>
+              <%# else %>
+               <%#= link_to perk_favourites_path(perk), class: "link-light-blank button-top-right", method: :post, remote: true do %>
+                  <%# <h6 class="button-card-teal high-z-index">♡</h6> %>
+                <%# end %>
+              <%# end %>
 
               <div class="card-infos">
                 <h2><%= perk.name %></h2>
@@ -42,17 +44,6 @@
 
             <div class="back" data-flipcard-target="flipback">
               <%= link_to "", perk_path(perk), class: "card-link" %>
-
-              <% if current_user.favourites.include?(perk) %>
-                <%= link_to favourite_path(Favourite.find(params[:id])), class: "link-light-blank button-top-right", method: :delete, remote: true do %>
-                  <h6 class="button-card-teal high-z-index">♥︎</h6>
-                <% end %>
-              <% else %>
-                <%= link_to perk_favourites_path(perk), class: "link-light-blank button-top-right", method: :post, remote: true  do %>
-                  <h6 class="button-card-teal high-z-index">♡</h6>
-                <% end %>
-              <% end %>
-
               <div class="card-infos">
                 <h3><%= perk.name %></h3>
                 <h5>Details</h5>
