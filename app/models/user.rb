@@ -8,8 +8,8 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :favourites, dependent: :destroy
   has_many :perks, through: :user_perks
-  has_many :orders
+  has_many :orders, dependent: :destroy
   has_many :tokens, through: :orders
   belongs_to :company
-  validates :email, :password, :name, :location, :tokens, :unique_code, presence: true
+  validates :email, :password, :name, :location, :token_allowance, :unique_code, presence: true
 end

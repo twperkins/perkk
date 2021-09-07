@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_07_101315) do
+ActiveRecord::Schema.define(version: 2021_09_07_113420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_101315) do
     t.string "profile_pic"
     t.boolean "admin", default: false
     t.boolean "model", default: false
-    t.integer "tokens"
+    t.integer "token_allowance"
     t.string "unique_code"
     t.string "location"
     t.bigint "company_id", null: false

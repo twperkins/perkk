@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     token_array = current_user_perks.map(&:token_cost)
     @total_tokens = token_array.sum
     @user_perks = current_user.perks.sort_by { |perk| perk.users.count }.reverse
-    @tokens_left = current_user.tokens - @total_tokens
+    @tokens_left = current_user.token_allowance - @total_tokens
     @days_left = (current_user.company.subscription_end - Date.today).to_i
     @qr_code = RQRCode::QRCode.new(current_user.qr_code)
     @svg = @qr_code.as_svg(
