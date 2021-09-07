@@ -5,6 +5,10 @@ BOROUGH = %w[Hackney Southwark Lambeth Kensington Hammersmith Westminster Isling
 if Rails.env.development?
   puts "Destroying user perks.."
   UserPerk.destroy_all
+  puts "Destroying orders.."
+  Order.destroy_all
+  puts "Destroying tokens.."
+  Token.destroy_all
   puts "Destroying reviews.."
   Review.destroy_all
   puts "Destroying perks..."
@@ -35,7 +39,7 @@ demo = User.create!(
   name: "Chaplin",
   location: Faker::TvShows::BojackHorseman.character,
   unique_code: "#{Faker::Verb.base}-#{Faker::Color.color_name}-#{Faker::Verb.past_participle}",
-  tokens: 1000,
+  token_allowance: 1000,
   tokens_used: 0,
   admin: true,
   qr_code: "http://www.perkk.co.uk/",
@@ -52,7 +56,7 @@ puts "creating the rest of the users.."
     password: Faker::Internet.password,
     name: Faker::Name.first_name,
     company_id: company.id,
-    tokens: 1000,
+    token_allowance: 1000,
     tokens_used: 0,
     location: BOROUGH.sample,
     unique_code: "#{Faker::Verb.base}-#{Faker::Color.color_name}-#{Faker::Verb.past_participle}",
