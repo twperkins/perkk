@@ -30,6 +30,15 @@
           </div>
           <%= link_to perk_favourites_path(user_perk), class: "link-light-blank button-top-right", method: :post, remote: true do %>
             <h6 class="button-card-teal high-z-index">♡</h6>
+              <% if current_user.favourites.include?(user_perk.perk) %>
+                <%= link_to favourite_path(Favourite.find(params[:id])), class: "link-light-blank button-top-right", method: :delete, remote: true do %>
+                <h6 class="button-card-teal high-z-index">♥︎</h6>
+              <% end %>
+            <% else %>
+              <%= link_to perk_favourites_path(user_perk.perk), class: "link-light-blank button-top-right", method: :post, remote: true  do %>
+                <h6 class="button-card-teal high-z-index">♡</h6>
+              <% end %>
+            <% end %>
           <% end %>
         </div>
       <% end %>
@@ -57,6 +66,15 @@
         </div>
         <%= link_to perk_favourites_path(perk), class: "link-dark-blank button-top-right", method: :post, remote: true do %>
           <h6 class="button-card high-z-index">♡</h6>
+              <% if current_user.favourites.include?(user_perk.perk) %>
+                <%= link_to favourite_path(Favourite.find(params[:id])), class: "link-light-blank button-top-right", method: :delete, remote: true do %>
+                <h6 class="button-card-teal high-z-index">♥︎</h6>
+              <% end %>
+            <% else %>
+             <%= link_to perk_favourites_path(user_perk.perk), class: "link-light-blank button-top-right", method: :post, remote: true  do %>
+                <h6 class="button-card-teal high-z-index">♡</h6>
+              <% end %>
+            <% end %>
         <% end %>
       </div>
     <% end %>

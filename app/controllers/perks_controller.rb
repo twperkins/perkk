@@ -2,6 +2,7 @@ class PerksController < ApplicationController
   before_action :set_perk, only: [:show]
   before_action :overlay_calcs
   before_action :recommended_perks
+  before_action :favourites
 
   def index
     @perks = Perk.order(name: :asc)
@@ -42,6 +43,12 @@ class PerksController < ApplicationController
 
   private
 
+  def favourites
+    @favourites = current_user.favourites.map do |favourite|
+      favourite.perk
+    end
+  end
+
   def set_perk
     @perk = Perk.find(params[:id])
   end
@@ -57,15 +64,15 @@ class PerksController < ApplicationController
     @user_perks = current_user.perks.sort_by { |perk| perk.users.count }.reverse
     @tokens_left = current_user.tokens - @total_tokens
     @days_left = (current_user.company.subscription_end - Date.today).to_i
-    @qr_code = RQRCode::QRCode.new(current_user.qr_code)
-    @svg = @qr_code.as_svg(
-      offset: 0,
-      color: '000',
-      shape_rendering: 'crispEdges',
-      standalone: true,
-      module_size: 8
-    )
-    user_perks_calculator
+    # @qr_code = RQRCode::QRCode.new(current_user.qr_code)
+    # @svg = @qr_code.as_svg(
+    #   offset: 0,
+    #   color: '000',
+    #   shape_rendering: 'crispEdges',
+    #   standalone: true,
+    #   module_size: 8
+    # )
+    # user_perks_calculator
   end
 
   def user_perks_calculator
