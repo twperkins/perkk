@@ -65,7 +65,7 @@ perk = Perk.create!(
   name: "Free Friday Rides",
   description: "Can't wait to get home? Get free rides within London on Fridays!",
   location: BOROUGH.sample,
-  token_cost: 210,
+  token_cost: 170,
   start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
   end_date: Faker::Date.forward(days: 365),
   category: "travel",
@@ -91,11 +91,26 @@ perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 1.3
 perk = Perk.create!(
-  name: "One month of free delivery fee",
+  name: "A year of free delivery",
   description: "Find the best restaurants that deliver. Get contactless delivery for restaurant takeaways, food shopping
    and more! Order food online or in the Uber Eats app and get free delivery cost every time!",
   location: BOROUGH.sample,
   token_cost: 50,
+  start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+  end_date: Faker::Date.forward(days: 365),
+  category: "membership",
+  merchants: "Uber Eats"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?uber-eats')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 1.3
+perk = Perk.create!(
+  name: "50% off Japanese cuisine",
+  description: "Find the best Japanese restaurants that deliver. Get contactless delivery for restaurant takeaways, food
+   shopping and more! Order food online or in the Uber Eats app and get 50% off Japanese cuisine for two months!",
+  location: BOROUGH.sample,
+  token_cost: 70,
   start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
   end_date: Faker::Date.forward(days: 365),
   category: "membership",
@@ -130,6 +145,20 @@ perk = Perk.create!(
   merchants: "Bounce"
 )
 file = URI.open('https://images.unsplash.com/photo-1519162952575-c6c7199502a3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8cGluZy1wb25nfHx8fHx8MTYzMDY2NzEyMA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 2
+perk = Perk.create!(
+  name: "Group ping-pong and beers",
+  description: "Wind down with an evening of beers and ping-pong in any Bounce location in London.",
+  location: '241 Old St, London EC1V 9EY',
+  token_cost: 40,
+  start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+  end_date: Faker::Date.forward(days: 365),
+  category: "social",
+  merchants: "Bounce"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?ping-pong')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 3
@@ -179,7 +208,7 @@ perk = Perk.create!(
   name: "Cycle to work scheme",
   description: "50% off of a selection of bikes",
   location: 'Unit B Effra Rd, London SW2 1BZ',
-  token_cost: 110,
+  token_cost: 70,
   start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
   end_date: Faker::Date.forward(days: 365),
   category: "travel",
@@ -195,7 +224,7 @@ perk = Perk.create!(
   to get 10 entries in any gardens you decide to visit in London (*excludes Chelsea flower show **only available
   between March and September.)",
   location: 'Kew, Richmond, London, TW9 3AE',
-  token_cost: 200,
+  token_cost: 140,
   start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
   end_date: Faker::Date.forward(days: 365),
   category: "social",
@@ -210,7 +239,7 @@ perk = Perk.create!(
   description: "Worried about your pet when you're at work? Do you have an emergency? Pet Sitters offers 20 hours of free
   pet sitting. Once these hours have been used you can continue using the service with a 20% discount.",
   location: BOROUGH.sample,
-  token_cost: 230,
+  token_cost: 130,
   start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
   end_date: Faker::Date.forward(days: 365),
   category: "pet",
@@ -271,7 +300,7 @@ perk = Perk.create!(
   description: "Learn to cook authentic Japanese food in Shoreditch, London. Beginners and advanced cooking courses with
    traditional and modern recipes over 4 lessons.",
   location: '57 Columbia Rd, London E2 7RG',
-  token_cost: 180,
+  token_cost: 80,
   start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
   end_date: Faker::Date.forward(days: 365),
   category: "course",
@@ -468,8 +497,8 @@ perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 perk = Perk.create!(
   name: "Guided in-depth arts tour",
   description: "A day of custom arts tours, centerted on a variety of specific arts movements in history, starting at
-   the Tate Modern and exploring multiple galleries and museums to create a well rounded investigation on the chosen
-   movement, for example: impressionism, abstract expressionism, romanticism and more.",
+   the Tate Modern and exploring multiple galleries and museums to create a well rounded investigation on the
+   arts movement of your choice! Upcoming tours: impressionism, abstract expressionism, romanticism and more.",
   location: 'Bankside, London SE1 9TG',
   token_cost: 60,
   start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
@@ -486,11 +515,26 @@ perk = Perk.create!(
   description: "Enjoy exclusive Members Hours, incredible shows, discounts, all-access to all archives, and more. Free
    entry for Members. Join us at the National Gallery today.",
   location: 'Trafalgar Square, London WC2N 5DN',
-  token_cost: 150,
+  token_cost: 90,
   start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
   end_date: Faker::Date.forward(days: 365),
   category: "membership",
   merchants: "National Gallery"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?design')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 17
+perk = Perk.create!(
+  name: "Museum membership",
+  description: "Enjoy exclusive Members Hours, incredible shows, discounts, all-access to all archives, and more. Free
+   entry for Members. Join us at the Victoria and Albert Museum today.",
+  location: 'Cromwell Rd, London SW7 2RL',
+  token_cost: 100,
+  start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+  end_date: Faker::Date.forward(days: 365),
+  category: "membership",
+  merchants: "V&A Museum"
 )
 file = URI.open('https://source.unsplash.com/1600x800/?design')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
@@ -525,6 +569,20 @@ perk = Perk.create!(
 file = URI.open('https://source.unsplash.com/1600x800/?cinema')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
+# creating perk 17
+perk = Perk.create!(
+  name: "Indie film Thursday",
+  description: "Two cinema tickets on any Thursday at any Everyman cinema, every month for a year!",
+  location: BOROUGH.sample,
+  token_cost: 50,
+  start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+  end_date: Faker::Date.forward(days: 365),
+  category: "social",
+  merchants: "Everyman cinema"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?cinema')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
 # creating perk 18
 perk = Perk.create!(
   name: "Half price staycation",
@@ -537,6 +595,20 @@ perk = Perk.create!(
   merchants: "Airbnb"
 )
 file = URI.open('https://images.unsplash.com/photo-1591825692235-69e99d4189f3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8YWlyYm5ifHx8fHx8MTYzMDY3OTMzMw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 18
+perk = Perk.create!(
+  name: "A weekend of glamping",
+  description: "Search through our selection of glamping stays and enjoy a 2 night weekend trip of your choice.",
+  location: BOROUGH.sample,
+  token_cost: 120,
+  start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+  end_date: Faker::Date.forward(days: 365),
+  category: "travel",
+  merchants: "Airbnb"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?glamping')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 19
@@ -569,6 +641,22 @@ perk = Perk.create!(
 file = URI.open('https://source.unsplash.com/1600x800/?skating')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
+# creating perk 20
+perk = Perk.create!(
+  name: "Skate Teacher Course",
+  description: "Become a qualified skate teacher with this intensive course and be able to host inline and roller
+   skating lessons in London · Beginner Level · Improver Level · (inc. SkateDance) · One Day Intensive Skate Lessons
+   for Improver/Intermediate.",
+  location: BOROUGH.sample,
+  token_cost: 50,
+  start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+  end_date: Faker::Date.forward(days: 365),
+  category: "course",
+  merchants: "Skatefresh"
+)
+file = URI.open('https://source.unsplash.com/1600x800/?skating')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
 # creating perk 21
 perk = Perk.create!(
   name: "Beekeeping lessons",
@@ -587,8 +675,9 @@ perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 # creating perk 22
 perk = Perk.create!(
   name: "One month city travel",
-  description: "Are you busy? Do you not have time? Are you a trillionaire? Do you go to vegan restaurants and need your
-   friends to know that you love the environment? This token gives you a discounted Taa pass for one whole month!",
+  description: "Do you find that there is a lack of flexibility and control over choosing your daily mode of
+   transportation? Have you always wanted to make a speedy, stress-free trip by avoiding congestion and minimizing air
+   pollution? This token gives you a discounted Taa pass for one whole month!",
   location: BOROUGH.sample,
   token_cost: 80,
   start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
@@ -691,7 +780,7 @@ file = URI.open('https://source.unsplash.com/1600x800/?gig')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating reviews for user
-110.times do
+120.times do
   puts "creating reviews..."
   Review.create!(
     comment: Faker::Restaurant.review,
@@ -782,3 +871,23 @@ end
     favourited: true
   )
 end
+
+# creating token bundle seeds
+
+puts "creating tokens small bundle..."
+Token.create!(
+  bundle: '100',
+  price_cents: 1000
+)
+
+puts "creating tokens big bundle..."
+Token.create!(
+  bundle: '200',
+  price_cents: 1500
+)
+
+puts "creating tokens XL bundle..."
+Token.create!(
+  bundle: '300',
+  price_cents: 2000
+)

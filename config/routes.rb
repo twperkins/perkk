@@ -17,5 +17,10 @@ Rails.application.routes.draw do
     resources :reviews, only: %i[create]
   end
 
+  resources :tokens, only: %i[index show]
+  resources :orders, only: %i[show create] do
+    resources :payments, only: :new
+  end
+
   delete '/package/:id', to: 'user_perks#destroy', as: :remove_user_perk
 end

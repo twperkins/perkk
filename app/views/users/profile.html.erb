@@ -4,11 +4,15 @@
     <div class='profile-first'>
       <div class="notifications-block">
         <h1>notifications </h1>
-        <h5> > turo: have two weeks for free on us when you renew <h5>
-        <h5> > ellie smith: any questions ahead of the update?</h5>
-        <h5> > perkk: less than two weeks to update your perks</h5>
-        <h5> > netflix: latest programmes released exclusive to perkk customers</h5>
-        <h5> > le wagon: we’ve increased your tokens for the next year!</h5>
+        <% if @user_perks.blank? %>
+          <h4>no new notifications at the moment</h4>
+        <% else %>
+        <h5> > perkk: welcome back, <%= current_user.name %>!</h5>
+        <h5> > <%= @user_perks[2].merchants.downcase %>: you recently favourited <%= @user_perks[2].name.downcase %>, add it to your package today for only <%= @user_perks[2].token_cost %> tokens! </h5>
+        <h5> > <%= @user_perks[1].merchants.downcase %>: why not try upgrading your perkk with us? <h5>
+        <h5> > <%= @user_perks[3].merchants.downcase %>: any questions ahead of your booking? please email us: hello@<%= @user_perks[3].merchants.downcase %>.co.uk</h5>
+        <h5> > <%= @user_perks[0].merchants.downcase %>: don't forget to review your perkk experience with us!</h5>
+        <% end %>
       </div>
       <br>
       <br>
