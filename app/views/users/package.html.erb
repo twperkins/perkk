@@ -27,12 +27,13 @@
               <h2><%= user_perk.perk.name %></h2>
               <p><%= user_perk.perk.token_cost %> tokens</p>
             </div>
-            <% if current_user.favourites.include?(user_perk.perk) %>
-              <%= link_to favourite_path(Favourite.find(params[:id])), class: "link-light-blank button-top-right", method: :delete, remote: true do %>
+            <% favourite = current_user.favourites.find_by(perk: user_perk.perk) %>
+            <% if favourite.present? %>
+              <%= link_to favourite_path(favourite), class: "link-light-blank button-top-right", method: :delete do %>
                 <h6 class="button-card-teal high-z-index">♥︎</h6>
               <% end %>
             <% else %>
-              <%= link_to perk_favourites_path(user_perk.perk), class: "link-light-blank button-top-right", method: :post, remote: true  do %>
+              <%= link_to perk_favourites_path(user_perk.perk), class: "link-light-blank button-top-right", method: :post do %>
                 <h6 class="button-card-teal high-z-index">♡</h6>
               <% end %>
             <% end %>
@@ -59,12 +60,13 @@
             <h2><%= perk.name %></h2>
             <p><%= perk.token_cost %> tokens</p>
           </div>
-          <% if current_user.favourites.include?(perk) %>
-            <%= link_to favourite_path(Favourite.find(params[:id])), class: "link-dark-blank button-top-right", method: :delete, remote: true do %>
+          <% favourite = current_user.favourites.find_by(perk: perk) %>
+          <% if favourite.present? %>
+            <%= link_to favourite_path(favourite), class: "link-dark-blank button-top-right", method: :delete, remote: true do %>
               <h6 class="button-card high-z-index">♥︎</h6>
             <% end %>
           <% else %>
-            <%= link_to perk_favourites_path(perk), class: "link-dark-blank button-top-right", method: :post, remote: true  do %>
+            <%= link_to perk_favourites_path(perk), class: "link-dark-blank button-top-right", method: :post, remote: true do %>
               <h6 class="button-card high-z-index">♡</h6>
             <% end %>
           <% end %>

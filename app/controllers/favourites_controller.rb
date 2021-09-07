@@ -6,14 +6,15 @@ class FavouritesController < ApplicationController
     @perk = Perk.find(params[:perk_id])
     @favourite.perk = @perk
     if @favourite.save
-      # redirect_to package_path unless current_page?('package')
+      redirect_to request.referrer
     else
-      redirect_to profile_path
+      redirect_to package_path
     end
   end
 
   def destroy
     @favourite = Favourite.find(params[:id])
-    @favourite.destroy_all
+    @favourite.destroy
+    redirect_to request.referrer
   end
 end
