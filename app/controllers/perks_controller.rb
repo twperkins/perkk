@@ -43,18 +43,18 @@ class PerksController < ApplicationController
 
   private
 
-  def favourites
-    @favourites = current_user.favourites.map do |favourite|
-      favourite.perk
-    end
-  end
-
   def set_perk
     @perk = Perk.find(params[:id])
   end
 
   def perks_params
     params.require(:perk).permit(:name, :token_cost, :description, :perk_pic, :merchants)
+  end
+
+  def favourites
+    @favourites = current_user.favourites.map do |favourite|
+      favourite.perk
+    end
   end
 
   def overlay_calcs
@@ -64,15 +64,15 @@ class PerksController < ApplicationController
     @user_perks = current_user.perks.sort_by { |perk| perk.users.count }.reverse
     @tokens_left = current_user.token_allowance - @total_tokens
     @days_left = (current_user.company.subscription_end - Date.today).to_i
-    # @qr_code = RQRCode::QRCode.new(current_user.qr_code)
-    # @svg = @qr_code.as_svg(
-    #   offset: 0,
-    #   color: '000',
-    #   shape_rendering: 'crispEdges',
-    #   standalone: true,
-    #   module_size: 8
-    # )
-    # user_perks_calculator
+    @qr_code = RQRCode::QRCode.new(current_user.qr_code)
+    @svg = @qr_code.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      standalone: true,
+      module_size: 8
+    )
+    user_perks_calculator
   end
 
   def user_perks_calculator
