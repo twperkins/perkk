@@ -1,7 +1,8 @@
-<h1>your tokens</h1>
-<div class="container py-3">
-  <div class="row">
-    <div class="col-sm-12 col-md-6">
+<%= render 'shared/navbar_transparent' %>
+
+<div class="show-grid">
+  <div class="show-container">
+    <div class="perk-header">
       <h1><%= @token.bundle %></h1>
       <p>This bundle description</p>
       <p>Amount: <%= humanized_money_with_symbol(@token.price) %></p>
