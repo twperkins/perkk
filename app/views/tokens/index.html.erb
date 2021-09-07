@@ -1,15 +1,28 @@
-<div class="container">
-  <h1>Token bundles</h1>
-  <div class="row">
-    <% @tokens.each do |token| %>
-      <div class="col-6 col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><%= token.bundle %></h5>
-            <%= link_to "More details", token_path(token), class: "btn btn-primary" %>
-          </div>
-        </div>
+<%= render 'shared/navbar_dark' %>
+
+<div class="contain">
+  <div class="tokens-grid">
+    <div class='tokens-first'>
+      <div class="tokens-logo">
+        <h1 class="logo-alternative">perkk tokens</h1>
+        <h4>for when you just need more perks</h4>
       </div>
-    <% end %>
+    </div>
+
+    <div class='tokens-second'>
+      <h1>bundles</h1>
+      <div class="bundle-options">
+        <% @tokens.each do |token| %>
+          <div class="bundle-card">
+            <div class="card-body">
+              <h5 class="card-title"><%= token.bundle %> tokens</h5>
+              <%= link_to token_path(token), class: "link-light-blank" do %>
+                <h6 class="button-bar">details</h6>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
