@@ -1,28 +1,32 @@
 .score-perk {
   color: $papyrus;
-  background-color: $teal;
-  border: 4px solid #FBF4DF;
+  background-color:$papyrus; //$teal;
+  border: 4px solid;
+  border-color: $teal;
   box-sizing: border-box;
   border-radius: 8px;
-  width: 700px;
-  height: 100px;
+  width: 220px;
+  height: calc(240px);
   box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5);
   padding: 16px;
-  margin: 16px;
-  position: relative;
-  .border-line {
-    height: 1px;
-    background-color: $papyrus;
-    position: absolute;
-    top: 90px;
-    width: 446px;
-    z-index: 1;
-    margin-left: 32px;
-  }
+  margin: 0px;
+  position: fixed;
+  top: 115px;
+  right: 195px;
+  z-index: 5;
 }
+
+// card same heightv as oiwned
+// top same as height of navbar (120px)
+// width 200px
+//yellow - border, orange margin
+//green - container
+// ?decrease poadding
+//background colour border
 
 .score-details-main {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   width: 100%;
@@ -31,6 +35,7 @@
 
   padding-bottom: 12px;
   margin-bottom: 12px;
+  color:$teal ;
   h2 {
     margin-bottom: 2px;
     text-align:center;
