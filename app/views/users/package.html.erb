@@ -44,11 +44,11 @@
             </div>
             <% favourite = current_user.favourites.find_by(perk: user_perk.perk) %>
             <% if favourite.present? %>
-              <%= link_to favourite_path(favourite), class: "link-light-blank button-top-right", method: :delete do %>
+              <%= link_to favourite_path(favourite), class: "link-light-blank button-top-right", method: :delete, remote: true do %>
                 <h6 class="button-card-teal high-z-index">♥︎</h6>
               <% end %>
             <% else %>
-              <%= link_to perk_favourites_path(user_perk.perk), class: "link-light-blank button-top-right", method: :post do %>
+              <%= link_to perk_favourites_path(user_perk.perk), class: "link-light-blank button-top-right", method: :post, remote: true do %>
                 <h6 class="button-card-teal high-z-index">♡</h6>
               <% end %>
             <% end %>
