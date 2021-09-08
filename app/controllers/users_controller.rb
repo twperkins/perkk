@@ -63,7 +63,7 @@ class UsersController < ApplicationController
     when midnight.upto(noon).include?(current_time)
       @greeting = "Good morning #{current_user.name}!"
     when noon.upto(five_pm).include?(current_time)
-      @greeting = "Afternoon #{current_user.name}."
+      @greeting = "Good afternoon #{current_user.name}."
     when five_pm.upto(eight_pm).include?(current_time)
       @greeting = "Any plans this evening #{current_user.name}?"
     when eight_pm.upto(midnight + 1.day).include?(current_time)
