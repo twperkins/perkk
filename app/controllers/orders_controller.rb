@@ -11,8 +11,8 @@ class OrdersController < ApplicationController
         currency: 'gbp',
         quantity: 1
       }],
-      success_url: order_url(order),
-      cancel_url: order_url(order)
+      success_url: package_url,
+      cancel_url: package_url
     )
 
     order.update(checkout_session_id: session.id)
@@ -21,9 +21,5 @@ class OrdersController < ApplicationController
 
   def show
     @order = current_user.orders.find(params[:id])
-  end
-
-  def add_tokens
-    current_user.token_allowance += token.amount if current_user.order(state: 'paid')
   end
 end
