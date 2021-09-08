@@ -885,17 +885,20 @@ end
 puts "creating tokens small bundle..."
 Token.create!(
   bundle: '100 Extra Tokens',
-  price_cents: 2000
+  price_cents: 2000,
+  amount: 100
 )
 
 puts "creating tokens big bundle..."
 Token.create!(
   bundle: '200 Extra Tokens',
-  price_cents: 3000
+  price_cents: 3000,
+  amount: 200
 )
 
 puts "creating tokens XL bundle..."
 Token.create!(
   bundle: '300 Extra Tokens',
-  price_cents: 4000
+  price_cents: 4000,
+  amount: 300
 )

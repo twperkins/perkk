@@ -12,6 +12,7 @@
         <h5> > <%= @user_perks[1].merchants.downcase %>: why not try upgrading your perkk with us? <h5>
         <h5> > <%= @user_perks[3].merchants.downcase %>: any questions ahead of your booking? please email us: hello@<%= @user_perks[3].merchants.downcase.gsub(/\s+/, "") %>.co.uk</h5>
         <h5> > <%= @user_perks[0].merchants.downcase %>: don't forget to review your perkk experience with us!</h5>
+        <h5><%= @total %></h5>
         <% end %>
       </div>
       <br>
