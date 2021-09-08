@@ -29,10 +29,18 @@ class UsersController < ApplicationController
     @user_perk = UserPerk.new
     @user_perks_all = UserPerk.where(user: current_user)
     @owned_perks = @user_perks_all.map(&:perk)
-    @unowned_perks = current_user.favourites.map(&:perk)
+
+    # get unowned perks
+    @unowned_perks = []
+    current_user.favourites.each do |favourite|
+      @unowned_perks << favourite.perk if @owned_perks.exclude?(favourite.perk)
+    end
+
     @recommended.each do |perk|
       @unowned_perks << perk if @owned_perks.exclude?(perk) && @unowned_perks.exclude?(perk)
     end
+
+    # calculate token count
     @total_perks = 0
     @users_perks = UserPerk.where(user: current_user)
     @users_perks.each { |user_perk| @total_perks += user_perk.perk.token_cost }
