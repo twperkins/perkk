@@ -67,7 +67,7 @@
       <% @unowned_perks.each do |perk|%>
         <div class="card small"
             id=<%="#{perk.id}-false"%>
-            data-action="dragend->account#account"
+            data-action="dragend->account#account dragend->totals-bar#total"
             data-url="<%= perk_user_perks_path(perk) %>"
             data-token-cost=<%="#{perk.token_cost}"%>
             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk.perk_pic.first.key %>')">
