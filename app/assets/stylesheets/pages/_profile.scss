@@ -17,10 +17,23 @@
 }
 
 .profile-second {
-  padding: 32px 64px;
+  padding: 8px 64px;
+  margin-left: 74px;
   margin-right: 74px;
+  position: relative;
+  .text-vertical-left {
+    border-bottom: solid 1px $teal;
+    font-size: 48px;
+    color: $teal;
+    left: 32px;
+    top: 0;
+    width: 100%;
+  }
   h3 {
+    font-size: 40px;
     font-family: Londrina Shadow;
+    margin-bottom: 8px;
+    margin-left: 8px;
   }
 }
 
