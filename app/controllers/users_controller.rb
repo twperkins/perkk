@@ -160,7 +160,7 @@ class UsersController < ApplicationController
     # add in slight randomisation
     perk_slight_random = Hash.new(0)
     perk_recommendations.each do |perk, value|
-      perk_slight_random[perk] = value * rand(1.0..1.0)
+      perk_slight_random[perk] = value * rand(1.0..2.0)
     end
 
     # get recommended into a nice array
