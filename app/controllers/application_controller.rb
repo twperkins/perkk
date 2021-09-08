@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def default_url_options
+  { host: ENV["http://www.perkk.co.uk"] || "localhost:3000" }
+  end
+
   def authenticate_user!
     return unless user_signed_in? == false
 
