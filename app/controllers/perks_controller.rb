@@ -11,6 +11,9 @@ class PerksController < ApplicationController
     if params[:query].present?
       @perks = @perks.where('name ILIKE ? OR description ILIKE ? OR category ILIKE ? OR merchants ILIKE ?', "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
     end
+    if params.key?(:order)
+      @perks = @perks.where(category: params[:order].downcase)
+    end
 
     @markers = @perks.geocoded.map do |perk|
       {
@@ -41,6 +44,10 @@ class PerksController < ApplicationController
     @perk_users = @perk.users.uniq
   end
 
+
+
+
+
   private
 
   def set_perk
@@ -48,7 +55,7 @@ class PerksController < ApplicationController
   end
 
   def perks_params
-    params.require(:perk).permit(:name, :token_cost, :description, :perk_pic, :merchants)
+    params.require(:perk).permit(:name, :token_cost, :description, :perk_pic, :merchants, :location, :category)
   end
 
   def favourites

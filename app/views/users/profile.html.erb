@@ -59,7 +59,7 @@
     <div class='profile-second'>
       <h2> Perk categories </h2>
         <% @perk_category.each do |category| %>
-          <%= link_to perk_path(Perk.find_by(category: category)) do %>
+          <%= link_to perks_path(order: category) do %>
             <h3><%= category %></h3>
           <% end  %>
         <% end  %>
