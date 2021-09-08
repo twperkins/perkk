@@ -79,7 +79,7 @@
     </div>
 
     <div class="login-overlay d-none" data-popout-target="form">
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), defaults: { input_html: { class: "input-field" } }) do |f| %>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), defaults: { input_html: { class: "" } }) do |f| %>
           <div class="form-inputs">
             <%= f.input :email,
                         required: false,

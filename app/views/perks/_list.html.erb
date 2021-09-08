@@ -7,10 +7,10 @@
         <%= pluralize perks.count, 'result' %> for <code><%= params[:query] %></code>
       <% end %>
     </p>
-    <div class="sort-by-search">
+    <div>
       <%= form_with(url: perks_path, method: :get, local: true) do |form| %>
-      <%= form.select :order, Perk.pluck(:category).uniq.map(&:capitalize), selected: params[:order] %>
-      <%= form.submit "Filter" %>
+        <%= form.select :order, Perk.pluck(:category).uniq.map(&:capitalize), selected: params[:order]%>
+        <%= form.submit "Filter" %>
       <% end%>
     </div>
   </div>

@@ -13,3 +13,28 @@
 .wide-bar {
   width: 100%;
 }
+
+button, select {
+	text-transform: none;
+	font-size: 20px;
+	color: $teal;
+	border: solid 1px teal;
+	border-radius: 10px;
+	background: $papyrus;
+	font-family: inherit;
+	margin-right: 5px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+button, input {
+	text-transform: none;
+	font-size: 20px;
+	border: solid 1p teal !important;
+	border-radius: 10px;
+	background: $papyrus;
+	font-family: inherit;
+	margin-right: 10px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
