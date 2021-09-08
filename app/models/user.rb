@@ -12,4 +12,5 @@ class User < ApplicationRecord
   has_many :tokens, through: :orders
   belongs_to :company
   validates :email, :password, :name, :location, :token_allowance, :unique_code, presence: true
+  validates :tokens_used, comparison: { less_than: :token_allowance }
 end

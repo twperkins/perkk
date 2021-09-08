@@ -3,6 +3,7 @@ class PerksController < ApplicationController
   before_action :overlay_calcs
   before_action :recommended_perks
   before_action :favourites
+  before_action :greeting
 
   def index
     @perks = Perk.order(name: :asc)
@@ -49,6 +50,25 @@ class PerksController < ApplicationController
 
   def perks_params
     params.require(:perk).permit(:name, :token_cost, :description, :perk_pic, :merchants)
+  end
+
+  def greeting
+    current_time = Time.now.to_i
+    midnight = Time.now.beginning_of_day.to_i
+    noon = Time.now.middle_of_day.to_i
+    five_pm = Time.now.change(hour: 17).to_i
+    eight_pm = Time.now.change(hour: 20).to_i
+
+    case
+    when midnight.upto(noon).include?(current_time)
+      @greeting = "Good morning #{current_user.name}!"
+    when noon.upto(five_pm).include?(current_time)
+      @greeting = "Afternoon #{current_user.name}"
+    when five_pm.upto(eight_pm).include?(current_time)
+      @greeting = "Any plans this evening #{current_user.name}?"
+    when eight_pm.upto(midnight + 1.day).include?(current_time)
+      @greeting = "Go to bed #{current_user.name}!"
+    end
   end
 
   def favourites
@@ -155,7 +175,7 @@ class PerksController < ApplicationController
     # add in slight randomisation
     perk_slight_random = Hash.new(0)
     perk_recommendations.each do |perk, value|
-      perk_slight_random[perk] = value * rand(1.0..3.0)
+      perk_slight_random[perk] = value * rand(1.0..1.0)
     end
 
     # get recommended into a nice array
