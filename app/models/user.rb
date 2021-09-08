@@ -10,7 +10,8 @@ class User < ApplicationRecord
   has_many :favourites, dependent: :destroy
   has_many :perks, through: :user_perks
   has_many :orders, dependent: :destroy
-  has_many :tokens, through: :orders
+  has_many :user_tokens, dependent: :destroy
+  has_many :tokens, through: :user_tokens
 
   belongs_to :company
 

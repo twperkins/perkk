@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_08_085651) do
+ActiveRecord::Schema.define(version: 2021_09_08_153059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,6 +117,15 @@ ActiveRecord::Schema.define(version: 2021_09_08_085651) do
     t.index ["user_id"], name: "index_user_perks_on_user_id"
   end
 
+  create_table "user_tokens", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "token_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["token_id"], name: "index_user_tokens_on_token_id"
+    t.index ["user_id"], name: "index_user_tokens_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -147,5 +156,7 @@ ActiveRecord::Schema.define(version: 2021_09_08_085651) do
   add_foreign_key "favourites", "users"
   add_foreign_key "orders", "tokens"
   add_foreign_key "orders", "users"
+  add_foreign_key "user_tokens", "tokens"
+  add_foreign_key "user_tokens", "users"
   add_foreign_key "users", "companies"
 end
