@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :favourites, only: %i[destroy]
 
   resources :tokens, only: %i[index show]
+  resources :user_tokens, only: %i[create]
   resources :orders, only: %i[show create] do
     resources :payments, only: :new
   end
