@@ -16,6 +16,13 @@ class UsersController < ApplicationController
     @favourites = current_user.favourites.map do |favourite|
       favourite.perk
     end
+
+    @total = current_user.token_allowance
+    current_user.tokens do |token|
+      @total += token.amount
+    end
+    # @total = current_user.token_allowance += current_user.tokens { |order| order.token.amount }
+    # if current_user.order.where(state: 'paid')
   end
 
   def package

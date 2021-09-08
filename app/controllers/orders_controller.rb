@@ -22,4 +22,8 @@ class OrdersController < ApplicationController
   def show
     @order = current_user.orders.find(params[:id])
   end
+
+  def add_tokens
+    current_user.token_allowance += token.amount if current_user.order(state: 'paid')
+  end
 end
