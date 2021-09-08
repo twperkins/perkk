@@ -3,6 +3,8 @@
 }
 
 .results {
+  display: flex;
+  justify-content: space-between;
   position: fixed;
   border-bottom: solid 1px $papyrus-shadow;
   background-color: $papyrus;
@@ -19,6 +21,8 @@
   margin-block-start: 0;
   margin-block-end: 0;
   padding-left: 1.5rem;
+  padding-right: 16px;
+  margin-right: 16px;
   }
 }
 

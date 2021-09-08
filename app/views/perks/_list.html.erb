@@ -10,7 +10,7 @@
       </p>
       <%= form_with(url: perks_path, method: :get, local: true) do |form| %>
         <%= form.select :order, Perk.pluck(:category).uniq, selected: params[:order]%>
-        <%= form.submit "search" %>
+        <%= form.submit "search", class: "submit-button" %>
       <% end%>
     </div>
   </div>
