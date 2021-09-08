@@ -30,11 +30,13 @@ button, select {
 button, input {
 	text-transform: none;
 	font-size: 20px;
-	border: solid 1p teal !important;
+	color: $teal;
+	border: solid 1px teal;
 	border-radius: 10px;
 	background: $papyrus;
 	font-family: inherit;
-	margin-right: 10px;
+	margin-right: 5px;
   padding-left: 10px;
   margin-bottom: 10px;
+  padding-right: 10px;
 }

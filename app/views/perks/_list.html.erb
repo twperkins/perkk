@@ -1,16 +1,16 @@
 <div data-search-perks-target="list">
   <div class="results">
-    <p>
-      <% if params[:query].blank? %>
-        <%= pluralize perks.count, 'perk' %> available
-      <% else %>
-        <%= pluralize perks.count, 'result' %> for <code><%= params[:query] %></code>
-      <% end %>
-    </p>
-    <div>
+    <div class="flex">
+      <p>
+        <% if params[:query].blank? %>
+          <%= pluralize perks.count, 'perk' %> available
+        <% else %>
+          <%= pluralize perks.count, 'result' %> for <code><%= params[:query] %></code>
+        <% end %>
+      </p>
       <%= form_with(url: perks_path, method: :get, local: true) do |form| %>
-        <%= form.select :order, Perk.pluck(:category).uniq.map(&:capitalize), selected: params[:order]%>
-        <%= form.submit "Filter" %>
+        <%= form.select :order, Perk.pluck(:category).uniq, selected: params[:order]%>
+        <%= form.submit "search" %>
       <% end%>
     </div>
   </div>

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Perkk | Making your job work for you</title>
+    <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,7 +14,6 @@
   </head>
 
   <body>
-    <%= render 'shared/flashes' %>
     <%= yield %>
   </body>
 </html>

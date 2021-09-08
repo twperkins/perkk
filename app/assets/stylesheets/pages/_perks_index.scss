@@ -9,6 +9,10 @@
   width: 86vw;
   padding-top: 32px;
   z-index: 1;
+  .flex {
+    width: calc(100% - 120px);
+    justify-content: space-between;
+  }
   p {
   font-size: 28px;
   padding-bottom: 1rem;
