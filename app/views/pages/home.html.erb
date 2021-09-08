@@ -71,15 +71,15 @@
   </div>
 
   <%# Pop out for login %>
-  <div class="popout" data-controller="popout" data-popout-target="popout">
+  <div class="popout <%= 'expanded-login' if params[:logged_in] %>" data-controller="popout" data-popout-target="popout">
     <%# Button below to pop out login page  %>
     <div class="sidebar">
-      <div class="button-secondary button-left button-popout" data-popout-target="button" data-action="click->popout#toggleLogin"><p>⌵</p></div>
+      <div class="button-secondary <%= params[:logged_in] ? 'button-right' : 'button-left'  %> button-popout" data-popout-target="button" data-action="click->popout#toggleLogin"><p>⌵</p></div>
       <h2 class="text-vertical-right papyrus">login</h2>
     </div>
 
-    <div class="login-overlay d-none" data-popout-target="form">
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), defaults: { input_html: { class: "" } }) do |f| %>
+    <div class="login-overlay <%= 'd-none' unless params[:logged_in] %>" data-popout-target="form">
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), defaults: { input_html: { class: "input-field" } }) do |f| %>
           <div class="form-inputs">
             <%= f.input :email,
                         required: false,

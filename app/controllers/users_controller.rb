@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :overlay_calcs
   before_action :recommended_perks
   before_action :favourites
+  before_action :greeting
   respond_to :json, :html
 
   def profile
@@ -15,27 +16,60 @@ class UsersController < ApplicationController
     @favourites = current_user.favourites.map do |favourite|
       favourite.perk
     end
+
+    @total = current_user.token_allowance
+    current_user.tokens do |token|
+      @total += token.amount
+    end
+    # @total = current_user.token_allowance += current_user.tokens { |order| order.token.amount }
+    # if current_user.order.where(state: 'paid')
   end
 
   def package
     @user_perk = UserPerk.new
     @user_perks_all = UserPerk.where(user: current_user)
     @owned_perks = @user_perks_all.map(&:perk)
+
+    # get unowned perks
     @unowned_perks = []
+    current_user.favourites.each do |favourite|
+      @unowned_perks << favourite.perk if @owned_perks.exclude?(favourite.perk)
+    end
+
     @recommended.each do |perk|
       @unowned_perks << perk if @owned_perks.exclude?(perk) && @unowned_perks.exclude?(perk)
     end
+
+    # calculate token count
     @total_perks = 0
     @users_perks = UserPerk.where(user: current_user)
     @users_perks.each { |user_perk| @total_perks += user_perk.perk.token_cost }
     current_user.tokens_used = @total_perks
     current_user.save(validate: false)
     @available_perks = current_user.token_allowance - @total_perks
-
     respond_with total_perks: @total_perks, available_perks: @available_perks # , @available_perks
   end
 
   private
+
+  def greeting
+    current_time = Time.now.to_i
+    midnight = Time.now.beginning_of_day.to_i
+    noon = Time.now.middle_of_day.to_i
+    five_pm = Time.now.change(hour: 17).to_i
+    eight_pm = Time.now.change(hour: 20).to_i
+
+    case
+    when midnight.upto(noon).include?(current_time)
+      @greeting = "Good morning #{current_user.name}!"
+    when noon.upto(five_pm).include?(current_time)
+      @greeting = "Afternoon #{current_user.name}."
+    when five_pm.upto(eight_pm).include?(current_time)
+      @greeting = "Any plans this evening #{current_user.name}?"
+    when eight_pm.upto(midnight + 1.day).include?(current_time)
+      @greeting = "Burning the midnight oil #{current_user.name}?"
+    end
+  end
 
   def favourites
     @favourites = current_user.favourites.map do |favourite|
@@ -141,7 +175,7 @@ class UsersController < ApplicationController
     # add in slight randomisation
     perk_slight_random = Hash.new(0)
     perk_recommendations.each do |perk, value|
-      perk_slight_random[perk] = value * rand(1.0..3.0)
+      perk_slight_random[perk] = value * rand(1.0..2.0)
     end
 
     # get recommended into a nice array

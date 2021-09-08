@@ -5,16 +5,16 @@
   <div class="score-perk flex">
     <div class="score-details-main">
       <div class="total-display">
-        <h4>Tokens Used</h4>
         <h2 data-totals-bar-target="totals"><%= current_user.tokens_used  %></h2>
+        <h5>tokens used</h5>
       </div>
       <div class="total-display">
-        <h4>Tokens Available</h4>
         <h2 data-totals-bar-target="available"><%= current_user.token_allowance - current_user.tokens_used %></h2>
+        <h5>tokens available</h5>
       </div>
-      <div class="pay-link">
-      <%= link_to "Add Tokens", tokens_path, class: "link" %>
-      </div>
+      <%= link_to tokens_path, class: "link-light-blank button-bottom-left" do %>
+        <p class="button-card-teal prominent">+</p>
+      <% end %>
     </div>
   </div>
     <div class="list-section owned" id="results2down" data-account-target="package">
@@ -44,18 +44,18 @@
             </div>
             <% favourite = current_user.favourites.find_by(perk: user_perk.perk) %>
             <% if favourite.present? %>
-              <%= link_to favourite_path(favourite), class: "link-light-blank button-top-right", method: :delete do %>
+              <%= link_to favourite_path(favourite), class: "link-light-blank button-top-right", method: :delete, remote: true do %>
                 <h6 class="button-card-teal high-z-index">♥︎</h6>
               <% end %>
             <% else %>
-              <%= link_to perk_favourites_path(user_perk.perk), class: "link-light-blank button-top-right", method: :post do %>
+              <%= link_to perk_favourites_path(user_perk.perk), class: "link-light-blank button-top-right", method: :post, remote: true do %>
                 <h6 class="button-card-teal high-z-index">♡</h6>
               <% end %>
             <% end %>
           </div>
         <% end %>
       <% end %>
-      <%= link_to profile_path, class: "link-light-blank button-top-right" do %>
+      <%= link_to package_path, class: "link-light-blank button-top-right" do %>
         <p class="button-card-teal prominent">✓</p>
       <% end %>
       <%= link_to profile_path, class: "link-light-blank button-bottom-left" do %>
@@ -67,7 +67,7 @@
       <% @unowned_perks.each do |perk|%>
         <div class="card small"
             id=<%="#{perk.id}-false"%>
-            data-action="dragend->account#account"
+            data-action="dragend->account#account dragend->totals-bar#total"
             data-url="<%= perk_user_perks_path(perk) %>"
             data-token-cost=<%="#{perk.token_cost}"%>
             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk.perk_pic.first.key %>')">

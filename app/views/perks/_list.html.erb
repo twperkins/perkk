@@ -23,8 +23,8 @@
           <%= link_to "", perk_path(perk), class: "card-link" %>
           <% favourite = current_user.favourites.find_by(perk: perk) %>
           <% if perk.favourites.present? %>
-            <%= link_to favourite_path(favourite), class: "link-light-blank button-top-right", method: :delete, remote: true do %>
-              <h6 class="button-card-teal high-z-index">♥︎</h6>
+            <%= link_to favourite_path(favourite), class: "link-dark-blank button-top-right", method: :delete, remote: true do %>
+              <h6 class="button-card high-z-index">♥︎</h6>
             <% end %>
           <% else %>
             <%= link_to perk_favourites_path(perk), class: "link-dark-blank button-top-right", method: :post, remote: true do %>

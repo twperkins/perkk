@@ -3,15 +3,14 @@
   <div class="profile-grid">
     <div class='profile-first'>
       <div class="notifications-block">
-        <h1>notifications </h1>
+        <h3><%= @greeting %> We've put your latest perkk news below.</h3>
         <% if @user_perks.blank? %>
-          <h4>no new notifications at the moment</h4>
+          <h4> > no new notifications at the moment</h4>
         <% else %>
-        <h5> > perkk: welcome back, <%= current_user.name %>!</h5>
-        <h5> > <%= @user_perks[2].merchants.downcase %>: you recently favourited our <%= @user_perks[2].name.downcase %> perkk, add it to your package today for only <%= @user_perks[2].token_cost %> tokens! </h5>
-        <h5> > <%= @user_perks[1].merchants.downcase %>: why not try upgrading your perkk with us? <h5>
-        <h5> > <%= @user_perks[3].merchants.downcase %>: any questions ahead of your booking? please email us: hello@<%= @user_perks[3].merchants.downcase.gsub(/\s+/, "") %>.co.uk</h5>
-        <h5> > <%= @user_perks[0].merchants.downcase %>: don't forget to review your perkk experience with us!</h5>
+          <h5> > <% perk_notification = @user_perks.sample %><%= perk_notification.merchants.downcase %>: you recently favourited <%= perk_notification.name.downcase %>, add it to your package today for only <%= perk_notification.token_cost %> tokens! </h5>
+          <h5> > <% perk_notification = @user_perks.sample %><%= perk_notification.merchants.downcase %>: why not try upgrading your perkk with us? <h5>
+          <h5> > <% perk_notification = @user_perks.sample %><%= perk_notification.merchants.downcase %>: any questions ahead of your booking? please email us: hello@<%= perk_notification.merchants.downcase.gsub(/\s+/, "") %>.co.uk</h5>
+          <h5> > <% perk_notification = @user_perks.sample %><%= perk_notification.merchants.downcase %>: don't forget to review your perkk experience with us!</h5>
         <% end %>
       </div>
       <br>
@@ -20,7 +19,7 @@
         <h3 class="text-vertical-left">recommended perks</h3>
         <% @recommended_perks.each do |perk|%>
           <div class="card-green" data-controller="flipcard" data-flipcard-target="flipcard">
-            <h6 class="button-card-teal button-bottom-right high-z-index button-flip" data-flipcard-target="flipcard-button" data-action="click->flipcard#toggleFlipcard">i</h6>
+            <h6 class="button-card-teal button-top-right high-z-index button-flip" data-flipcard-target="flipcard-button" data-action="click->flipcard#toggleFlipcard">i</h6>
             <div class="front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path perk.perk_pic.first.key %>')">
               <%= link_to "", perk_path(perk), class: "card-link" %>
 
