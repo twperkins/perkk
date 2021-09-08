@@ -15,10 +15,14 @@
         <% @tokens.each do |token| %>
           <div class="bundle-card">
             <div class="card-body">
-              <h5 class="card-title"><%= token.bundle %> tokens</h5>
-              <%= link_to token_path(token), class: "link-light-blank" do %>
-                <h6 class="button-bar">details</h6>
-              <% end %>
+              <h5 class="card-title"><%= token.bundle %></h5>
+              <div class="flex">
+                <h4><%= humanized_money_with_symbol(token.price) %></h4>
+                <%= form_tag orders_path do %>
+                  <%= hidden_field_tag 'token_id', token.id %>
+                  <%= submit_tag 'Purchase', class: 'button-bar' %>
+                <% end %>
+              </div>
             </div>
           </div>
         <% end %>
