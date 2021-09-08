@@ -27,4 +27,11 @@
 .notifications-block {
   color: $papyrus-highlight;
   margin-left: 32px;
+  h3 {
+    border-bottom: solid 1px $papyrus;
+    margin-bottom: 16px;
+    padding-bottom: 4px;
+    width: 100%;
+    color: $papyrus;
+  }
 }
