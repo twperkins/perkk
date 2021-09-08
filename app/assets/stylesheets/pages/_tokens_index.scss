@@ -48,9 +48,21 @@
 .card-body {
   height: 130px;
   width: 210px;
-  padding: 32px;
+  padding: 24px;
   .card-title {
     color: $teal;
     border-bottom: solid 1px $teal;
+    padding-bottom: 8px;
+  }
+  .flex {
+    align-items: center;
+    justify-content: space-between;
+    h4 {
+      margin-bottom: 0px;
+    }
+    .button-bar {
+      margin: 4px;
+      width: 100%;
+    }
   }
 }
