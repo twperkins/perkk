@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   private
 
   def default_url_options
-    { host: ENV["DOMAIN"] || "localhost:3000" }
+    { host: ENV["http://www.perkk.co.uk"] || "localhost:3000" }
   end
 
   def authenticate_user!
