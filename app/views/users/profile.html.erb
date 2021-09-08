@@ -56,10 +56,10 @@
     </div>
 
     <div class='profile-second'>
-      <h2> Perk categories </h2>
+      <h2 class="text-vertical-left"> categories </h2>
         <% @perk_category.each do |category| %>
           <%= link_to perks_path(order: category) do %>
-            <h3><%= category %></h3>
+            <h3 class="category-class"><%= category %></h3>
           <% end  %>
         <% end  %>
       </div>
