@@ -18,6 +18,8 @@ export default class extends Controller {
       .then(response => response.json())
       .then(data => {this.availableTarget.innerText = data["available_perks"];
         this.totalsTarget.innerText = data["total_perks"];
+        console.log(data["total_perks"]);
+        console.log(data["available_perks"]);
     });
   }
 
