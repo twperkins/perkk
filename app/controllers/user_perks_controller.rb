@@ -3,26 +3,24 @@ class UserPerksController < ApplicationController
     @perk = Perk.find(params[:perk_id])
     @user_perk = UserPerk.new
     @user_perk.perk_id = @perk.id
-    p "current user"
-    if request.headers["Content-Type"] == "application/json"
-      @user_perk.user = current_user
-      if @user_perk.save
-        render json: @user_perk
-      else
-        render json: { message: "failed to save" }
-      end
-      @total_perks = 0
-      @user_perks = UserPerk.where(user: current_user)
-      @user_perks.each { |user_perk| @total_perks += user_perk.perk.token_cost }
-      current_user.tokens_used = @total_perks
-      current_user.save(validate: false)
+    if current_user.tokens_used + @perk.token_cost > current_user.token_allowance
+      flash.alert = "Over token count!"
     else
-      @user_perk.user = current_user
-      if @user_perk.save
-        redirect_to package_path
-        # redirect_to profile_path
+      if request.headers["Content-Type"] == "application/json"
+        @user_perk.user = current_user
+        if @user_perk.save
+          render json: @user_perk
+        else
+          render json: { message: "failed to save" }
+        end
       else
-        redirect_to profile_path
+        @user_perk.user = current_user
+        if @user_perk.save
+          redirect_to package_path
+          # redirect_to profile_path
+        else
+          redirect_to profile_path
+        end
       end
     end
   end
