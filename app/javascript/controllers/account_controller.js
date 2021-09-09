@@ -1,6 +1,10 @@
 import { event } from "jquery"
 import { Controller } from "stimulus"
 import Rails from '@rails/ujs'
+import { initSweetalert } from '../plugins/init_sweetalert';
+import swal from 'sweetalert';
+
+
 
 export default class extends Controller {
 
@@ -24,7 +28,10 @@ static targets = ["list","package","totals"]
         console.log(data.message)
        if (data.message == "failed to save"){
          console.log("I am an alert box!");
-         alert("You do not have enough tokens - please add tokens");
+        //  alert("You do not have enough tokens - please add more tokens!");
+        //  initSweetalert
+         swal("Oops!", "Something went wrong!", "error");
+
        }
         console.log('Success:', data.message);
       })
