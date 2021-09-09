@@ -7,7 +7,7 @@
   position: absolute;
   top: 167px;
   left: 12%;
-  width: 25%;
+  width: 35%;
   h2 {
     color: $papyrus;
     font-family: 'Londrina Shadow';
@@ -17,9 +17,16 @@
     color: $papyrus;
     font-size: 24px;
   }
+
 }
 
 .payment-grid {
   display: grid;
   grid-template-columns: 12fr;
 }
+
+  h3 {
+    color: $papyrus;
+    font-family: 'Abel', sans-serif;
+    font-size: 48px;
+  }
