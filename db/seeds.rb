@@ -31,10 +31,27 @@ company = Company.create!(
 file = URI.open('https://source.unsplash.com/800x600/?company')
 company.logo_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
-# demo user
+# real demo user
 puts "creating demo user.."
 demo = User.create!(
   email: "charlie@facebook.com",
+  password: "123123",
+  name: "Chaplin",
+  location: Faker::TvShows::BojackHorseman.character,
+  unique_code: "#{Faker::Verb.base}-#{Faker::Color.color_name}-#{Faker::Verb.past_participle}",
+  token_allowance: 1000,
+  tokens_used: 0,
+  admin: true,
+  qr_code: "http://www.perkk.co.uk/",
+  company_id: company.id
+)
+file = URI.open('https://source.unsplash.com/800x600/?person')
+demo.profile_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# bug demo user
+puts "creating demo user.."
+demo = User.create!(
+  email: "demo@user.com",
   password: "123123",
   name: "Chaplin",
   location: Faker::TvShows::BojackHorseman.character,
@@ -130,7 +147,7 @@ perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 # creating perk 1.5
 perk = Perk.create!(
   name: "Two months membership",
-  description: "50% off all orders, free delivery and exclusive discounts for two months!",
+  description: "50% off all orders, free delivery and exclusive discounts on any food you desire for two months!",
   location: BOROUGH.sample,
   token_cost: 170,
   start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
@@ -139,6 +156,20 @@ perk = Perk.create!(
   merchants: "Deliveroo"
 )
 file = URI.open('https://images.unsplash.com/photo-1610478920409-ec0f58e881a5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGVsaXZlcm9vfHx8fHx8MTYzMDY2NzE0Nw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 1.7
+perk = Perk.create!(
+  name: "Wine tasting for two",
+  description: "Wine-tasting courses to suit all levels, with wine experience gift packages and lunch events with expertly paired food!",
+  location: '6-9 Leadenhall Market, London EC3V 1PJ',
+  token_cost: 70,
+  start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+  end_date: Faker::Date.forward(days: 365),
+  category: "social",
+  merchants: "East London Wine School"
+)
+file = URI.open('https://images.unsplash.com/photo-1516600164266-f3b8166ae679?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8d2luZXx8fHx8fDE2MzExODYwODk&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 2
@@ -321,7 +352,8 @@ perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 perk = Perk.create!(
   name: "Meal for Two",
   description: "This perk offers you 50% off at a Quirky, 18th-century townhouse tea room that transforms into a
-   cocktail lounge every evening.",
+   cocktail lounge every evening. Sketch is a destination for food, drinks, music & art, comprising an artist conceived
+   gastro-brasserie restaurant.",
   location: '9 Conduit St, London W1S 2XG',
   token_cost: 20,
   start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
@@ -667,7 +699,7 @@ perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 20
 perk = Perk.create!(
-  name: "Skate Teacher Course",
+  name: "Skate Teacher course",
   description: "Become a qualified skate teacher with this intensive course and be able to host inline and roller
    skating lessons in London · Beginner Level · Improver Level · (inc. SkateDance) · One Day Intensive Skate Lessons
    for Improver/Intermediate.",
@@ -788,6 +820,38 @@ perk = Perk.create!(
 file = URI.open('https://images.unsplash.com/photo-1580781441945-3a233a33ff8c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8dGFrZWF3YXl8fHx8fHwxNjMxMDI3NDUx&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
+# creating perk 25
+perk = Perk.create!(
+  name: "Food festival taste pass",
+  description: "Expect 60+ dishes from London’s most exciting restaurants, fire-fuelled theatrics, live entertainment,
+   and hours of unrestrained indulgence. You've got two years' worth of festive feasting to catch up on. Book as a group
+   and make up for lost time!",
+  location: BOROUGH.sample,
+  token_cost: 10,
+  start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+  end_date: Faker::Date.forward(days: 365),
+  category: "membership",
+  merchants: "London Taste Festival"
+)
+file = URI.open('https://images.unsplash.com/photo-1544455215-5289d4cd0ec2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Zm9vZC1tYXJrZXR8fHx8fHwxNjMxMTg4NTQx&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 25
+perk = Perk.create!(
+  name: "Food festival group ticket",
+  description: "Expect 60+ dishes from London’s most exciting restaurants, fire-fuelled theatrics, live entertainment,
+   and hours of unrestrained indulgence. You've got two years' worth of festive feasting to catch up on. Book as a group
+   and make up for lost time!",
+  location: BOROUGH.sample,
+  token_cost: 60,
+  start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+  end_date: Faker::Date.forward(days: 365),
+  category: "membership",
+  merchants: "London Taste Festival"
+)
+file = URI.open('https://images.unsplash.com/photo-1558163260-0200547a99ad?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Zm9vZC1tYXJrZXR8fHx8fHwxNjMxMTg4NDgy&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
 # creating perk 26
 perk = Perk.create!(
   name: "Tour booking membership",
@@ -804,7 +868,7 @@ file = URI.open('https://images.unsplash.com/photo-1428992992979-aaeb02b6960c?cr
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating reviews for user
-120.times do
+130.times do
   puts "creating reviews..."
   Review.create!(
     comment: Faker::Restaurant.review,

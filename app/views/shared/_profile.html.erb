@@ -13,7 +13,7 @@
       <h2> your details</h2>
       <div class="detail">
         <div class="border-line"></div>
-        <span><%= cl_image_tag(current_user.profile_pic.key, class: "avatar-very-large") %> <%= current_user.name %></span>
+        <span><%= cl_image_tag(current_user.profile_pic.key, class: "avatar-very-large") %> <%= current_user.name %> </span>
         <div class="account-details">
           <span><h3><%= @tokens_left %></h3><p>tokens left</p></span>
           <span><h3><%= @days_left %></h3><p>days left</p></span>
@@ -21,16 +21,13 @@
         <div class="unique-codes">
           <div class="qr-code"><%= @svg.html_safe %></div>
           <h4><%=current_user.unique_code %></h4><h5>unique-code</h5>
+          <p> charlie@facebook.com | <i class="fab fa-facebook"></i></p>
         </div>
         <%= link_to destroy_user_session_path, method: :delete, class: "link-light-blank" do %>
           <p class="button-bar">sign out</p>
         <% end %>
       </div>
     </div>
-
-    <%# <div class="usage">
-      <h2>usage3</h2>
-    </div> %>
 
     <div class="perk-container">
       <h2>your perks</h2>
