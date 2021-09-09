@@ -3,13 +3,6 @@
 <div class="contain">
   <div class="tokens-grid">
     <div class='tokens-first'>
-      <div class="tokens-logo">
-        <h1 class="logo-alternative">perkk tokens</h1>
-        <h4>for when you just need more perks</h4>
-      </div>
-    </div>
-
-    <div class='tokens-second'>
       <h1>bundles</h1>
       <div class="bundle-options">
         <% @tokens.each do |token| %>
@@ -17,16 +10,28 @@
             <div class="card-body">
               <h5 class="card-title"><%= token.bundle %></h5>
               <div class="flex">
-                <h4><%= humanized_money_with_symbol(token.price) %></h4>
+                <h3><%= humanized_money_with_symbol(token.price) %></h3>
                 <%= form_tag orders_path do %>
                   <%= hidden_field_tag 'token_id', token.id %>
-                  <%= submit_tag 'Purchase', class: 'button-bar' %>
+                  <%= submit_tag 'Purchase', class: 'button-bar-light' %>
                 <% end %>
               </div>
             </div>
           </div>
         <% end %>
       </div>
+      <div class="tokens-logo">
+        <h1 class="logo-alternative">perkk tokens</h1>
+        <h4>for when you just need more perks</h4>
+      </div>
+    </div>
+
+    <div class='tokens-second'>
+      <h3>perkk account</h3>
+      <h2><%= current_user.tokens_used %></h2>
+      <h5>tokens Used</h5>
+      <h2><%= current_user.token_allowance - current_user.tokens_used %></h2>
+      <h5>tokens available</h5>
     </div>
   </div>
 </div>
