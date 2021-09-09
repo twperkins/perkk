@@ -32,14 +32,24 @@ static targets = ["list","package","totals"]
         //  ideally this should be a seperate js file
         //
          const el = document.createElement('div')
+         const refresh = document.createElement('div')
+
          el.innerHTML = "<a style='font-size:40px' href='/tokens'>Add Tokens</a>"
+         refresh.innerHTML = "<a href='/tokens'>something</a>"
+
 
          swal({
-           icon: 'https://picsum.photos/id/22/200/300',
+           icon: 'https://picsum.photos/id/22/600/600',
            title: "Oops!",
            content: el,
-          //  imageUrl: 'https://unsplash.it/400/200',
+           button: "Ok!",
+         }).then((result) => {
+           console.log(result)
+           if (result) {
+             location.reload();
+           }
          })
+
          //
          //
         // end of sweetalert
