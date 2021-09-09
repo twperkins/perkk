@@ -94,7 +94,7 @@ perk = Perk.create!(
   category: "travel",
   merchants: "Uber"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?uber')
+file = URI.open('https://images.unsplash.com/photo-1625959518941-99decaa7d878?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8dWJlcnx8fHx8fDE2MzExODA0NTU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 1.3
@@ -109,12 +109,12 @@ perk = Perk.create!(
   category: "membership",
   merchants: "Uber Eats"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?uber-eats')
+file = URI.open('https://images.unsplash.com/photo-1604167504016-6d7b03ab184f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8dGFrZWF3YXl8fHx8fHwxNjMxMTgwNDI5&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 1.3
 perk = Perk.create!(
-  name: "50% off Japanese cuisine",
+  name: "Half price Japanese cuisine",
   description: "Find the best Japanese restaurants that deliver. Get contactless delivery for restaurant takeaways, food
    shopping and more! Order food online or in the Uber Eats app and get 50% off Japanese cuisine for two months!",
   location: BOROUGH.sample,
@@ -124,7 +124,7 @@ perk = Perk.create!(
   category: "membership",
   merchants: "Uber Eats"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?uber-eats')
+file = URI.open('https://images.unsplash.com/photo-1581331474665-a0bbee7dfba9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8amFwYW5lc2UtZm9vZHx8fHx8fDE2MzExODAzOTc&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 1.5
@@ -166,7 +166,7 @@ perk = Perk.create!(
   category: "social",
   merchants: "Bounce"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?ping-pong')
+file = URI.open('https://images.unsplash.com/photo-1461748659110-16121c049d52?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8cGluZy1wb25nfHx8fHx8MTYzMTE4MDI5Ng&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 3
@@ -194,7 +194,7 @@ perk = Perk.create!(
   category: "travel",
   merchants: "Ryanair"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?heathrow-airport')
+file = URI.open('https://images.unsplash.com/photo-1558438542-983bb555e8da?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8aGVhdGhyb3ctYWlycG9ydHx8fHx8fDE2MzExODAyNTY&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 3.5
@@ -253,7 +253,7 @@ perk = Perk.create!(
   category: "pet",
   merchants: "Bark"
 )
-file = URI.open('https://images.unsplash.com/photo-1552944150-6dd1180e5999?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2F0fHx8fHx8MTYzMDY2Njg4Ng&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
+file = URI.open('https://images.unsplash.com/photo-1453227588063-bb302b62f50b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8cGV0LXNpdHRlcnx8fHx8fDE2MzExODAxNDE&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 5
@@ -268,7 +268,7 @@ perk = Perk.create!(
   category: "pet",
   merchants: "Petplan"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?pet')
+file = URI.open('https://images.unsplash.com/photo-1549291981-56d443d5e2a2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8cGV0fHx8fHx8MTYzMTE4MDEwNw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 puts "creating amazing perks.."
@@ -407,7 +407,7 @@ perk = Perk.create!(
   category: "course",
   merchants: "Bonsai empire"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?bonsai')
+file = URI.open('https://images.unsplash.com/photo-1611387729672-25583e070328?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Ym9uc2FpfHx8fHx8MTYzMTE4MDA3Ng&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 13
@@ -422,7 +422,7 @@ perk = Perk.create!(
   category: "social",
   merchants: "TeamSport Go Karting"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?go-kart')
+file = URI.open('https://images.unsplash.com/photo-1555349260-32bfc31e538d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Z28ta2FydHx8fHx8fDE2MzExODAwNDk&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 13
@@ -437,7 +437,7 @@ perk = Perk.create!(
   category: "social",
   merchants: "TeamSport Go Karting"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?go-kart')
+file = URI.open('https://images.unsplash.com/photo-1555349224-bdbeaaf0096a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Z28ta2FydHx8fHx8fDE2MzExODAwMzE&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 14
@@ -452,7 +452,7 @@ perk = Perk.create!(
   category: "social",
   merchants: "Mansion impossible"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?mystery')
+file = URI.open('https://images.unsplash.com/photo-1554493752-e4543263886c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8bXlzdGVyeXx8fHx8fDE2MzExODAwMTQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 14
@@ -468,7 +468,7 @@ perk = Perk.create!(
   category: "social",
   merchants: "Mansion impossible"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?haunted-mansion')
+file = URI.open('https://images.unsplash.com/photo-1604255981616-880f65c7a119?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8aGF1bnRlZC1tYW5zaW9ufHx8fHx8MTYzMTE3OTk5NA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 15
@@ -483,7 +483,7 @@ perk = Perk.create!(
   category: "wellbeing",
   merchants: "Well Bean"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?wellbeing')
+file = URI.open('https://images.unsplash.com/photo-1609751352001-25b60439239c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8c2t5cGV8fHx8fHwxNjMxMTc5OTcz&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 16
@@ -498,12 +498,12 @@ perk = Perk.create!(
   category: "membership",
   merchants: "TATE"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?kusama')
+file = URI.open('https://images.unsplash.com/photo-1608572257175-021825e20081?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8a3VzYW1hfHx8fHx8MTYzMTE3OTg5OQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 16
 perk = Perk.create!(
-  name: "Guided in-depth arts tour",
+  name: "London Arts tours",
   description: "A day of custom arts tours, centerted on a variety of specific arts movements in history, starting at
    the Tate Modern and exploring multiple galleries and museums to create a well rounded investigation on the
    arts movement of your choice! Upcoming tours: impressionism, abstract expressionism, romanticism and more.",
@@ -529,7 +529,7 @@ perk = Perk.create!(
   category: "membership",
   merchants: "National Gallery"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?gallery')
+file = URI.open('https://images.unsplash.com/photo-1585950483336-8d59d18e0ffe?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Z2FsbGVyeXx8fHx8fDE2MzExNzk4NTg&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 17
@@ -544,7 +544,7 @@ perk = Perk.create!(
   category: "membership",
   merchants: "V&A Museum"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?design')
+file = URI.open('https://images.unsplash.com/photo-1561328688-f84502cf2c3e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8dixhLW11c2V1bXx8fHx8fDE2MzExNzk4Mzc&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 16
@@ -560,7 +560,7 @@ perk = Perk.create!(
   category: "course",
   merchants: "Le Wagon"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?coding')
+file = URI.open('https://images.unsplash.com/photo-1557853197-aefb550b6fdc?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y29kaW5nfHx8fHx8MTYzMTE3OTYzMw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 17
@@ -574,7 +574,23 @@ perk = Perk.create!(
   category: "social",
   merchants: "Orange Network"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?cinema')
+file = URI.open('https://images.unsplash.com/photo-1608170825938-a8ea0305d46c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2luZW1hfHx8fHx8MTYzMTE3OTI5Nw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
+perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
+
+# creating perk 17
+perk = Perk.create!(
+  name: "Family outdoor cinema tickets",
+  description: "Free family of five outdoor cinema tickets at Waddesdon Cinema. Watch a selection of classic films in
+   the striking setting of Waddesdon Manor. Explore an extensive art collection and impressive Victorian gardens.
+   Redeemable once a month. Events all year.",
+  location: BOROUGH.sample,
+  token_cost: 60,
+  start_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+  end_date: Faker::Date.forward(days: 365),
+  category: "social",
+  merchants: "Waddesdon Cinema"
+)
+file = URI.open('https://images.unsplash.com/photo-1527979809431-ea3d5c0c01c9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2luZW1hfHx8fHx8MTYzMTE3OTMyOA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 17
@@ -588,7 +604,7 @@ perk = Perk.create!(
   category: "social",
   merchants: "Everyman cinema"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?cinema')
+file = URI.open('https://images.unsplash.com/photo-1559570278-eb8d71d06403?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2luZW1hfHx8fHx8MTYzMTE3OTYwOA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 18
@@ -616,7 +632,7 @@ perk = Perk.create!(
   category: "travel",
   merchants: "Airbnb"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?glamping')
+file = URI.open('https://images.unsplash.com/photo-1508974462591-3c124867fdf8?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Z2xhbXBpbmd8fHx8fHwxNjMxMTc5MTYx&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 19
@@ -646,7 +662,7 @@ perk = Perk.create!(
   category: "course",
   merchants: "Skatefresh"
 )
-file = URI.open('https://source.unsplash.com/1600x800/?skating')
+file = URI.open('https://images.unsplash.com/photo-1583832292569-7092d6d90873?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8c2thdGluZ3x8fHx8fDE2MzExNzgyMzY&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600')
 perk.perk_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # creating perk 20
@@ -882,23 +898,37 @@ end
 
 # creating token bundle seeds
 
+puts "creating tokens tiny bundle..."
+Token.create!(
+  bundle: '50 Extra Tokens',
+  price_cents: 2500,
+  amount: 50
+)
+
 puts "creating tokens small bundle..."
 Token.create!(
   bundle: '100 Extra Tokens',
-  price_cents: 2000,
+  price_cents: 5000,
   amount: 100
 )
 
 puts "creating tokens big bundle..."
 Token.create!(
   bundle: '200 Extra Tokens',
-  price_cents: 3000,
+  price_cents: 9500,
   amount: 200
 )
 
 puts "creating tokens XL bundle..."
 Token.create!(
   bundle: '300 Extra Tokens',
-  price_cents: 4000,
+  price_cents: 14000,
   amount: 300
+)
+
+puts "creating tokens XXL bundle..."
+Token.create!(
+  bundle: '400 Extra Tokens',
+  price_cents: 18000,
+  amount: 400
 )
