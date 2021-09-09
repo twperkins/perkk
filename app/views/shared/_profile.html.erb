@@ -61,15 +61,15 @@
                   </div>
                   <div class="perk-attribute">
                     <h4><%= (perk.token_cost / @total_tokens.to_f * 100).round(1) %>%</h4>
-                    <p>proportion</p>
+                    <p>package portion</p>
                   </div>
                   <div class="perk-attribute">
                     <% if index > 0 && perk.users.count < user_count %>
                       <% ranking += 1 %>
                       <% user_count = perk.users.count %>
                     <% end %>
-                    <h4> <%= ranking %></h4>
-                    <p>ranking</p>
+                    <h4> <%= ranking.ordinalize %></h4>
+                    <p>popularity</p>
                   </div>
                 </div>
                 <div class="perk-details">
