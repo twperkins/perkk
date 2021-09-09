@@ -6,7 +6,7 @@ export default class extends Controller {
   connect() {
     console.log('connected');
   }
-  toggleOverlay() {
+  nextPerk() {
     console.log('clicked')
     this.overlayTarget.classList.toggle('expanded-overlay');
     this.profileDetailsTarget.classList.toggle('d-none');
