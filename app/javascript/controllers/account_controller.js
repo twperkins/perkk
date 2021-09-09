@@ -39,7 +39,7 @@ static targets = ["list","package","totals"]
 
 
          swal({
-           icon: 'https://picsum.photos/id/22/400/300',
+           icon: 'https://picsum.photos/id/22/600/600',
            title: "Oops!",
            content: el,
            button: "Ok!",
