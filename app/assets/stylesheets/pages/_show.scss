@@ -1,9 +1,9 @@
 .show-grid {
   display: grid;
-  grid-template-columns: 14fr 1fr;
+  grid-template-columns: 11fr 1fr;
   .empty-column {
     background-color: $papyrus;
-    width: 120px !important;
+    min-width: 120px !important;
   }
   .button-right {
     position: absolute;

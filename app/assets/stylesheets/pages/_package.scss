@@ -1,6 +1,5 @@
 .list-section {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   padding: 0px 16px;
   box-shadow: 4px 4px 4px rgba(213, 207, 190, 0.5), -4px -4px 4px rgba(255, 253, 248, 0.5);
@@ -23,11 +22,25 @@
 
 .owned {
   height: calc(250px);
+  display: flex;
   background-color: $teal;
-  overflow-y: scroll;
+  overflow-x: scroll;
   width: calc(90vw - 380px);
   margin-left: 5vw;
   margin-bottom: 16px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.flex-owned {
+  height: calc(250px);
+  display: flex;
+  background-color: $teal;
+  overflow-x: scroll;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
 }
 
 .range {
@@ -36,6 +49,7 @@
   overflow-y: scroll;
   width: calc(90vw - 120px);
   margin: 0px auto 16px;
+  flex-wrap: wrap;
 }
 
 .package-header {
