@@ -1,0 +1,25 @@
+.payment-header {
+  background-color: rgba($color: #FBF4DF, $alpha: 0.1);
+  padding: 24px;
+  border-radius: 30px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  position: absolute;
+  top: 167px;
+  left: 12%;
+  width: 25%;
+  h2 {
+    color: $papyrus;
+    font-family: 'Londrina Shadow';
+    font-size: 48px;
+  }
+  h4 {
+    color: $papyrus;
+    font-size: 24px;
+  }
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: 12fr;
+}

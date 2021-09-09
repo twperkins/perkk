@@ -28,7 +28,7 @@ company = Company.create!(
   subscription_start: Faker::Date.between(from: 2.days.ago, to: Date.today),
   subscription_end: Faker::Date.forward(days: 365)
 )
-file = URI.open('https://source.unsplash.com/800x600/?company')
+file = URI.open('https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2850&q=80')
 company.logo_pic.attach(io: file, filename: 'test.png', content_type: 'image/png')
 
 # real demo user
