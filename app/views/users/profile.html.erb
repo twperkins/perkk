@@ -2,8 +2,9 @@
 <div class="contain">
   <div class="profile-grid">
     <div class='profile-first'>
+      <h2 class="text-vertical-left-note">latest news</h2>
       <div class="notifications-block">
-        <h3><%= @greeting %></h3>
+        <h3><%= @greeting.downcase %></h3>
         <% if @user_perks.blank? %>
           <h4> > no new notifications at the moment</h4>
         <% else %>
@@ -45,7 +46,7 @@
               <%= link_to "", perk_path(perk), class: "card-link" %>
               <div class="card-infos">
                 <h3><%= perk.name %></h3>
-                <h5>Details</h5>
+                <h5>details</h5>
                 <p><%= perk.description %></p>
                 <h4><%= perk.token_cost %> tokens</h4>
               </div>
@@ -56,7 +57,7 @@
     </div>
 
     <div class='profile-second'>
-      <h2 class="text-vertical-left"> categories </h2>
+      <h2 class="text-vertical-right">explore</h2>
         <% @perk_category.each do |category| %>
           <%= link_to perks_path(order: category), class: "category-class" do %>
             <h3><%= category %></h3>

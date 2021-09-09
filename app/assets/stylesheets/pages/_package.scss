@@ -33,7 +33,7 @@
 }
 
 .flex-owned {
-  height: calc(250px);
+  height: calc(234px);
   display: flex;
   background-color: $teal;
   overflow-x: scroll;
@@ -41,6 +41,11 @@
   margin-right: 2vw;
   flex-wrap: nowrap;
   justify-content: flex-start;
+  align-items: center;
+  .small {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 }
 
 .range {
