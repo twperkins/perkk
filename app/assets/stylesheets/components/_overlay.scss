@@ -101,8 +101,8 @@
   box-sizing: border-box;
   border-radius: 8px;
   border-top-right-radius: 30px;
-  width: 550px;
-  height: 340px;
+  width: 32vw;
+  height: 20vw;
   box-shadow: -4px -4px 4px rgba(255, 253, 248, 0.5), 4px 4px 4px rgba(213, 207, 190, 0.5);
   padding: 16px;
   margin: 16px;
@@ -125,6 +125,11 @@
   width: 100%;
   margin-bottom: 16px;
   z-index: 2;
+  .flex {
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 75%;
+  }
   .avatar-very-large {
     margin-right: 16px;
     z-index: 2;
@@ -141,22 +146,24 @@
 }
 
 .perk-details-main {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  border-bottom: solid 1px $papyrus;
+  text-align: right;
   padding-bottom: 12px;
   margin-bottom: 12px;
+  padding-left: 8px;
+  margin-right: 16px;
   p {
     margin-bottom: 2px;
+    border-bottom: solid 1px $papyrus;
   }
   h4 {
+    padding-top: 4px;
     margin-bottom: 2px;
   }
 }
 
 .perk-details {
+  padding-left: 16px;
+  border-left: solid 1px $papyrus;
   h5 {
     padding: 4px;
   }
