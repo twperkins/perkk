@@ -33,7 +33,7 @@
             <br>
             <h2><%= @order.token.bundle %></h2>
             <h4><%= humanized_money_with_symbol @order.amount %></h4>
-            <button class="button-bar">Pay</button>
+            <button id="pay" class="button-bar">Pay</button>
             <script src="https://js.stripe.com/v3/"></script>
             <script>
               const paymentButton = document.getElementById('pay');
