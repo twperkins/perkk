@@ -23,25 +23,38 @@
 
 
 
-<div class="payment-grid">
-  <div class="show-container" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path current_user.company.logo_pic.key %>')">
-  <%# <div class="show-container" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2850&q=80')"> %>
-    <div class="checkout"><h2>Checkout summary</h2></div>
-    <div class="payment-header">
-      <h2><%= @order.token.bundle %></h2>
-      <h4><%= humanized_money_with_symbol @order.amount %></h4>
-      <button class="button-bar">Pay</button>
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @order.checkout_session_id %>'
-          });
-        });
-      </script>
+<div class="contain">
+  <div class="payment-tokens-grid">
+    <div class='payment-tokens-first'>
+      <div class="payment-grid">
+        <div class="show-container" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path current_user.company.logo_pic.key %>')">
+        <%# <div class="show-container" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2850&q=80')"> %>
+          <div class="payment-header">
+            <h2><%= @order.token.bundle %></h2>
+            <h4><%= humanized_money_with_symbol @order.amount %></h4>
+            <button class="button-bar">Pay</button>
+            <script src="https://js.stripe.com/v3/"></script>
+            <script>
+              const paymentButton = document.getElementById('pay');
+              paymentButton.addEventListener('click', () => {
+                const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+                stripe.redirectToCheckout({
+                  sessionId: '<%= @order.checkout_session_id %>'
+                });
+              });
+            </script>
+          </div>
+        </div>
+      </div>
     </div>
-
+    <div class='payment-tokens-second'>
+      <h3>perkk account</h3>
+      <h2 data-totals-bar-target="totals" class="countup"><%= current_user.tokens_used %></h2>
+      <h5>tokens used</h5>
+      <h2 data-totals-bar-target="totals" class="countup"><%= current_user.token_allowance - current_user.tokens_used %></h2>
+      <h5>tokens available</h5>
+      <h2 data-totals-bar-target="totals" class="countup"><%= (current_user.token_allowance - current_user.tokens_used) + @order.token.amount %></h2>
+      <h5>new tokens available</h5>
+    </div>
   </div>
 </div>
