@@ -3,7 +3,7 @@
   <div class="profile-grid">
     <div class='profile-first'>
       <div class="notifications-block">
-        <h3><%= @greeting %> We've put your latest perkk news below.</h3>
+        <h3><%= @greeting %></h3>
         <% if @user_perks.blank? %>
           <h4> > no new notifications at the moment</h4>
         <% else %>
@@ -58,8 +58,8 @@
     <div class='profile-second'>
       <h2 class="text-vertical-left"> categories </h2>
         <% @perk_category.each do |category| %>
-          <%= link_to perks_path(order: category) do %>
-            <h3 class="category-class"><%= category %></h3>
+          <%= link_to perks_path(order: category), class: "category-class" do %>
+            <h3><%= category %></h3>
           <% end  %>
         <% end  %>
       </div>
