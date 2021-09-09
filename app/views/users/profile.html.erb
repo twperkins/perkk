@@ -47,7 +47,7 @@
               <div class="card-infos">
                 <h3><%= perk.name %></h3>
                 <h5>details</h5>
-                <p><%= perk.description %></p>
+                <p><%= truncate(perk.description, length: 140) %></p>
                 <h4><%= perk.token_cost %> tokens</h4>
               </div>
             </div>
