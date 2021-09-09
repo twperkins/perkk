@@ -74,7 +74,7 @@
                 </div>
                 <div class="perk-details">
                   <h5><strong>details</strong></h5>
-                  <p><%= perk.description %></p>
+                  <p><%= truncate(perk.description, length: 180, separator: ' ') %></p>
                 </div>
               </div>
             </div>
