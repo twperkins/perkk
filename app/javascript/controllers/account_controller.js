@@ -34,15 +34,21 @@ static targets = ["list","package","totals"]
          const el = document.createElement('div')
          const refresh = document.createElement('div')
 
-         el.innerHTML = "<a style='font-size:20px' href='/tokens'>Add Tokens</a>"
+         el.innerHTML = '<a class="link-light-blank" id="add-tokens-button method="post" href = "/tokens">\
+                           <p class="button-bar">add tokens</p>\
+                         </a >'
          refresh.innerHTML = "<a href='/tokens'>something</a>"
+
+          // '< a class="link-light-blank" method="post" href = "/tokens" >\
+          //   <p class="button-bar">add tokens</p>\
+          // </a >'
 
 
          swal({
-           icon: 'https://picsum.photos/id/22/200/200',
+          //  icon: 'https://picsum.photos/id/22/200/200',
            title: "Oops, not enough tokens!",
            content: el,
-           button: "Ok!",
+           button: "keep looking",
            className: "swal-class",
          }).then((result) => {
            console.log(result)
