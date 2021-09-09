@@ -34,6 +34,8 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initSortable } from '../plugins/init_sortable'; // <-- add this
 import { initStarRating } from '../plugins/init_star_rating';
 import { runAnimations } from '../plugins/run_animations';
+// import { initSweetalert } from '../plugins/run_animations';
+
 
 
 
@@ -42,4 +44,5 @@ document.addEventListener('turbolinks:load', () => {
   initSortable();
   initStarRating();
   runAnimations();
+  // initSweetalert();
 })
