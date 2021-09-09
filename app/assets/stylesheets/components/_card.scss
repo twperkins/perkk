@@ -129,6 +129,7 @@
   cursor: pointer;
   transform-style: preserve-3d;
   transition: all 0.8s ease;
+  flex-shrink: 0;
   .card-infos {
     position: absolute;
     bottom: 0px;
@@ -137,14 +138,14 @@
   h2 {
     font-family: 'Londrina Shadow';
     text-transform: lowercase;
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
   p {
     margin-bottom: 0;
     margin-top: 8px;
     text-align: left;
     text-transform: lowercase;
-    font-size: 0.75rem;
+    font-size: 1.2em;
   }
 }
 
@@ -187,8 +188,9 @@
   }
   p {
     color: $papyrus;
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 8px;
+    overflow-y: scroll;
   }
 }
 
