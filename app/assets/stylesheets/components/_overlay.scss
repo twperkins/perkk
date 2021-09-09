@@ -27,6 +27,8 @@
 .detail-container {
   h2 {
     color: $teal;
+    border-bottom: solid 1px $papyrus-shadow;
+    width: 60%;
   }
 }
 
@@ -88,7 +90,6 @@
 .your-perks {
   height: 85vh;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   overflow-y: scroll;
 }
