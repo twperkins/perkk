@@ -36,7 +36,7 @@
         </div>
       </div>
       <%# TO DO: button below to scroll to next perk (update perk_main and perk_minor)  %>
-      <%= link_to "#", class: "link-light-blank" do %>
+      <%= link_to "#", class: "link-light-blank" data-scroll-perks-target="button" data-action="click->scroll-perks#toggleLogin" do %>
         <p class="button-secondary button-right">⌵</p>
       <% end %>
     </div>
