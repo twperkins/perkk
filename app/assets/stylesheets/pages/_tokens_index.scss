@@ -48,8 +48,8 @@
 .tokens-logo {
   color: $papyrus;
   position: absolute;
-  bottom: 128px;
-  left: 128px;
+  bottom: 10vh;
+  left: 10vw;
 }
 
 .bundle-options {
@@ -58,7 +58,7 @@
   flex-wrap: wrap;
   padding: 32px;
   overflow-y: scroll;
-  height: 40vh;
+  height: 55%;
 }
 
 .bundle-card {
