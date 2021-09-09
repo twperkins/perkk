@@ -21,7 +21,12 @@ static targets = ["list","package","totals"]
     })
       .then(response => response.json())
       .then((data) => {
-        console.log('Success:', data);
+        console.log(data.message)
+       if (data.message == "failed to save"){
+         console.log("I am an alert box!");
+         alert("You do not have enough tokens - please add tokens");
+       }
+        console.log('Success:', data.message);
       })
       .catch((error) => {
         console.error('Error:', error);
