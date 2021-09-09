@@ -46,3 +46,38 @@ document.addEventListener('turbolinks:load', () => {
   runAnimations();
   // initSweetalert();
 })
+
+// // this is for the home page to scroll through cards (Stef)
+
+// https://github.com/kenwheeler/slick - check this before trying to implement the feature
+
+// or do do an array in JS
+
+// import 'slick-carousel'
+// import 'slick-carousel/slick/slick.css'
+// import 'slick-carousel/slick/slick-theme.css'
+
+// $(".perk-gallery").slick({
+
+//   // normal options...
+//   infinite: false,
+
+//   // the magic
+//   responsive: [{
+
+//     breakpoint: 1024,
+//     settings: {
+//       slidesToShow: 2,
+//       infinite: true
+//     }
+
+//   }, {
+
+//     breakpoint: 600,
+//     settings: {
+//       slidesToShow: 2,
+//       dots: true
+//     }
+
+//   }]
+// });
