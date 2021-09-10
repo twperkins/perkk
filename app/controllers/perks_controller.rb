@@ -45,10 +45,6 @@ class PerksController < ApplicationController
     @perk_users = @perk.users.uniq
   end
 
-
-
-
-
   private
 
   def set_perk

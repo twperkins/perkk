@@ -22,7 +22,7 @@
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path perk.perk_pic.first.key %>')">
           <%= link_to "", perk_path(perk), class: "card-link" %>
           <% favourite = current_user.favourites.find_by(perk: perk) %>
-          <% if perk.favourites.present? %>
+          <% if favourite.present? %>
             <%= link_to favourite_path(favourite), class: "link-dark-blank button-top-right", method: :delete, remote: true do %>
               <h6 class="button-card high-z-index">♥︎</h6>
             <% end %>
