@@ -131,3 +131,28 @@
   background-color: $teal;
   box-shadow: inset -4px -4px 4px rgba(131, 159, 156, 0.5), inset 4px 4px 4px rgba(83, 101, 99, 0.5);
 }
+
+@media(max-width: 1000px) {
+  .tokens-grid {
+    display: block;
+  }
+  .tokens-second {
+    display: none;
+  }
+  .tokens-navbar .navbar-dark {
+    width: 100%;
+  }
+}
+
+@media(max-width: 500px) {
+  .tokens-logo {
+    width: 80vw;
+    text-align: center;
+    h1 {
+      font-size: 32px;
+    }
+    h4 {
+      font-size: 24px;
+    }
+  }
+}
