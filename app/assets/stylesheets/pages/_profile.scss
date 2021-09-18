@@ -112,18 +112,6 @@
   }
 }
 
-@media(max-width: 1350px) {
-  .navbar-dark .navbar-sections {
-    width: 80%;
-  }
-}
-
-@media(max-width: 1275px) {
-  .navbar-dark .navbar-sections {
-    width: 90%;
-  }
-}
-
 @media(max-width: 750px) {
   .profile-grid {
     display: block;
@@ -138,9 +126,6 @@
         margin: 16px;
       }
     }
-  }
-  .navbar-dark {
-    width: calc(100vw - 120px);
   }
   .notifications-block {
     h3 {

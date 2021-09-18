@@ -171,3 +171,33 @@
   background-color: $papyrus;
   z-index: 3;
 }
+
+@media(max-width: 1350px) {
+  .navbar-dark .navbar-sections {
+    width: 80%;
+  }
+  .navbar, .navbar-transparent {
+    width: 80%;
+  }
+}
+
+@media(max-width: 1275px) {
+  .navbar-dark .navbar-sections {
+    width: 90%;
+  }
+  .navbar, .navbar-transparent {
+    width: 90%;
+  }
+}
+
+@media(max-width: 750px) {
+  .navbar-dark, .navbar, .navbar-transparent {
+    width: calc(100vw - 120px);
+  }
+}
+
+@media(max-width: 690px) {
+  .navbar, .navbar-transparent {
+    width: 100vw;
+  }
+}

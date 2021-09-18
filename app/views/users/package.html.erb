@@ -21,13 +21,13 @@
       <div class="flex-owned" id="results2down" data-account-target="package">
         <h2 class="package-header text-vertical-left">your perks</h2>
         <% if @user_perks_all.blank? %>
-          <div class="card-green small">
+          <div class="card-green small add">
             <div class="card-infos">
               <h2>add perks here</h2>
             </div>
           </div>
         <% else %>
-          <div class="card-green small">
+          <div class="card-green small add">
             <div class="card-infos">
               <h2>add perks here</h2>
             </div>
@@ -95,7 +95,7 @@
 
 </div>
 
-<div>
+<div class="package">
   <%= render 'shared/profile' %>
 </div>
 
