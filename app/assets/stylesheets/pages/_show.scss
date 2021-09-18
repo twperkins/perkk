@@ -112,3 +112,57 @@
     }
   }
 }
+
+@media(max-width: 1400px) {
+  .show {
+    .overlay {
+      display: none;
+    }
+  }
+  .show-grid {
+    display: block;
+    .button-right {
+      position: absolute;
+      top: 50vh;
+      right: 5%;
+    }
+    .button-left {
+      position: absolute;
+      top: 50vh;
+      left: 5%;
+    }
+  }
+  .description-section {
+    right: 12%;
+  }
+}
+
+@media(max-width: 690px) {
+  .show-grid {
+    .button-right {
+      position: absolute;
+      top: 104px;
+      right: 5%;
+    }
+    .button-left {
+      position: absolute;
+      top: 104px;
+      left: 5%;
+    }
+    h2 {
+      font-size: 24px;
+    }
+    h4 {
+      font-size: 18px;
+    }
+    h5 {
+      font-size: 16px;
+    }
+    h6 {
+      font-size: 14px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+}

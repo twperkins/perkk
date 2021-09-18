@@ -3,7 +3,7 @@
     <div class="flex">
       <p>
         <% if params[:query].blank? %>
-          <%= pluralize perks.count, 'perk' %> available
+          <%= pluralize perks.count, 'perk' %>
         <% else %>
           <%= pluralize perks.count, 'result' %> for <code><%= params[:query] %></code>
         <% end %>
