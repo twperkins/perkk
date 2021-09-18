@@ -9,3 +9,9 @@
   display: flex;
   justify-items: space-between;
 }
+
+@media(max-width: 690px) {
+  .contain {
+    width: 100%;
+  }
+}

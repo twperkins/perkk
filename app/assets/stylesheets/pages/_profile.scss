@@ -34,9 +34,7 @@
 }
 
 .profile-second {
-  padding: 8px 64px;
-  margin-left: 74px;
-  margin-right: 74px;
+  padding: 8px 20%;
   position: relative;
   .text-vertical-right {
     font-style: normal;
@@ -49,13 +47,13 @@
     z-index: 1;
     font-size: 48px;
     position: absolute;
-    left: -48px;
+    left: 24px;
     top: 0;
     width: 100%;
     height: 40px;
   }
   h3 {
-    font-size: 40px;
+    font-size: 3vw;
     font-family: Londrina Shadow;
     margin-bottom: 32px;
     margin-left: 8px;
@@ -74,5 +72,110 @@
     padding-bottom: 4px;
     width: 90%;
     color: $papyrus;
+  }
+}
+
+@media(max-width: 1675px) {
+  .cards-profile {
+    .card-green {
+      box-sizing: border-box;
+      border-radius: 16px;
+      width: 195px;
+      height: 315px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      margin: 16px;
+      transform-style: preserve-3d;
+      transition: all 0.8s ease;
+      .card-infos {
+        position: absolute;
+        bottom: 0px;
+        padding: 16px;
+      }
+      h2 {
+        font-family: 'Londrina Shadow';
+        text-transform: lowercase;
+        font-size: 1.5rem;
+      }
+      p {
+        margin-bottom: 0;
+        margin-top: 8px;
+        text-align: left;
+        text-transform: lowercase;
+        font-size: 1rem;
+      }
+    }
+  }
+  .navbar-dark .navbar-sections {
+      width: 70%;
+  }
+}
+
+@media(max-width: 750px) {
+  .profile-grid {
+    display: block;
+    width: calc(100vw - 120px);
+    margin-right: 120px;
+    .profile-second {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      h3 {
+        font-size: 32px;
+        margin: 16px;
+      }
+    }
+  }
+  .notifications-block {
+    h3 {
+      font-size: 24px;
+    }
+    h5 {
+      font-size: 16px;
+    }
+  }
+}
+
+@media(max-width: 500px) {
+  .profile-grid {
+    .profile-first {
+      padding: 16px;
+    }
+    .profile-second {
+      padding: 16px;
+    }
+    .text-vertical-left-note {
+      display: none;
+    }
+    .text-vertical-left {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 28px;
+      color: $papyrus;
+      transform: none;
+      transform-origin: none;
+      text-align: center;
+      position: relative;
+      left: 0;
+      top: 0;
+      z-index: 1;
+    }
+    .text-vertical-right {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 28px;
+      color: $teal;
+      transform: none;
+      transform-origin: none;
+      text-align: center;
+      position: relative;
+      left: 0;
+      top: 0;
+      z-index: 1;
+    }
+    .cards-profile {
+      justify-content: center;
+    }
   }
 }

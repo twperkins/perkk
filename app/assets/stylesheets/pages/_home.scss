@@ -18,7 +18,7 @@
 
 .home-banner {
   background-color: $papyrus;
-  padding-top: 80%;
+  padding-top: 50vh;
   h1 {
     font-size: 72px;
   }
@@ -70,6 +70,12 @@
   color: $papyrus;
   border: solid 1px $papyrus;
   text-align: center;
+  h2 {
+    font-size: 2vw;
+  }
+  p {
+    font-size: 0.9vw;
+  }
 }
 
 .small-circle {
@@ -109,4 +115,167 @@
   width: 40%;
   display: flex;
   justify-content: space-between;
+}
+
+@media(max-width: 1300px) {
+  .perk-gallery {
+    .main-perk {
+      box-sizing: border-box;
+      border-radius: 30px;
+      width: 260px !important;
+      height: 420px !important;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      margin: 16px;
+      transform-style: preserve-3d;
+      transition: all 0.8s ease;
+      .card-infos {
+        position: absolute;
+        bottom: 0px;
+        padding: 16px;
+      }
+      h2 {
+        font-family: 'Londrina Shadow';
+        text-transform: lowercase;
+        font-size: 1.5rem;
+      }
+      p {
+        margin-bottom: 0;
+        margin-top: 8px;
+        text-align: left;
+        text-transform: lowercase;
+        font-size: 1rem;
+      }
+    }
+    .minor-perk {
+      box-sizing: border-box;
+      border-radius: 16px;
+      width: 195px !important;
+      height: 315px !important;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      margin: 16px;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transition: all 0.8s ease;
+      flex-shrink: 0;
+      .card-infos {
+        position: absolute;
+        bottom: 0px;
+        padding: 16px;
+      }
+      h2 {
+        font-family: 'Londrina Shadow';
+        text-transform: lowercase;
+        font-size: 1.3rem;
+      }
+      p {
+        margin-bottom: 0;
+        margin-top: 8px;
+        text-align: left;
+        text-transform: lowercase;
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+@media(max-width: 1100px) {
+  .perk-gallery {
+    .main-perk {
+      box-sizing: border-box;
+      border-radius: 16px;
+      width: 195px !important;
+      height: 315px !important;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      margin: 16px;
+      transform-style: preserve-3d;
+      transition: all 0.8s ease;
+      .card-infos {
+        position: absolute;
+        bottom: 0px;
+        padding: 16px;
+      }
+      h2 {
+        font-family: 'Londrina Shadow';
+        text-transform: lowercase;
+        font-size: 1.5rem;
+      }
+      p {
+        margin-bottom: 0;
+        margin-top: 8px;
+        text-align: left;
+        text-transform: lowercase;
+        font-size: 1rem;
+      }
+    }
+    .minor-perk {
+      box-sizing: border-box;
+      border-radius: 16px;
+      width: 130px !important;
+      height: 210px !important;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      margin: 16px;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transition: all 0.8s ease;
+      flex-shrink: 0;
+      .card-infos {
+        position: absolute;
+        bottom: 0px;
+        padding: 16px;
+      }
+      h2 {
+        font-family: 'Londrina Shadow';
+        text-transform: lowercase;
+        font-size: 1.3rem;
+      }
+      p {
+        margin-bottom: 0;
+        margin-top: 8px;
+        text-align: left;
+        text-transform: lowercase;
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+@media(max-width: 900px) {
+  .navbar-dark-home {
+    display: none;
+  }
+  .perk-gallery {
+    display: none;
+  }
+  .home-grid {
+    display: block;
+    height: 100vh;
+    background-color: $teal;
+    .banner-container {
+      background-color: $teal;
+      .home-banner {
+        background-color: $teal;
+        padding-top: 10vh;
+        h1 {
+          color: $papyrus;
+        }
+        h4 {
+          color: $papyrus;
+        }
+        .link-dark-blank {
+          display: none;
+        }
+      }
+    }
+  }
+  .lower-grid {
+    display: none;
+  }
 }
