@@ -19,7 +19,7 @@
     <div class="perks-cards wrapper">
       <% perks.each do |perk| %>
 
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path perk.perk_pic.first.key %>')">
+        <div class="card medium" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path perk.perk_pic.first.key %>')">
           <%= link_to "", perk_path(perk), class: "card-link" %>
           <% favourite = current_user.favourites.find_by(perk: perk) %>
           <% if favourite.present? %>

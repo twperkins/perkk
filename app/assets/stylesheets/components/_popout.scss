@@ -14,5 +14,11 @@
 }
 
 .expanded-login {
-  width: 61.5% !important;
+  width: 61.5%;
+}
+
+@media(max-width: 900px) {
+  .expanded-login {
+    width: 98%;
+  }
 }
