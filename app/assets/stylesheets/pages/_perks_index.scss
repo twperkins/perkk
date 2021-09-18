@@ -8,7 +8,7 @@
   position: fixed;
   border-bottom: solid 1px $papyrus-shadow;
   background-color: $papyrus;
-  width: 86vw;
+  width: calc(90vw - 120px);
   padding-top: 32px;
   z-index: 1;
   .flex {
@@ -38,5 +38,39 @@
   padding-left: 1rem;
   .card {
     margin-bottom: 1rem;
+  }
+}
+
+@media(max-width: 1170px) {
+  #map {
+    display: none;
+  }
+  .perks-cards {
+    width: calc(130% - 120px);
+    margin-right: 0.2rem;
+    padding-left: 0.2rem;
+  }
+  .side-trim {
+    margin: 0px 32px;
+  }
+}
+
+@media(max-width: 690px) {
+  .find {
+    .overlay {
+      display: none;
+    }
+  }
+  .results {
+    width: 90vw;
+  }
+  .side-trim {
+    margin: 0px 16px;
+  }
+  .contain {
+    margin-right: 0px;
+  }
+  .perks-cards {
+    justify-content: center;
   }
 }
